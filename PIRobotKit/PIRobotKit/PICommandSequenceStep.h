@@ -8,19 +8,19 @@
 #import "PIObject.h"
 
 /**
- Index key to denote the duration for a given PIComponentStates raw data (specified by gComponentsKey)
+ Index key to denote the duration for a given PIComponentValues raw data (specified by gComponentsKey)
  */
 extern NSString *const gDurationKey;
 
 /**
- Index key to denote the raw data (NSDictionary) to be mapped to PIComponentStates
+ Index key to denote the raw data (NSDictionary) to be mapped to PIComponentValues
  */
 extern NSString *const gComponentsKey;
 
-@class PIComponentStates;
+@class PIComponentValues;
 
 /**
- `PICommandSequenceStep` class is essentially a wrapper class on top of PIComponentStates and is used in conjunction with `PICommandSequence` class to describe a robot animation sequence.  This class cannot be executed by itself without being a part of the `PICommandSequence` class.
+ `PICommandSequenceStep` class is essentially a wrapper class on top of PIComponentValues and is used in conjunction with `PICommandSequence` class to describe a robot animation sequence.  This class cannot be executed by itself without being a part of the `PICommandSequence` class.
  */
 @interface PICommandSequenceStep : PIObject
 
@@ -32,7 +32,7 @@ extern NSString *const gComponentsKey;
 /**
  The desire state of the robot for this given step.  Caller can only specify output component values for the robot.  
  */
-@property (nonatomic, strong) PIComponentStates *componentStates;
+@property (nonatomic, strong) PIComponentValues *componentStates;
 
 /**
  Class initializer that will instantiate a PICommandSequenceStep object populated with the given raw data, parsed by the specific parser version.  The raw data will be mapped to PIComponentState equivalent.

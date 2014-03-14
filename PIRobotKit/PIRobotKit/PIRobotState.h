@@ -7,10 +7,10 @@
 //
 #import "PIObject.h"
 
-@class PIComponentStates;
+@class PIComponentValues;
 
 /**
- `PIRobotState` class is a wrapper class on top of PIComponentStates that represents the actual state of the object with combined sensor/actuator outputs.  Caller can leverage this information to trigger any custom events.  
+ `PIRobotState` class is a wrapper class on top of PIComponentValues that represents the actual state of the object with combined sensor/actuator outputs.  Caller can leverage this information to trigger any custom events.
  */
 @interface PIRobotState : PIObject
 
@@ -22,13 +22,13 @@
 /**
  The actual PIComponent values for this state, which will include actuator and sensor values.
  */
-@property (nonatomic, strong) PIComponentStates *componentStates;
+@property (nonatomic, strong) PIComponentValues *componentValues;
 
 /**
- Copies output component values from PIComponentStates into itself, which can be deeply nested as determined by the PIComponent object themselves.
+ Copies output component values from PIComponentValues into itself, which can be deeply nested as determined by the PIComponent object themselves.
  
- @param states The output PIComponentStates values to copy from.
+ @param states The output PIComponentValues values to copy from.
  */
-- (void) copyFromComponentStates:(PIComponentStates *)states;
+- (void) copyFromComponentValues:(PIComponentValues *)values;
 
 @end

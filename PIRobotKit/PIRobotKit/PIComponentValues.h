@@ -1,5 +1,5 @@
 //
-//  PIComponentStates.h
+//  PIComponentValues.h
 //  PIRobotKit
 //
 //  Created by Kevin Liang on 2/24/14.
@@ -12,7 +12,7 @@
 
 /**
  Index keys used to map a PIComponent to the specific physical component for a given robot.
- For example, gComponentLeftEarLight will be used to mapped PIComponentRGB to the left ear RGB light for Bo (or Yana)'s PIComponentStates.
+ For example, gComponentLeftEarLight will be used to mapped PIComponentRGB to the left ear RGB light for Bo (or Yana)'s PIComponentValues.
  */
 extern NSString *const gComponentEye;
 extern NSString *const gComponentLeftEarLight;
@@ -37,7 +37,7 @@ extern NSString *const gComponentSpeaker;
 extern NSString *const gComponentMicrophone;
 
 /**
- Denotes the proper parser version to be used to convert raw data in NSDictionary to the appropriate PIComponentStates.
+ Denotes the proper parser version to be used to convert raw data in NSDictionary to the appropriate PIComponentValues.
  */
 extern NSString *const gParseVersionKey;
 
@@ -45,16 +45,16 @@ extern NSString *const gParseVersionKey;
 @class PIMotorServo, PIMotorWheel, PILightRGB, PILight, PIEye;
 
 /**
- `PIComponentStates` class contains the mapping between the specific component values (as denoted with various PIComponent subclasses) and the actual component on the robot.  This class is "robot agnostic" - that is, it can be used on any of the robot types (Bo or Yana) or any robot instances (Bo1 or Bo2).  If PIComponentStates contains values for components that are not applicable for a given robot type (e.g. left motor for Yana), the values will simply be ignored by the robot object during execution.
+ `PIComponentValues` class contains the mapping between the specific component values (as denoted with various PIComponent subclasses) and the actual component on the robot.  This class is "robot agnostic" - that is, it can be used on any of the robot types (Bo or Yana) or any robot instances (Bo1 or Bo2).  If PIComponentValues contains values for components that are not applicable for a given robot type (e.g. left motor for Yana), the values will simply be ignored by the robot object during execution.
  */
 @interface PIComponentValues : PIObject
 
 /**
  Convenience function to stop the robot from moving.
  
- @return instance of PIComponentStates with motor speeds set to 0.
+ @return instance of PIComponentValues with motor speeds set to 0.
  */
-+ (PIComponentStates *)stopAllMotors;
++ (PIComponentValues *)stopAllMotors;
 
 /**
  Verify if the parser version is valid for parsing raw data.
@@ -65,13 +65,13 @@ extern NSString *const gParseVersionKey;
 + (BOOL) isValidParsingVersion:(NSString *)version;
 
 /** 
- Convenience method to merge two PIComponentStates together.  If there are conflicting component values (e.g. firstState and secondState both has values for left motor), then this method will take the value from the secondState object. 
+ Convenience method to merge two PIComponentValues together.  If there are conflicting component values (e.g. firstState and secondState both has values for left motor), then this method will take the value from the secondState object.
  
- @param firstState A PIComponentStates object to be merged
- @param secondState A PIComponentStates object to be merged.  During conflict, this state's value will be used as tie-breaker.
- @return a new instance of PIComponentStates with the resulting merged values.
+ @param firstState A PIComponentValues object to be merged
+ @param secondState A PIComponentValues object to be merged.  During conflict, this state's value will be used as tie-breaker.
+ @return a new instance of PIComponentValues with the resulting merged values.
  */
-+ (PIComponentStates *) mergeState:(PIComponentStates *)firstState withState:(PIComponentStates *)secondState;
++ (PIComponentValues *) mergeState:(PIComponentValues *)firstState withState:(PIComponentValues *)secondState;
 
 /**
  Convenience functions to make it easy to set the component values.  
@@ -126,23 +126,23 @@ extern NSString *const gParseVersionKey;
 - (BOOL) empty;
 
 /**
- Returns an array of keys for this PIComponentStates.
+ Returns an array of keys for this PIComponentValues.
  */
 - (NSArray *) allKeys;
 
 /**
- Returns an exact clone copy of this PIComponentStates.  
+ Returns an exact clone copy of this PIComponentValues.
  */
-- (PIComponentStates *) cloneCopy;
+- (PIComponentValues *) cloneCopy;
 
 /**
- Returns YES if the passed in PIComponentStates satisfies both criteria when compared to this instance of PIComponentStates:
+ Returns YES if the passed in PIComponentValues satisfies both criteria when compared to this instance of PIComponentValues:
  1. state is a strict subset of key/PIComponets pairs
  2. state's PIComponent values are the same
  
- @param state The PIComponentStates to compare against
+ @param state The PIComponentValues to compare against
  @return YES if both conditions are satisifed above.  NO otherwise.
  */
-- (BOOL) containsSameComponents:(PIComponentStates *)state;
+- (BOOL) containsSameComponents:(PIComponentValues *)state;
 
 @end

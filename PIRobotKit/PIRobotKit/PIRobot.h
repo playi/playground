@@ -8,7 +8,7 @@
 
 #import <CoreBluetooth/CBPeripheral.h>
 #import "PIObject.h"
-#import "PIComponentStates.h"
+#import "PIComponentValues.h"
 #import "PICommandSequence.h"
 #import "PIEvent.h"
 
@@ -121,9 +121,9 @@ typedef enum
 /**
  Sets the desired component values immediately.  No callback will be fired.  This method is mainly used to quickly put the robot in a desired state until state is changed again. 
  
- @param states The desired output states for the robot as specified by PIComponentStates
+ @param states The desired output states for the robot as specified by PIComponentValues
  */
-- (void) sendRobotCommand:(PIComponentStates *)states;
+- (void) sendRobotCommand:(PIComponentValues *)command;
 
 #pragma mark - override by child class
 /**
