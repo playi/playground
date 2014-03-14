@@ -17,8 +17,8 @@
 /**
  Velocity speed for the motor, expressed as centimeter/second
  */
-@property (nonatomic) double speed;
+@property (nonatomic) float speed;
 
-- (id) initWithSpeed:(double)speed;
+- (id) initWithSpeed:(float)speed;
 
 @end

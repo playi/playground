@@ -16,9 +16,9 @@
 /**
  The brightness value of the light, range from 0 to 255
  */
-@property (nonatomic) NSUInteger brightness;
+@property (nonatomic) PIBrightness brightness;
 
 
-- (id) initWithBrightness:(NSUInteger) brightness;
+- (id) initWithBrightness:(PIBrightness) brightness;
 
 @end

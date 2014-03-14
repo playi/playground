@@ -16,6 +16,6 @@
 /**
  the volumen index for the sound.  Mute = 0.
  */
-@property (nonatomic) NSUInteger volume;
+@property (nonatomic) PIValueIndex volume;
 
 @end

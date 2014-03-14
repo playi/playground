@@ -16,8 +16,8 @@
 /**
  Angle that the motor is at, with granularity to a full degree.
  */
-@property (nonatomic) NSInteger angle;
+@property (nonatomic) PIAngle angle;
 
-- (id) initWithAngle:(NSInteger)angle;
+- (id) initWithAngle:(PIAngle)angle;
 
 @end

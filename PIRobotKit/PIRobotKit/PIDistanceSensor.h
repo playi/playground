@@ -16,11 +16,11 @@
 /**
  Refers to the estimated distance (in cm) of the object that has been detected.  If no object has been detected, value would be less than 0.
  */
-@property (nonatomic, readonly) PIBotCentimeters_t distance;
+@property (nonatomic, readonly) PIDistance distance;
 
 /**
  Refers to the confidence level of the distance of the object that has been detected.  This values gives a bounded range (distance +/- margin) of the actual distance of the object.
  */
-@property (nonatomic, readonly) PIBotCentimeters_t margin;
+@property (nonatomic, readonly) PIDistance margin;
 
 @end

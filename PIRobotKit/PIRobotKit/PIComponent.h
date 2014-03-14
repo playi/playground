@@ -19,6 +19,13 @@ extern NSString *const gRedKey;
 extern NSString *const gGreenKey;
 extern NSString *const gBlueKey;
 
+
+typedef int PIAngle; // angle variables in degrees
+typedef float PIDistance; // distance variables in cm
+typedef float PIVelocity; // velocity variables in cm/s
+typedef NSUInteger PIBrightness; // brightness variables [0-255]
+typedef NSUInteger PIValueIndex; // count index 
+
 /**
  `PIComponent` class is the parent class that all the specific component classes inherits off of.  This is useful when dealing with container classes such as `PIComponentValues` that expects a `PIComponent` object, but the components may have different types (e.g. `PILightRGB` vs. `PIEye`).
  

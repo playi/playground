@@ -29,7 +29,7 @@ typedef enum {
 /** 
  Pre-defined animations that can be used.  todo: sequence index to be an enum set later on.
  */
-@property (nonatomic) NSUInteger animationIndex;
+@property (nonatomic) PIValueIndex animationIndex;
 
 /**
  Set the individual LED light within the eye.  This will be over-written by child classes.
@@ -37,7 +37,7 @@ typedef enum {
  @param state Set the state of the LED to
  @param index The specific LED index to set the state to
  */
-- (void) setLEDState:(PIEyeLEDState)state atIndex:(NSUInteger)index;
+- (void) setLEDState:(PIEyeLEDState)state atIndex:(PIValueIndex)index;
 
 /**
  Fetch the current state of the LED.
@@ -45,7 +45,7 @@ typedef enum {
  @param index The specific LED index in question
  @return state of the specific LED
  */
-- (PIEyeLEDState) LEDStateAtIndex:(NSUInteger)index;
+- (PIEyeLEDState) LEDStateAtIndex:(PIValueIndex)index;
 
 /**
  Returns an array of the LED states, where the length of the array is the total number of LEDs, and the LED index will correspond to the object index for the array.

@@ -16,7 +16,7 @@
 /**
  Distance travelled, represented in centimeters
  */
-@property (nonatomic, readonly) double distance;
+@property (nonatomic, readonly) PIDistance distance;
 
 /** 
  Used to artificially increase the speed of the motors without actually changing the speed.  This is useful in scenarios where you would want to keep the speed at 5cm/s, but may want to kick up the motor speed due to surface friction.  Defaults to 1.

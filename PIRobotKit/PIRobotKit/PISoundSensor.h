@@ -16,11 +16,11 @@
 /**
  Pre-defined sound event index that is detected from the robot.
  */
-@property (nonatomic) NSUInteger index;
+@property (nonatomic) PIValueIndex index;
 
 /**
  Location where the sound originated from (same angular coordinates as PIMotorServo), range from [-179, 180]
  */
-@property (nonatomic) NSInteger angle;
+@property (nonatomic) PIAngle angle;
 
 @end

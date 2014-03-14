@@ -16,18 +16,18 @@
 /**
  The brightness value of red, range from 0 to 255
  */
-@property (nonatomic) NSUInteger red;
+@property (nonatomic) PIBrightness red;
 
 /**
  The brightness value of green, range from 0 to 255
  */
-@property (nonatomic) NSUInteger green;
+@property (nonatomic) PIBrightness green;
 
 /**
  The brightness value of blue, range from 0 to 255
  */
-@property (nonatomic) NSUInteger blue;
+@property (nonatomic) PIBrightness blue;
 
-- (id) initWithRed:(NSUInteger)red green:(NSUInteger)green blue:(NSUInteger)blue;
+- (id) initWithRed:(PIBrightness)red green:(PIBrightness)green blue:(PIBrightness)blue;
 
 @end

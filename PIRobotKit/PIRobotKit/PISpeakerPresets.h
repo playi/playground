@@ -16,8 +16,8 @@
 /**
  Preset soundtrack index to play
  */
-@property (nonatomic) PISoundTrackIndex index;
+@property (nonatomic) PIValueIndex index;
 
-- (void) initWithSoundTrack:(PISoundTrackIndex)index volume:(NSUInteger)volume;
+- (void) initWithSoundTrack:(PIValueIndex)index volume:(PIValueIndex)volume;
 
 @end
