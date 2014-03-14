@@ -1,5 +1,5 @@
 # Play-i API
-Welcome to Play-i API!  The main goal of this documentation is to give you a good understanding of Bo and Yana's capabilities and how you can control them to build great applications on top!  The play-i team will frequently update both the API codebase as well as the documentation during our alpha release, so please check back often to see the latest updates!  
+Welcome to the Play-i API!  This documentation will give you a good understanding of Bo and Yana's capabilities and how you can control them to build great applications on top!  The Play-i team will frequently update both the API codebase as well as the documentation during our alpha release, so please check back often to see the latest updates!  
 
 
 ### Quick overview
