@@ -35,6 +35,7 @@
 		0A7EFF9018D379B100D3A2DD /* PIEye.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7EFF8F18D379B100D3A2DD /* PIEye.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A7EFF9218D37ECA00D3A2DD /* PIColorLight.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7EFF9118D37ECA00D3A2DD /* PIColorLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A7EFF9418D3AF8100D3A2DD /* PIComponentValues.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7EFF9318D3AF8100D3A2DD /* PIComponentValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A7EFF9618D3B6FE00D3A2DD /* PIBoRobot.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7EFF9518D3B6FE00D3A2DD /* PIBoRobot.h */; };
 		0A88A4661891A62E00E2DAB9 /* PIRobotManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A88A4651891A62E00E2DAB9 /* PIRobotManagerTests.m */; };
 		0A88A46B18931A5D00E2DAB9 /* PIRobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A88A46A18931A5D00E2DAB9 /* PIRobotTests.m */; };
 		0A88A4721896F0A800E2DAB9 /* PICommandSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A88A46E1896F0A800E2DAB9 /* PICommandSequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -107,6 +108,7 @@
 		0A7EFF8F18D379B100D3A2DD /* PIEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIEye.h; sourceTree = "<group>"; };
 		0A7EFF9118D37ECA00D3A2DD /* PIColorLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIColorLight.h; sourceTree = "<group>"; };
 		0A7EFF9318D3AF8100D3A2DD /* PIComponentValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIComponentValues.h; sourceTree = "<group>"; };
+		0A7EFF9518D3B6FE00D3A2DD /* PIBoRobot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIBoRobot.h; sourceTree = "<group>"; };
 		0A88A4651891A62E00E2DAB9 /* PIRobotManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIRobotManagerTests.m; sourceTree = "<group>"; };
 		0A88A46A18931A5D00E2DAB9 /* PIRobotTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIRobotTests.m; sourceTree = "<group>"; };
 		0A88A46E1896F0A800E2DAB9 /* PICommandSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICommandSequence.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		0A6E669618BECE8100FC6D96 /* Robots */ = {
 			isa = PBXGroup;
 			children = (
+				0A7EFF9518D3B6FE00D3A2DD /* PIBoRobot.h */,
 				98295894186270710089F1D9 /* PIRobot.h */,
 				98EC54F0187DDAE900087D1D /* PIYanaRobot.h */,
 			);
@@ -293,6 +296,7 @@
 				0A42763D18A3312800545D6D /* PISoundSensor.h in Headers */,
 				0A42766518A9A18200545D6D /* PIDistanceSensor.h in Headers */,
 				98295896186270710089F1D9 /* PIRobot.h in Headers */,
+				0A7EFF9618D3B6FE00D3A2DD /* PIBoRobot.h in Headers */,
 				0A42765D18A983AE00545D6D /* PIMotorServo.h in Headers */,
 				0A6E668C18BC1F4400FC6D96 /* PICommandSequenceStep.h in Headers */,
 				98EC54C8187D48B500087D1D /* PIComponent.h in Headers */,

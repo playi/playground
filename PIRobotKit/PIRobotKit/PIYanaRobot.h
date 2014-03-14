@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Play-i. All rights reserved.
 //
 
-#import <PIRobotKit/PIRobotKit.h>
-
+/**
+ `PIYanaRobot` class is child class of `PIRobot`, which contains Yana specific checks and information.
+ */
 @interface PIYanaRobot : PIRobot
 
 @end
