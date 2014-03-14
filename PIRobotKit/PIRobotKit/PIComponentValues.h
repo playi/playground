@@ -47,7 +47,7 @@ extern NSString *const gParseVersionKey;
 /**
  `PIComponentStates` class contains the mapping between the specific component values (as denoted with various PIComponent subclasses) and the actual component on the robot.  This class is "robot agnostic" - that is, it can be used on any of the robot types (Bo or Yana) or any robot instances (Bo1 or Bo2).  If PIComponentStates contains values for components that are not applicable for a given robot type (e.g. left motor for Yana), the values will simply be ignored by the robot object during execution.
  */
-@interface PIComponentStates : PIObject
+@interface PIComponentValues : PIObject
 
 /**
  Convenience function to stop the robot from moving.

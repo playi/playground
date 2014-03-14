@@ -8,6 +8,7 @@
 
 #import "PIObject.h"
 #import "PICommandSequenceStep.h"
+#import "PIEvent.h"
 
 /**
  Index key that maps the raw data (NSArray of NSDictionaries) to be parsed.
@@ -25,17 +26,12 @@ extern NSString *const gDataPayloadKey;
  2. register for a clap event: [self.events addObject:clapEvent];
  
  */
-@interface PICommandSequence : PIObject
+@interface PICommandSequence : PIObject <PIEventDataSource>
 
 /**
  A set of PICommandSequenceStep objects to be executed sequentially over the course of the animation.
  */
 @property (nonatomic, strong) NSMutableArray *steps;
-
-/**
- A set of PIEvents to listen to during the execution of this sequence.
- */
-@property (nonatomic, strong) NSMutableArray *events;
 
 /**
  Parses the raw data animation recursively to populate the steps in this sequence.  This method will override any existing PICommandSequenceSteps for this sequence.

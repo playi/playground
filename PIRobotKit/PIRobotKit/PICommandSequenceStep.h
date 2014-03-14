@@ -54,5 +54,5 @@ extern NSString *const gComponentsKey;
  */
 - (BOOL) parseData:(NSDictionary *)data withVersion:(NSString *)version;
 
-- (id) initWithDuration:(double) duration;
+- (id) initWithCommand:(PIComponentValues *)command duration:(double) duration;
 @end

@@ -10,6 +10,7 @@
 #import "PIObject.h"
 #import "PIComponentStates.h"
 #import "PICommandSequence.h"
+#import "PIEvent.h"
 
 // c-lib
 #import "PIBotInterface.h"
@@ -35,7 +36,7 @@ typedef enum
 /**
  `PIRobot` class handles the actual command/events communication to/from the physical robot, respectively.  While most of the logic is in this class, `PIRobot` relies on the derived classes to handle robot type specific logic. 
  */
-@interface PIRobot : PIObject <CBPeripheralDelegate>
+@interface PIRobot : PIObject <PIEventDataSource>
 
 /** 
  Unique ID for this given robot.
@@ -86,26 +87,6 @@ typedef enum
  */
 + (CBUUID *) serviceUUID;
 
-#pragma mark - events management
-/** 
- Adds an event to listen to.  If event already exists, this will be a no-op.
- 
- @param event Event to be notified on receiving PIRobotState data.
- */
-- (void) addEvent:(PIEvent *)event;
-
-/**
- Removes the given event from listening queue.  If event isn't registered to begin with, this will be a no-op.
- 
- @param event Event to be removed from on receiving PIRobotState data.
- */
-- (void) removeEvent:(PIEvent *)event;
-
-/**
- Returns an array of all the events that is currently registered for this robot, or an empty array if there are no registered events.
- */
-- (NSArray *) allEvents;
-
 # pragma mark - command sequence management
 /**
  Start executing on the given command sequence with the given options.  If the sequence is already being executed, this will be a no-op.  Once the sequence has finished, delegate callback will be called.
@@ -142,7 +123,7 @@ typedef enum
  
  @param states The desired output states for the robot as specified by PIComponentStates
  */
-- (void) sendDesiredRobotState:(PIComponentStates *)states;
+- (void) sendRobotCommand:(PIComponentStates *)states;
 
 #pragma mark - override by child class
 /**
