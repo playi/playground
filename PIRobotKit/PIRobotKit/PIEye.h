@@ -17,11 +17,17 @@ typedef enum {
 /**
  `PIEye` is subclass of `PILight` class, and it is an output class to express eye animations. Currently there are 12 LEDs for the eye, arranged in clock-wise fashion.  Thus the LED index would look like:
  
- 10 11  0
- 9      1
- 8      2
- 7      3
- 6  5   4
+           0
+    11            1
+ 
+ 10                  2
+ 
+9                     3
+ 
+  8                  4
+ 
+    7             5
+           6
  
  */
 @interface PIEye : PILight
