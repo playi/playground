@@ -1,6 +1,10 @@
 # Play-i API
 Welcome to the Play-i API!  This documentation will give you a good understanding of Bo and Yana's capabilities and how you can control them to build great applications on top!  The Play-i team will frequently update both the API codebase as well as the documentation during our alpha release, so please check back often to see the latest updates!  
 
+If you have any questions please post a new topic in the developer forum here: http://devforum.play-i.com - Be sure to see if your question has already been asked by someone else before posting! 
+
+We are collecting feedback and feature requests here: http://devforum.play-i.com/t/api-feedback-and-feature-requests/12 - Feel free to post a comment if you have any feedback! If someone has already posted the same feedback, please like it and/or post a response to their comment. 
+
 
 ### Quick overview
 Before digging into the code, please take a look at what Bo and Yana are capable of: https://docs.google.com/document/d/1P3o16FcD1LM18gDAjkGUVZZNjq8yxg77XeWf7hqrcms/edit?usp=sharing
