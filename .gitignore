@@ -17,8 +17,5 @@ DerivedData
 .idea/
 *.hmap
 *.xccheckout
-
-#CocoaPods
-#Pods
 .ruby-gemset
 .ruby-version
