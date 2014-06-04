@@ -42,12 +42,19 @@
     self.robotManager = [PIRobotManager manager];
     self.robotManager.delegate = self;
     
+    // load main animation from file
     self.mainAnimation = [PICommandSequence sequenceFromFileInBundle:MAIN_ANIMATION_FILE fileType:@"json"];
+    
+    // create second animation programmatically
     self.secondaryAnimation = [PICommandSequence new];
     PICommand *earsRed = [PICommand new];
     [earsRed setLeftEarLight:[[PIComponentLightRGB alloc] initWithRed:255 green:0 blue:0]];
     [earsRed setRightEarLight:[[PIComponentLightRGB alloc] initWithRed:255 green:0 blue:0]];
     [self.secondaryAnimation addCommand:earsRed withDuration:2.0];
+    PICommand *earsOff = [PICommand new];
+    [earsOff setLeftEarLight:[[PIComponentLightRGB alloc] initWithRed:0 green:0 blue:0]];
+    [earsOff setRightEarLight:[[PIComponentLightRGB alloc] initWithRed:0 green:0 blue:0]];
+    [self.secondaryAnimation addCommand:earsOff withDuration:2.0];
     
     self.playPauseMainSequence.enabled = NO;
 }
@@ -56,7 +63,7 @@
 - (IBAction) connectionStatusAction:(id)sender
 {
     if (!self.robot || (self.robot.connectionState != CONNECTED)) {
-        [self.robotManager scanForPIRobots:1.0]; // scan for available robots to connect periodically (1 second)
+        [self.robotManager scanForPIRobots:1.0];
     }
     else {
         [self.robotManager disconnectRobot:self.robot];
