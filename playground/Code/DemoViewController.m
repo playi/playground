@@ -19,7 +19,9 @@
 
 @implementation DemoViewController
 @synthesize connectionStatus = _connectionStatus;
-@synthesize playPause = _playPause;
+@synthesize playPauseMainSequence = _playPauseMainSequence;
+@synthesize playSecondarySequence = _playSecondarySequence;
+@synthesize singleCommand = _singleCommand;
 
 @synthesize robot = _robot;
 @synthesize robotManager = _robotManager;
@@ -47,7 +49,7 @@
     [earsRed setRightEarLight:[[PIComponentLightRGB alloc] initWithRed:255 green:0 blue:0]];
     [self.secondaryAnimation addCommand:earsRed withDuration:2.0];
     
-    self.playPause.enabled = NO;
+    self.playPauseMainSequence.enabled = NO;
 }
 
 #pragma mark - user interactions
@@ -65,24 +67,24 @@
 {
     if ([self.robot isExecutingCommandSequence:self.mainAnimation]) {
         [self.robot stopCommandSequence:self.mainAnimation];
-        [self.playPause setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
+        [self.playPauseMainSequence setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
     }
     else {
         [self.robot executeCommandSequence:self.mainAnimation withOptions:self.mainAnimationResult];
-        [self.playPause setBackgroundImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
+        [self.playPauseMainSequence setBackgroundImage:[UIImage imageNamed:@"pause.png"] forState:UIControlStateNormal];
     }
-}
-
-- (IBAction) playSoundAction:(id)sender
-{
-    PICommand *cmd = [PICommand new];
-    [cmd setSound:[[PIComponentSpeaker alloc] initWithSoundTrack:SOUNDTRACK_HI]];
-    [self.robot sendRobotCommand:cmd];
 }
 
 - (IBAction) playSecondarySequence:(id)sender
 {
     [self.robot executeCommandSequence:self.secondaryAnimation withOptions:nil];
+}
+
+- (IBAction) sendCommand:(id)sender
+{
+    PICommand *cmd = [PICommand new];
+    [cmd setSound:[[PIComponentSpeaker alloc] initWithSoundTrack:SOUNDTRACK_HI]];
+    [self.robot sendRobotCommand:cmd];
 }
 
 #pragma mark - PIRobotManagerDelegate
@@ -97,14 +99,14 @@
     self.robot = robot;
     self.robot.delegate = self;
     [self.connectionStatus setBackgroundImage:[UIImage imageNamed:@"connectionOn.png"] forState:UIControlStateNormal];
-    self.playPause.enabled = YES;
+    self.playPauseMainSequence.enabled = YES;
 }
 
 - (void) manager:(PIRobotManager *)manager didDisconnectWithRobot:(PIRobot *)robot error:(NSError *)error
 {
     NSLog(@"disconnected from robot: %@", robot.name);
     [self.connectionStatus setBackgroundImage:[UIImage imageNamed:@"connectionOff.png"] forState:UIControlStateNormal];
-    self.playPause.enabled = NO;
+    self.playPauseMainSequence.enabled = NO;
 }
 
 - (void) manager:(PIRobotManager *)manager stateDidChange:(PIRobotManagerState)oldState toState:(PIRobotManagerState)newState

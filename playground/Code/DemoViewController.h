@@ -9,11 +9,13 @@
 @interface DemoViewController : UIViewController<PIRobotManagerDelegate, PIRobotDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *connectionStatus;
-@property (weak, nonatomic) IBOutlet UIButton *playPause;
+@property (weak, nonatomic) IBOutlet UIButton *playPauseMainSequence;
+@property (weak, nonatomic) IBOutlet UIButton *playSecondarySequence;
+@property (weak, nonatomic) IBOutlet UIButton *singleCommand;
 
 - (IBAction) connectionStatusAction:(id)sender;
 - (IBAction) playPauseMainSequence:(id)sender;
 - (IBAction) playSecondarySequence:(id)sender;
-- (IBAction) playSoundAction:(id)sender;
+- (IBAction) sendCommand:(id)sender;
 
 @end
