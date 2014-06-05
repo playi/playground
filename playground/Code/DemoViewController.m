@@ -47,14 +47,16 @@
     
     // create second animation programmatically
     self.secondaryAnimation = [PICommandSequence new];
-    PICommand *earsRed = [PICommand new];
-    [earsRed setLeftEarLight:[[PIComponentLightRGB alloc] initWithRed:255 green:0 blue:0]];
-    [earsRed setRightEarLight:[[PIComponentLightRGB alloc] initWithRed:255 green:0 blue:0]];
-    [self.secondaryAnimation addCommand:earsRed withDuration:2.0];
-    PICommand *earsOff = [PICommand new];
-    [earsOff setLeftEarLight:[[PIComponentLightRGB alloc] initWithRed:0 green:0 blue:0]];
-    [earsOff setRightEarLight:[[PIComponentLightRGB alloc] initWithRed:0 green:0 blue:0]];
-    [self.secondaryAnimation addCommand:earsOff withDuration:2.0];
+    PICommand *eyeBitmapCmd = [PICommand new];
+    PIComponentEyeRing *eyeBitmap = [PIComponentEyeRing new];
+    [eyeBitmap setLEDValue:YES atIndex:1];
+    [eyeBitmap setLEDValue:YES atIndex:6];
+    [eyeBitmapCmd setEyeRing:eyeBitmap];
+    [self.secondaryAnimation addCommand:eyeBitmapCmd withDuration:2.0];
+    PICommand *eyeOffCmd = [PICommand new];
+    PIComponentEyeRing *eyeOff = [PIComponentEyeRing new];
+    eyeOff.animationIndex = EYEANIM_NONE;
+    [self.secondaryAnimation addCommand:eyeOffCmd withDuration:2.0];
     
     self.playPauseMainSequence.enabled = NO;
 }
