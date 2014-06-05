@@ -56,6 +56,7 @@
     PICommand *eyeOffCmd = [PICommand new];
     PIComponentEyeRing *eyeOff = [PIComponentEyeRing new];
     eyeOff.animationIndex = EYEANIM_NONE;
+    [eyeOffCmd setEyeRing:eyeOff];
     [self.secondaryAnimation addCommand:eyeOffCmd withDuration:2.0];
     
     self.playPauseMainSequence.enabled = NO;
