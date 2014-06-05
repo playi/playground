@@ -100,6 +100,7 @@
     NSLog(@"discovered robot: %@", robot.name);
     [manager connectRobot:robot];
 }
+
 - (void) manager:(PIRobotManager *)manager didConnectWithRobot:(PIRobot *)robot
 {
     NSLog(@"connected with robot: %@", robot.name);
