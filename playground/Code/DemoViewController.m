@@ -92,8 +92,9 @@
 
 - (IBAction) sendCommand:(id)sender
 {
+    PIAngle randomPanAngle = -100 + rand() % (100+100); // random angle from [-100, 100]
     PICommand *cmd = [PICommand new];
-    [cmd setSound:[[PIComponentSpeaker alloc] initWithSoundTrack:SOUNDTRACK_HI]];
+    [cmd setHeadPan:[[PIComponentMotorServo alloc] initWithAngle:randomPanAngle]];
     [self.robot sendRobotCommand:cmd];
 }
 
