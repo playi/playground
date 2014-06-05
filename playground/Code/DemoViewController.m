@@ -134,6 +134,7 @@
 {
     NSLog(@"sequence cancelled");
     self.mainAnimationResult = results;
+    [self.robot sendRobotCommand:[PICommandToolbelt moveStop]];
 }
 
 - (void) robot:(PIRobot *)robot didFinishCommandSequence:(PICommandSequence *)sequence

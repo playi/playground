@@ -34,7 +34,7 @@
 		0A1A384E193D582C00DC23B3 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A384D193D582C00DC23B3 /* DemoViewController.m */; };
 		0A1A3857193E461400DC23B3 /* bo_confident_slalom.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A3856193E461400DC23B3 /* bo_confident_slalom.json */; };
 		0A307CE7193FDD020016C0F0 /* smallPlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A307CE6193FDD020016C0F0 /* smallPlay@2x.png */; };
-		0A307CE9193FDFBB0016C0F0 /* PIRobotAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A307CE8193FDFBB0016C0F0 /* PIRobotAPI.framework */; };
+		0A364FCC194112130056823E /* PIRobotAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A364FCB194112130056823E /* PIRobotAPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,7 @@
 		0A1A384D193D582C00DC23B3 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoViewController.m; path = Code/DemoViewController.m; sourceTree = "<group>"; };
 		0A1A3856193E461400DC23B3 /* bo_confident_slalom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bo_confident_slalom.json; sourceTree = "<group>"; };
 		0A307CE6193FDD020016C0F0 /* smallPlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smallPlay@2x.png"; sourceTree = "<group>"; };
-		0A307CE8193FDFBB0016C0F0 /* PIRobotAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PIRobotAPI.framework; path = libraries/PIRobotAPI.framework; sourceTree = "<group>"; };
+		0A364FCB194112130056823E /* PIRobotAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PIRobotAPI.framework; path = libraries/PIRobotAPI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 				0A1A382A193D302E00DC23B3 /* libstdc++.6.0.9.dylib in Frameworks */,
 				0A1A3828193D300300DC23B3 /* CoreBluetooth.framework in Frameworks */,
 				0A1A37F9193D267600DC23B3 /* CoreGraphics.framework in Frameworks */,
-				0A307CE9193FDFBB0016C0F0 /* PIRobotAPI.framework in Frameworks */,
+				0A364FCC194112130056823E /* PIRobotAPI.framework in Frameworks */,
 				0A1A37FB193D267600DC23B3 /* UIKit.framework in Frameworks */,
 				0A1A37F7193D267600DC23B3 /* Foundation.framework in Frameworks */,
 			);
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1A3829193D302E00DC23B3 /* libstdc++.6.0.9.dylib */,
-				0A307CE8193FDFBB0016C0F0 /* PIRobotAPI.framework */,
+				0A364FCB194112130056823E /* PIRobotAPI.framework */,
 				0A1A3827193D300200DC23B3 /* CoreBluetooth.framework */,
 				0A1A37F6193D267600DC23B3 /* Foundation.framework */,
 				0A1A37F8193D267600DC23B3 /* CoreGraphics.framework */,
