@@ -5,7 +5,9 @@ This sample application performs simple tasks for Bo/Yana through the play-i dev
 
 We will continue to update this application in the future to outline API capabilities.
 
-Please refer to our developer portal (http://developer.play-i.com/#/docs) for more information, and our developer forum (http://devforum.play-i.com/) for support.
+Please refer to our developer forum (http://devforum.play-i.com/) for support.
+
+Here is the link to the API package: https://s3-us-west-1.amazonaws.com/playi-devportal-downloads/PIRobotAPI.framework.zip
 
 ### Changelog
 3/17/2014 - header files + documentation
