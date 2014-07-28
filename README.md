@@ -1,4 +1,5 @@
 # Sample play-i API application
+
 This sample application performs simple tasks for Bo/Yana through the play-i developer API. Specifically, this app demonstrates the following:
 * How the play-i API is being used in iOS
 * How to use the API to command Bo/Yana (currently works with our developer simulator)

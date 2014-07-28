@@ -9,11 +9,17 @@
 #import "DemoViewController.h"
 
 @interface DemoViewController ()
+
+// Objects used to help track the robots state.
 @property (nonatomic, strong) PIRobot *robot;
 @property (nonatomic, strong) PIRobotManager *robotManager;
 @property (nonatomic, strong) PICommandSequence *mainAnimation;
 @property (nonatomic, strong) PICommandSequence *secondaryAnimation;
 @property (nonatomic, strong) NSDictionary *mainAnimationResult;
+
+// Scalar values used to help track the robots state.
+@property (atomic) PIVelocity leftWheelVelocity;
+@property (atomic) PIVelocity rightWheelVelocity;
 
 @end
 
@@ -60,6 +66,9 @@
     [self.secondaryAnimation addCommand:eyeOffCmd withDuration:2.0];
     
     self.playPauseMainSequence.enabled = NO;
+    
+    self.leftWheelVelocity = (PIVelocity)0.0;
+    self.rightWheelVelocity = (PIVelocity)0.0;
 }
 
 #pragma mark - user interactions
@@ -90,13 +99,134 @@
     [self.robot executeCommandSequence:self.secondaryAnimation withOptions:nil];
 }
 
-- (IBAction) sendCommand:(id)sender
+- (IBAction) sendCommand_RotateHead:(id)sender
 {
     PIAngle randomPanAngle = -100 + rand() % (100+100); // random angle from [-100, 100]
     PICommand *cmd = [PICommand new];
     [cmd setHeadPan:[[PIComponentMotorServo alloc] initWithAngle:randomPanAngle]];
     [self.robot sendRobotCommand:cmd];
 }
+
+- (IBAction) sendCommand_MatchLights:(id)sender
+{
+
+    // random light values from 0 to 255 for the light brightness.
+    unsigned char randomRed   = rand() % 256;
+    unsigned char randomGreen = rand() % 256;
+    unsigned char randomBlue  = rand() % 256;
+    unsigned char randomBrightness = rand() % 256;
+    
+    PIComponentLightRGB *randomRGB = [[PIComponentLightRGB alloc]
+                                      initWithRed:randomRed
+                                      green:randomGreen
+                                      blue:randomBlue];
+    
+    PIComponentLightLED *randomLED = [[PIComponentLightLED alloc]
+                                      initWithBrightness:randomBrightness];
+    
+    // There are four separate commands for each of Bo's lights.
+    // Each command is created and sent to the robot in quick seccession.
+    PICommand *cmd1 = [PICommand new];
+    [cmd1 setChestLight:randomRGB];
+    [self.robot sendRobotCommand:cmd1];
+    
+    PICommand *cmd2 = [PICommand new];
+    [cmd2 setLeftEarLight:randomRGB];
+    [self.robot sendRobotCommand:cmd2];
+    
+    PICommand *cmd3 = [PICommand new];
+    [cmd3 setRightEarLight:randomRGB];
+    [self.robot sendRobotCommand:cmd3];
+    
+    PICommand *cmd4 = [PICommand new];
+    [cmd4 setTailLight:randomLED];
+    [self.robot sendRobotCommand:cmd4];
+}
+
+
+- (IBAction) sendCommand_TwinkleLights:(id)sender
+{
+    // There are four separate commands for each of Bo's lights.
+    // Each of the commands is created and sent to the robot.
+    // This time the lights are more random.  more inline code used here.
+    PICommand *cmd1 = [PICommand new];
+    [cmd1 setChestLight:[[PIComponentLightRGB alloc]
+                         initWithRed: rand()%256
+                         green: rand()%256
+                         blue: rand()%256]];
+    [self.robot sendRobotCommand:cmd1];
+    
+    PICommand *cmd2 = [PICommand new];
+    [cmd2 setLeftEarLight:[[PIComponentLightRGB alloc]
+                           initWithRed: rand()%256
+                           green: rand()%256
+                           blue: rand()%256]];
+    [self.robot sendRobotCommand:cmd2];
+    
+    PICommand *cmd3 = [PICommand new];
+    [cmd3 setRightEarLight:[[PIComponentLightRGB alloc]
+                            initWithRed: rand()%256
+                            green: rand()%256
+                            blue: rand()%256]];
+    
+    [self.robot sendRobotCommand:cmd3];
+    
+    PICommand *cmd4 = [PICommand new];
+    [cmd4 setTailLight:[[PIComponentLightLED alloc]
+                         initWithBrightness: rand()%256]];
+    [self.robot sendRobotCommand:cmd4];
+}
+
+
+// The wheels speed are already set.  Just send the command.
+- (IBAction) sendCommand_wheels:(id)sender
+{
+    PIComponentMotorWheel *left = [PIComponentMotorWheel new];
+    [left initWithVelocity:self.leftWheelVelocity];
+    
+    PIComponentMotorWheel *right = [PIComponentMotorWheel new];
+    [right initWithVelocity:self.rightWheelVelocity];
+    
+    PICommand *cmd1 = [PICommand new];
+    [cmd1 setMotorLeft:left right:right];
+    
+    [self.robot sendRobotCommand:cmd1];
+}
+
+- (IBAction) sendCommand_leftWheelForward:(id)sender
+{
+    self.leftWheelVelocity += 5.0;
+    [self sendCommand_wheels:sender];
+}
+
+- (IBAction) sendCommand_rightWheelForward:(id)sender
+{
+    self.rightWheelVelocity += 5.0;
+    [self sendCommand_wheels:sender];
+}
+
+- (IBAction) sendCommand_leftWheelBack:(id)sender
+{
+    self.leftWheelVelocity -= 5.0;
+    [self sendCommand_wheels:sender];
+}
+
+- (IBAction) sendCommand_rightWheelBack:(id)sender
+{
+    self.rightWheelVelocity -= 5.0;
+    [self sendCommand_wheels:sender];
+}
+
+- (IBAction) sendCommand_wheelsStop:(id)sender
+{
+    self.rightWheelVelocity = 0.0;
+    self.leftWheelVelocity  = 0.0;
+    [self sendCommand_wheels:sender];
+}
+
+
+
+// --------------------------------------------------------------------------------------
 
 #pragma mark - PIRobotManagerDelegate
 - (void) manager:(PIRobotManager *)manager didDiscoverRobot:(PIRobot *)robot
