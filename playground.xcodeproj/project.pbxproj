@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A18247719953687000169A9 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A18247619953687000169A9 /* libc++.dylib */; };
 		0A1A37F7193D267600DC23B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A37F6193D267600DC23B3 /* Foundation.framework */; };
 		0A1A37F9193D267600DC23B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A37F8193D267600DC23B3 /* CoreGraphics.framework */; };
 		0A1A37FB193D267600DC23B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A37FA193D267600DC23B3 /* UIKit.framework */; };
@@ -20,7 +21,6 @@
 		0A1A381A193D267600DC23B3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A3818193D267600DC23B3 /* InfoPlist.strings */; };
 		0A1A381C193D267600DC23B3 /* playgroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A381B193D267600DC23B3 /* playgroundTests.m */; };
 		0A1A3828193D300300DC23B3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A3827193D300200DC23B3 /* CoreBluetooth.framework */; };
-		0A1A382A193D302E00DC23B3 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A3829193D302E00DC23B3 /* libstdc++.6.0.9.dylib */; };
 		0A1A3835193D570900DC23B3 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A3834193D570900DC23B3 /* Storyboard.storyboard */; };
 		0A1A3842193D578D00DC23B3 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A3839193D578D00DC23B3 /* bg@2x.png */; };
 		0A1A3843193D578D00DC23B3 /* connectionOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1A383A193D578D00DC23B3 /* connectionOff.png */; };
@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A18247619953687000169A9 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		0A1A37F3193D267600DC23B3 /* playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1A37F6193D267600DC23B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A1A37F8193D267600DC23B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,7 +66,6 @@
 		0A1A3819193D267600DC23B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A1A381B193D267600DC23B3 /* playgroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = playgroundTests.m; sourceTree = "<group>"; };
 		0A1A3827193D300200DC23B3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		0A1A3829193D302E00DC23B3 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		0A1A3834193D570900DC23B3 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		0A1A3839193D578D00DC23B3 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		0A1A383A193D578D00DC23B3 /* connectionOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connectionOff.png; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A1A382A193D302E00DC23B3 /* libstdc++.6.0.9.dylib in Frameworks */,
+				0A18247719953687000169A9 /* libc++.dylib in Frameworks */,
 				0A1A3828193D300300DC23B3 /* CoreBluetooth.framework in Frameworks */,
 				0A1A37F9193D267600DC23B3 /* CoreGraphics.framework in Frameworks */,
 				0A364FCC194112130056823E /* PIRobotAPI.framework in Frameworks */,
@@ -132,7 +132,7 @@
 		0A1A37F5193D267600DC23B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A1A3829193D302E00DC23B3 /* libstdc++.6.0.9.dylib */,
+				0A18247619953687000169A9 /* libc++.dylib */,
 				0A364FCB194112130056823E /* PIRobotAPI.framework */,
 				0A1A3827193D300200DC23B3 /* CoreBluetooth.framework */,
 				0A1A37F6193D267600DC23B3 /* Foundation.framework */,
