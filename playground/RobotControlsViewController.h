@@ -6,9 +6,7 @@
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface RobotControlsViewController : UIViewController
+@interface RobotControlsViewController : UIViewController <WWRobotDelegate>
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;

@@ -16,8 +16,6 @@
 
 @end
 
-#define ROBOT_CONNECTED_COLOR [UIColor colorWithRed:50/255.0 green:200/255.0 blue:50/255.0 alpha:0.6];
-#define ROBOT_DISCOVERED_COLOR [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:0.6];
 
 @implementation RobotListViewController
 
@@ -97,10 +95,10 @@
     // status
     WWRobot *robot = (WWRobot *)self.robots[indexPath.row];
     if (robot.isConnected) {
-        cell.statusColorView.backgroundColor = ROBOT_CONNECTED_COLOR;
+        cell.contentView.backgroundColor = [UIColor colorWithRed:50/255.0 green:200/255.0 blue:50/255.0 alpha:0.6];
     }
     else {
-        cell.statusColorView.backgroundColor = ROBOT_DISCOVERED_COLOR;
+        cell.contentView.backgroundColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:0.6];
     }
     
     // robot info
@@ -130,6 +128,16 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WWRobot *robot = self.robots[indexPath.row];
+    if (robot.isConnected) {
+        [self.manager disconnectFromRobot:robot];
+    }
+    else {
+        [self.manager connectToRobot:robot];
+    }
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return NO;
@@ -137,22 +145,32 @@
 
 #pragma mark - RobotManagerDelegate
 
-- (void) manager:(WWRobotManager *)manager didDiscoverRobot:(WWRobot *)robot
-{
+- (void) manager:(WWRobotManager *)manager didDiscoverRobot:(WWRobot *)robot {
     if (![self.robots containsObject:robot]) {
+        // found new robots, refresh list
         [self.robots addObject:robot];
         [self.tableView reloadData];
     }
 }
 
-- (void) manager:(WWRobotManager *)manager didLoseRobot:(WWRobot *)robot
-{
+- (void) manager:(WWRobotManager *)manager didUpdateDiscoveredRobots:(WWRobot *)robot {
+    // existing robots have new data, refresh
+    [self.tableView reloadData];
+}
+
+- (void) manager:(WWRobotManager *)manager didLoseRobot:(WWRobot *)robot {
+    // lost connectivity with existing robot, refresh list
     [self.robots removeObject:robot];
     [self.tableView reloadData];
 }
 
-- (void) manager:(WWRobotManager *)manager didConnectRobot:(WWRobot *)robot
-{
+- (void) manager:(WWRobotManager *)manager didConnectRobot:(WWRobot *)robot {
+    // connected with robot, refresh
+    [self.tableView reloadData];
+}
+
+- (void) manager:(WWRobotManager *)manager didDisconnectRobot:(WWRobot *)robot {
+    // disconnected with robot, refresh
     [self.tableView reloadData];
 }
 
