@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A304C021A1A6FEF001A67B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C011A1A6FEF001A67B7 /* main.m */; };
 		0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C041A1A6FEF001A67B7 /* AppDelegate.m */; };
-		0A304C081A1A6FEF001A67B7 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C071A1A6FEF001A67B7 /* MasterViewController.m */; };
+		0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */; };
 		0A304C0B1A1A6FEF001A67B7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C0A1A1A6FEF001A67B7 /* DetailViewController.m */; };
 		0A304C0E1A1A6FEF001A67B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0C1A1A6FEF001A67B7 /* Main.storyboard */; };
 		0A304C101A1A6FEF001A67B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */; };
@@ -40,8 +40,8 @@
 		0A304C011A1A6FEF001A67B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A304C031A1A6FEF001A67B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A304C041A1A6FEF001A67B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0A304C061A1A6FEF001A67B7 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		0A304C071A1A6FEF001A67B7 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		0A304C061A1A6FEF001A67B7 /* RobotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotListViewController.h; sourceTree = "<group>"; };
+		0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotListViewController.m; sourceTree = "<group>"; };
 		0A304C091A1A6FEF001A67B7 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0A304C0A1A1A6FEF001A67B7 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		0A304C0D1A1A6FEF001A67B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 		0A304C361A1A85D2001A67B7 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A304C061A1A6FEF001A67B7 /* MasterViewController.h */,
-				0A304C071A1A6FEF001A67B7 /* MasterViewController.m */,
+				0A304C061A1A6FEF001A67B7 /* RobotListViewController.h */,
+				0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */,
 				0A304C091A1A6FEF001A67B7 /* DetailViewController.h */,
 				0A304C0A1A1A6FEF001A67B7 /* DetailViewController.m */,
 			);
@@ -273,7 +273,7 @@
 			files = (
 				0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */,
 				0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */,
-				0A304C081A1A6FEF001A67B7 /* MasterViewController.m in Sources */,
+				0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */,
 				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
 				0A304C0B1A1A6FEF001A67B7 /* DetailViewController.m in Sources */,
 			);

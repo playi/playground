@@ -1,16 +1,16 @@
 //
-//  MasterViewController.m
+//  RobotListViewController.m
 //  playground
 //
 //  Created by Kevin Liang on 11/17/14.
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "RobotListViewController.h"
 #import "DetailViewController.h"
 #import "RobotListTableViewCell.h"
 
-@interface MasterViewController ()
+@interface RobotListViewController ()
 
 @property NSMutableArray *robots;
 
@@ -19,7 +19,7 @@
 #define ROBOT_CONNECTED_COLOR [UIColor colorWithRed:50/255.0 green:200/255.0 blue:50/255.0 alpha:0.6];
 #define ROBOT_DISCOVERED_COLOR [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:0.6];
 
-@implementation MasterViewController
+@implementation RobotListViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
