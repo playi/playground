@@ -1,18 +1,18 @@
 //
-//  DetailViewController.m
+//  RobotControlsViewController.m
 //  playground
 //
 //  Created by Kevin Liang on 11/17/14.
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "RobotControlsViewController.h"
 
-@interface DetailViewController ()
+@interface RobotControlsViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation RobotControlsViewController
 
 #pragma mark - Managing the detail item
 

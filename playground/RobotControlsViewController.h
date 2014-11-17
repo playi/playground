@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  RobotControlsViewController.h
 //  playground
 //
 //  Created by Kevin Liang on 11/17/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface RobotControlsViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;

@@ -7,7 +7,7 @@
 //
 
 #import "RobotListViewController.h"
-#import "DetailViewController.h"
+#import "RobotControlsViewController.h"
 #import "RobotListTableViewCell.h"
 
 @interface RobotListViewController ()
@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.RobotControlsViewController = (RobotControlsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.robots = [NSMutableArray new];
     
     // load custom nib
@@ -74,7 +74,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = self.robots[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        RobotControlsViewController *controller = (RobotControlsViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
