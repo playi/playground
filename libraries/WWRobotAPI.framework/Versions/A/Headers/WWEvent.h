@@ -12,15 +12,21 @@
 
 typedef BOOL(^WWEventAlertBlock)(WWEvent *event, WWSensorHistory *history);
 
-typedef enum {
-    WW_EVENT_GESTURE_IDLE         = 1 << 0,      // nothing is happening; waiting for event to start.
-    WW_EVENT_GESTURE_STARTED      = 1 << 1,      // the gesture Might be starting. but it might be some other gesture..
-    WW_EVENT_GESTURE_ESTABLISHED  = 1 << 2,      // .. the gesture has definitely started.
-    WW_EVENT_GESTURE_COMPLETED    = 1 << 3,      // the gesture has finished.
-    WW_EVENT_GESTURE_CANCELLED    = 1 << 4,      // the gesture started, but it was a false positive - it wasn't this gesture after all.
-} WWEventGesture;
 
-typedef unsigned int WWEventGestureMask;
+/**
+ * Certain events recognize "phases" in the event, and can be configured to trigger upon entry into any of these phases.
+ *
+ * As of this writing, these events are `gestureSlideAlongAxis` and `gestureDrop`.
+ */
+typedef enum {
+    WW_EVENT_GESTURE_IDLE         = 1 << 0,      /// nothing is happening; waiting for event to start.
+    WW_EVENT_GESTURE_STARTED      = 1 << 1,      /// the gesture might be starting. but it might be some other gesture..
+    WW_EVENT_GESTURE_ESTABLISHED  = 1 << 2,      /// the gesture has definitely started.
+    WW_EVENT_GESTURE_COMPLETED    = 1 << 3,      /// the gesture has finished.
+    WW_EVENT_GESTURE_CANCELLED    = 1 << 4,      /// the gesture started, but it was a false positive - it wasn't this gesture after all.
+} WWEventPhase;
+
+typedef unsigned int WWEventPhaseMask; /// bitwise-OR of `WWEventPhase` enums.
 
 /**
  *  The `WWEvent` object registers `WWRobot` for event notification.
@@ -58,10 +64,14 @@ typedef unsigned int WWEventGestureMask;
 @property (nonatomic, readonly) BOOL isActive;
 
 /**
- *  @todo doc: need explanation from orion.
+ *  The current `WWEventPhase` of the event.
  */
-@property (nonatomic, readonly) WWEventGesture gestureState;
-@property (nonatomic) WWEventGestureMask signalForStateMask;    // which states we should emit an event for.
+@property (nonatomic, readonly) WWEventPhase eventPhase;
+
+/**
+ * Bitwise-OR of the `WWEventPhase`
+ */
+@property (nonatomic) WWEventPhaseMask signalForPhaseMask;    // which Phases we should emit an event for.
 
 
 /**
@@ -86,15 +96,35 @@ typedef unsigned int WWEventGestureMask;
 - (id) initWithShouldAlertBlock:(WWEventAlertBlock)block identifier:(NSString *)identifier;
 
 /**
- *  @todo doc: need orion's help
+ * Tells the `WWEvent` to trigger when it enters specific `WWEventPhase`s
+ * Certain events recognize "phases" in the event, and can be configured to trigger upon entry into any of these phases.
  *
- *  @param mask <#mask description#>
+ * As of this writing, these events are `gestureSlideAlongAxis` and `gestureDrop`.
+ * - WW_EVENT_GESTURE_IDLE
+ *   nothing is happening; waiting for event to start.
+ * - WW_EVENT_GESTURE_STARTED
+ *   the gesture might be starting. but it might be some other gesture..
+ * - WW_EVENT_GESTURE_ESTABLISHED
+ *   the gesture has definitely started.
+ * - WW_EVENT_GESTURE_COMPLETED
+ *   the gesture has finished.
+ * - WW_EVENT_GESTURE_CANCELLED
+ *   the gesture started, but it was a false positive - it wasn't this gesture after all.
  *
- *  @return <#return value description#>
+ *  @param mask bitwise-OR of `WWEventPhase` enums.
+ *
+ *  @return returns the `WWEvent` itself.
  */
-- (WWEvent*) setStateSignalMask:(WWEventGestureMask)mask;
-+ (NSString *) gestureStateToString:(WWEventGesture)state;
-- (BOOL) shouldSignalForState:(WWEventGesture)gestureStateNew;
+- (WWEvent*) setPhaseSignalMask:(WWEventPhaseMask)mask;
+
+/**
+ * Convert a `WWEventPhase` enum to an `NSString`.
+ *
+ * @param phase The `WWEventPhase` to convert.
+ *
+ * @return `NSString` human-readable phase name.
+ */
++ (NSString *) eventPhaseToString:(WWEventPhase)phase;
 
 /**
  *  Returns true if the given identifier is the same as the event's identifier.

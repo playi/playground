@@ -15,6 +15,14 @@
  *
  *  @todo doc: add threshold values.
  *  @todo doc: how do I best describe linear/angular?
+ *             - maybe some examples ?  eg
+ *
+ * | Linear (cm/s) | Angular (radians/s) | Result                                                                                                       |
+ * |---------------|---------------------|-------                                                                                                       |
+ * | 50            | 0                   | Go straight forward at .5 meters per second.                                                                 |
+ * | 0             | 3.14159             | Turn in-place counter-clockwise at 1/2 a revolution per second.                                              |
+ * | 50            | 3.14159             | Drive in a counter-clockwise circle with circumference of one meter, taking two seconds to complete one lap. |
+ *
  */
 @interface WWCommandBodyLinearAngular : WWCommand
 

@@ -50,13 +50,6 @@
 - (id) initWithBitmap:(NSArray *)bitmap;
 
 /**
- *  Returns the max LED count for the eye ring (read-only).
- *
- *  @return The max count of the LED for the eye ring.
- */
-- (NSUInteger) ledCount;
-
-/**
  *  Sets the index of the ledBitmap to the specified value.
  *
  *  @param on    The boolean value that specifies whether the light is on.
