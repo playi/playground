@@ -37,14 +37,14 @@
 - (NSTimeInterval) timeIntervalSinceState:(WWSensorSet *)anotherState;
 
 /**
- *  Returns the `WWSensor` object associated with the WWComponentId mapping.
+ *  Returns the `WWSensor` object associated with given WWComponentId.
  *
  *  If the mapping does not exist, null is returned.
  *
- *  @param key The NSNumber representation of the WWComponentId.
+ *  @param index The WWComponentId mapping for the desired sensor.
  *
  *  @return The associated `WWSensor` object in the mapping.
  */
-- (WWSensor *) sensorForKey:(id)key;
+- (WWSensor *) sensorForIndex:(WWComponentId)index;
 
 @end

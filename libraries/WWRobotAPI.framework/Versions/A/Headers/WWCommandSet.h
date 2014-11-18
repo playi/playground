@@ -144,15 +144,15 @@
  */
 
 /**
- *  Returns the `WWCommand` object associated with the WWComponentId mapping.
+ *  Returns the `WWCommand` object associated with the given WWComponentId.
  *
  *  If the mapping does not exist, null is returned.
  *
- *  @param key The NSNumber representation of the WWComponentId.
+ *  @param index The WWComponentId mapping for the desired command.
  *
  *  @return The associated `WWCommand` object in the mapping.
  */
-- (WWCommand *) commandForKey:(id)key;
+- (WWCommand *) commandForIndex:(WWComponentId)index;
 
 
 /**---------------------------------------------------------------------------------------
@@ -161,13 +161,13 @@
  */
 
 /**
- *  Removes the `WWCommand` object associated with the given key.  
+ *  Removes the `WWCommand` object associated with the given WWComponentId.
  *
  *  If desired mapping doesn't exist, this method is a no-op.
  *
- *  @param key The NSNumber representation of the WWComponentId.
+ *  @param index The WWComponentId mapping for the desired command.
  */
-- (void) removeCommandForKey:(id)key;
+- (void) removeCommandForIndex:(WWComponentId)index;
 
 
 /**---------------------------------------------------------------------------------------
