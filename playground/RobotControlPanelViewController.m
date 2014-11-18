@@ -1,15 +1,16 @@
 //
-//  RobotControlsViewController.m
+//  RobotControlPanelViewController.m
 //  playground
 //
 //  Created by Kevin Liang on 11/17/14.
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
-#import "RobotControlsViewController.h"
+#import "RobotControlPanelViewController.h"
 #import "ControlLightsViewController.h"
+#import "ControlEyeRingViewController.h"
 
-@interface RobotControlsViewController ()
+@interface RobotControlPanelViewController ()
 
 @property (nonatomic, strong) NSArray *controlsVC;
 
@@ -23,14 +24,15 @@
 #define CONTROL_SOUND 3
 #define CONTROL_SENSORS 4
 
-@implementation RobotControlsViewController
+@implementation RobotControlPanelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ControlLightsViewController *lights = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlLightsViewController class])];
-    self.controlsVC = @[lights];
+    ControlEyeRingViewController *eyeRing = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlEyeRingViewController class])];
+    self.controlsVC = @[lights, eyeRing];
     
     [self presentRobotControlsVC:[self.controlsVC firstObject]];    
 }

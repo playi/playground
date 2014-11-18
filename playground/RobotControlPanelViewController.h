@@ -1,5 +1,5 @@
 //
-//  RobotControlsViewController.h
+//  RobotControlPanelViewController.h
 //  playground
 //
 //  Created by Kevin Liang on 11/17/14.
@@ -8,7 +8,7 @@
 
 @class RobotControlViewController;
 
-@interface RobotControlsViewController : UIViewController
+@interface RobotControlPanelViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *controlsSelector;
 @property (weak, nonatomic) IBOutlet UIView *controlsView;

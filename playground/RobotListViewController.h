@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class RobotControlsViewController;
+@class RobotControlPanelViewController;
 
 @interface RobotListViewController : UITableViewController<WWRobotManagerDelegate>
 
-@property (strong, nonatomic) RobotControlsViewController *robotControlsViewController;
+@property (strong, nonatomic) RobotControlPanelViewController *controlPanelViewController;
 @property (nonatomic, strong) WWRobotManager *manager;
 
 @end

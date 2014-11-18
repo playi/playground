@@ -7,7 +7,7 @@
 //
 
 #import "RobotListViewController.h"
-#import "RobotControlsViewController.h"
+#import "RobotControlPanelViewController.h"
 #import "RobotControlViewController.h"
 #import "RobotListTableViewCell.h"
 
@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.robotControlsViewController = (RobotControlsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.controlPanelViewController = (RobotControlPanelViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.robots = [NSMutableArray new];
     
     // load custom nib
@@ -72,7 +72,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        RobotControlsViewController *controller = (RobotControlsViewController *)[[segue destinationViewController] topViewController];
+        RobotControlPanelViewController *controller = (RobotControlPanelViewController *)[[segue destinationViewController] topViewController];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -166,7 +166,7 @@
 - (void) manager:(WWRobotManager *)manager didConnectRobot:(WWRobot *)robot {
     // connected with robot, refresh
     [self.tableView reloadData];
-    [self.robotControlsViewController.activeControlVC refreshConnectedRobots];
+    [self.controlPanelViewController.activeControlVC refreshConnectedRobots];
 }
 
 - (void) manager:(WWRobotManager *)manager didFailToConnectRobot:(WWRobot *)robot error:(WWError *)error {
