@@ -27,6 +27,7 @@
 		0A304C481A1AD28A001A67B7 /* ControlEyeRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C471A1AD28A001A67B7 /* ControlEyeRingViewController.m */; };
 		0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4A1A1AE50B001A67B7 /* JoystickView.m */; };
 		0A304C4E1A1AE8FC001A67B7 /* ControlDriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */; };
+		0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */; };
 		780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D964F1A1B844000B109CC /* CircleJoystickView.m */; };
 		780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D96521A1B8F1800B109CC /* ControlHeadViewController.m */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,8 @@
 		0A304C4A1A1AE50B001A67B7 /* JoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickView.m; sourceTree = "<group>"; };
 		0A304C4C1A1AE8FC001A67B7 /* ControlDriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlDriveViewController.h; sourceTree = "<group>"; };
 		0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlDriveViewController.m; sourceTree = "<group>"; };
+		0A304C521A1BEBC9001A67B7 /* ControlSensorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlSensorsViewController.h; sourceTree = "<group>"; };
+		0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlSensorsViewController.m; sourceTree = "<group>"; };
 		780D964E1A1B844000B109CC /* CircleJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleJoystickView.h; sourceTree = "<group>"; };
 		780D964F1A1B844000B109CC /* CircleJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleJoystickView.m; sourceTree = "<group>"; };
 		780D96511A1B8F1800B109CC /* ControlHeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHeadViewController.h; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */,
 				780D96511A1B8F1800B109CC /* ControlHeadViewController.h */,
 				780D96521A1B8F1800B109CC /* ControlHeadViewController.m */,
+				0A304C521A1BEBC9001A67B7 /* ControlSensorsViewController.h */,
+				0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */,
 				0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */,
 				0A304C481A1AD28A001A67B7 /* ControlEyeRingViewController.m in Sources */,
+				0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */,
 				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
 				0A304C4E1A1AE8FC001A67B7 /* ControlDriveViewController.m in Sources */,
 				780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */,

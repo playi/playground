@@ -11,6 +11,7 @@
 #import "ControlEyeRingViewController.h"
 #import "ControlDriveViewController.h"
 #import "ControlHeadViewController.h"
+#import "ControlSensorsViewController.h"
 
 @interface RobotControlPanelViewController ()
 
@@ -20,12 +21,6 @@
 
 @end
 
-#define CONTROL_LIGHTS 0
-#define CONTROL_EYE_RING 1
-#define CONTROL_DRIVE 2
-#define CONTROL_SOUND 3
-#define CONTROL_SENSORS 4
-
 @implementation RobotControlPanelViewController
 
 - (void)viewDidLoad {
@@ -34,10 +29,11 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ControlLightsViewController *lights = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlLightsViewController class])];
     ControlEyeRingViewController *eyeRing = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlEyeRingViewController class])];
-    ControlDriveViewController *drive= [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlDriveViewController class])];
-    ControlHeadViewController *head= [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlHeadViewController class])];
+    ControlDriveViewController *drive = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlDriveViewController class])];
+    ControlHeadViewController *head = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlHeadViewController class])];
+    ControlSensorsViewController *sensor = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlSensorsViewController class])];
 
-    self.controlsVC = @[lights, eyeRing, drive, head];
+    self.controlsVC = @[lights, eyeRing, drive, head, sensor];
     
     [self presentRobotControlsVC:[self.controlsVC firstObject]];    
 }
