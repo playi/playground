@@ -7,7 +7,10 @@
 //
 
 #import "RobotControlViewController.h"
+#import "CircleJoystickView.h"
 
-@interface ControlDriveViewController : RobotControlViewController
+@interface ControlDriveViewController : RobotControlViewController <JoystickDelegate>
+
+@property (nonatomic, weak) IBOutlet CircleJoystickView *joystick;
 
 @end

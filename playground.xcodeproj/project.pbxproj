@@ -27,6 +27,8 @@
 		0A304C481A1AD28A001A67B7 /* ControlEyeRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C471A1AD28A001A67B7 /* ControlEyeRingViewController.m */; };
 		0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4A1A1AE50B001A67B7 /* JoystickView.m */; };
 		0A304C4E1A1AE8FC001A67B7 /* ControlDriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */; };
+		780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D964F1A1B844000B109CC /* CircleJoystickView.m */; };
+		780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D96521A1B8F1800B109CC /* ControlHeadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,10 @@
 		0A304C4A1A1AE50B001A67B7 /* JoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickView.m; sourceTree = "<group>"; };
 		0A304C4C1A1AE8FC001A67B7 /* ControlDriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlDriveViewController.h; sourceTree = "<group>"; };
 		0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlDriveViewController.m; sourceTree = "<group>"; };
+		780D964E1A1B844000B109CC /* CircleJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleJoystickView.h; sourceTree = "<group>"; };
+		780D964F1A1B844000B109CC /* CircleJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleJoystickView.m; sourceTree = "<group>"; };
+		780D96511A1B8F1800B109CC /* ControlHeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHeadViewController.h; sourceTree = "<group>"; };
+		780D96521A1B8F1800B109CC /* ControlHeadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlHeadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,8 @@
 		0A304C351A1A85CB001A67B7 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				780D964E1A1B844000B109CC /* CircleJoystickView.h */,
+				780D964F1A1B844000B109CC /* CircleJoystickView.m */,
 				0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */,
 				0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */,
 				0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */,
@@ -191,6 +199,8 @@
 				0A304C0A1A1A6FEF001A67B7 /* RobotControlPanelViewController.m */,
 				0A304C4C1A1AE8FC001A67B7 /* ControlDriveViewController.h */,
 				0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */,
+				780D96511A1B8F1800B109CC /* ControlHeadViewController.h */,
+				780D96521A1B8F1800B109CC /* ControlHeadViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -244,6 +254,7 @@
 				TargetAttributes = {
 					0A304BFB1A1A6FEF001A67B7 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = G5EG5T3U3L;
 					};
 					0A304C171A1A6FF0001A67B7 = {
 						CreatedOnToolsVersion = 6.1;
@@ -300,10 +311,12 @@
 				0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */,
 				0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */,
 				0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */,
+				780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */,
 				0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */,
 				0A304C481A1AD28A001A67B7 /* ControlEyeRingViewController.m in Sources */,
 				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
 				0A304C4E1A1AE8FC001A67B7 /* ControlDriveViewController.m in Sources */,
+				780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */,
 				0A304C0B1A1A6FEF001A67B7 /* RobotControlPanelViewController.m in Sources */,
 				0A304C401A1AB963001A67B7 /* ControlLightsViewController.m in Sources */,
 			);
@@ -429,6 +442,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libraries",
@@ -438,6 +453,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -445,6 +462,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libraries",
@@ -454,6 +473,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -8,136 +8,161 @@
 
 #import "JoystickView.h"
 
-#define CLAMP(x, low, high)  (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
+#define TIMER_RETURN_UPDATE_RATE 30.0 // delegates calls update rate ( affects robot update state )
 
-#define STROKECOLOR CUSTOMBLUECOLOR
-#define STROKEWIDTH 5.0f
-#define CIRCLE_RECT_PADDING 10
-#define BACKCOLOR [UIColor whiteColor].CGColor
-
-// joystick dot
-#define DOTCOLOR CUSTOMBLUECOLOR
-#define DOTSIZE 60
-#define CUSTOMBLUECOLOR [UIColor colorWithRed:70./255 green:151./255 blue:202./255 alpha:1].CGColor
 
 @interface JoystickView ()
-{
-    CGPoint _dotPos;
-    CGPoint _center;
-    float _circleRadius;
-}
 
-- (float) getX; /* returns relative position [-1 : 1]  */
-- (float) getY;
-- (float) power;
-- (float) circleRadius;
-- (float) normalizeValue:(float)value srcMin:(float)srcMin srcMax:(float)srcMax dstMin:(float)dstMin dstMax:(float)dstMax;
+@property (nonatomic, strong) NSTimer *returnTimer;
+@property (nonatomic) float currentReturnRatio;
+@property (nonatomic) float returnTime;
 
 @end
 
 @implementation JoystickView
+#define DRIVE_DRAGGER_IMAGE @"RC_drive_joystick"
+#define HEAD_DRAGGER_IMAGE @"RC_head_joystick"
 
-- (void) layoutSubviews {
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id) initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void) commonInit
+{
+    self.contentMode = UIViewContentModeScaleAspectFit;
+    self.autoresizingMask = 0;
+    self.userInteractionEnabled = YES;
+}
+
+- (void) layoutSubviews
+{
     [super layoutSubviews];
     
     _center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
     _dotPos = _center;
-    _circleRadius = CGRectInset(self.bounds, CIRCLE_RECT_PADDING, CIRCLE_RECT_PADDING).size.width / 2;
-}
-- (float) angle
-{
-    CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-    CGPoint p1 = _dotPos;
-    CGPoint p0 = center;
-    
-    CGPoint vector = CGPointMake(p1.x - p0.x, p1.y - p0.y);
-    
-    float theta_rad = atan2(vector.y,vector.x);
-    
-    theta_rad += M_PI / 2.0;
-    
-    float theta_deg = (theta_rad / M_PI * 180);
-    
-    theta_deg += (theta_rad > 0 ? 0 : 360);
-    
-    
-    return theta_deg;
+    [self updateDraggerPosition];
 }
 
 #pragma mark Joystick Layout
-
-- (void) drawRect:(CGRect)rect
+- (void) updateDraggerImage
 {
-    [super drawRect:rect];
+    NSString *imgName;
+    if (self.type == DRIVE_JOYSTICK) {
+        imgName = DRIVE_DRAGGER_IMAGE;
+    } else {
+        imgName = HEAD_DRAGGER_IMAGE;
+    }
     
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetShouldAntialias(ctx, YES);
-
-    // draw the dot
-    CGRect middleCircle;
-    middleCircle.origin.x = _dotPos.x - DOTSIZE / 2;
-    middleCircle.origin.y = _dotPos.y - DOTSIZE / 2;
-    middleCircle.size.width = DOTSIZE;
-    middleCircle.size.height = DOTSIZE;
+    UIImage *img = [UIImage imageNamed:imgName];
+    self.draggerImgView = [[UIImageView alloc] initWithImage:img];
+    self.draggerImgView.frame = CGRectMake(0, 0, DOTSIZE, DOTSIZE);
+    self.draggerImgView.center = self.dotPos;
     
-    CGContextSetFillColorWithColor(ctx, DOTCOLOR);
-    CGContextSetLineWidth(ctx, 1.0);
-    CGContextFillEllipseInRect(ctx, middleCircle);
+    [self addSubview:self.draggerImgView];
 }
 
-- (float) power
-{
-    return hypotf(_dotPos.x - _center.x, _dotPos.y - _center.y) / [self circleRadius];
-}
-
-- (float) circleRadius
-{
-    return _circleRadius - DOTSIZE / 2;
-}
-
-- (float) normalizeValue:(float)value srcMin:(float)srcMin srcMax:(float)srcMax dstMin:(float)dstMin dstMax:(float)dstMax {
-    return ( value - srcMin ) / ( srcMax - srcMin ) * ( dstMax - dstMin ) + dstMin;
-}
-
+// forbid the joystick dot going out of circle
 - (void) enforceJoystickBound:(CGPoint *)point
 {
     // clamp
     if ([_joystickDelegate respondsToSelector:@selector(joystickBounds)]) {
         CGRect bounds = [_joystickDelegate joystickBounds];
-        point->x = CLAMP(point->x, bounds.origin.x, bounds.size.width);
-        point->y = CLAMP(point->y, bounds.origin.y, bounds.size.height);
+        point->x = clamp(point->x, bounds.origin.x, bounds.size.width);
+        point->y = clamp(point->y, bounds.origin.y, bounds.size.height);
     }
     return;
 }
 
-- (float) getX {
-    float src_min = _center.x - [self circleRadius];
-    float src_max = _center.x + [self circleRadius];
-    
-    return [self normalizeValue:_dotPos.x srcMin:src_min srcMax:src_max dstMin:1 dstMax:-1];
-}
-
-- (float) getY {
-    float src_min = _center.y - [self circleRadius];
-    float src_max = _center.y + [self circleRadius];
-    
-    return [self normalizeValue:_dotPos.y srcMin:src_min srcMax:src_max dstMin:1 dstMax:-1];
-}
-
-
-#pragma mark Hadle touches
+#pragma mark Handle touches
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    [self.returnTimer invalidate];
+    self.currentReturnRatio = 0;
+    [self.draggerImgView.layer removeAllAnimations];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    _dotPos = _center;
-    [self setNeedsDisplay];
-    if ([_joystickDelegate respondsToSelector:@selector(onJoystickReleased:)]) {
-        [_joystickDelegate onJoystickReleased:self];
+    BOOL shouldReturnSoflty = [self.joystickDelegate respondsToSelector:@selector(joystickSoftReturnDuration)];
+    
+    if (shouldReturnSoflty) {
+        if ([self.joystickDelegate respondsToSelector:@selector(onJoystickSoftReleased)]) {
+            [self.joystickDelegate onJoystickSoftReleased];
+        }
+        [self returnJoystickToCenter];
+    } else {
+        [self returnNow];
+        [self.joystickDelegate onJoystickReleased];
+    }
+}
+
+- (void) returnNow
+{
+    if (self.returnTimer) {
+        [self.returnTimer invalidate];
+        self.returnTimer = nil;
+    }
+    
+    self.dotPos = _center;
+    [self updateDraggerPosition];
+}
+
+- (void) returnJoystickToCenter
+{
+    float dist = getDistance(_center, _dotPos);
+    if (dist < 0.1) {
+        [self returnNow];
+        return;
+    }
+    
+    self.returnTime = [self.joystickDelegate joystickSoftReturnDuration];
+    self.returnTime *= dist / CGRectGetWidth(self.bounds);
+    
+    // timer will update robot with new joystick values while is being animated
+    self.returnTimer = [NSTimer scheduledTimerWithTimeInterval:(self.returnTime / TIMER_RETURN_UPDATE_RATE) target:self selector:@selector(updateReturnJoystick) userInfo:nil repeats:YES];
+
+    // animate soft return
+    [UIView animateWithDuration:self.returnTime animations:^{
+        self.draggerImgView.center = _center;
+    }];
+}
+
+- (void) updateReturnJoystick
+{
+    if (_currentReturnRatio >= 1) {
+        self.dotPos = _center;
+    
+        // means we have returned it to the center
+        if ([_joystickDelegate respondsToSelector:@selector(onJoystickReleased)]) {
+            [_joystickDelegate onJoystickReleased];
+        }
+        // clean
+        [self.returnTimer invalidate];
+        self.returnTimer = nil;
+        _currentReturnRatio = 0;
+    } else {
+        _currentReturnRatio += (self.returnTime / TIMER_RETURN_UPDATE_RATE);
+        
+        if ([_joystickDelegate respondsToSelector:@selector(onJoystickMoved)]) {
+            [_joystickDelegate onJoystickMoved];
+        }
+        
+        self.dotPos = lerpPoints(_dotPos, _center, _currentReturnRatio * 0.4);
     }
 }
 
@@ -146,35 +171,35 @@
     CGPoint newPos = [[touches anyObject] locationInView: self];
     [self enforceJoystickBound:&newPos];
     
-    _dotPos = newPos;
-    [self setNeedsDisplay];
-    if ([_joystickDelegate respondsToSelector:@selector(onJoystickMoved:)]) {
-        [_joystickDelegate onJoystickMoved:self];
+    self.dotPos = newPos;
+    [self updateDraggerPosition];
+}
+
+- (void) setDotPos:(CGPoint)dotPos
+{
+    _dotPos = dotPos;
+    if ([_joystickDelegate respondsToSelector:@selector(onJoystickMoved)]) {
+        [_joystickDelegate onJoystickMoved];
     }
 }
 
-- (id) initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if(self) {
-        [self commonInit];
-    }
-    return self;
+-(void) updateDraggerPosition
+{
+    self.draggerImgView.center = _dotPos;
 }
 
-- (id) initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
+#pragma mark Joystick getters and setters
+
+// methods to be over-written
+- (float) getX
+{
+    return 0;
 }
 
-- (void) commonInit {
-    self.contentMode = UIViewContentModeScaleAspectFit;
-    self.backgroundColor = [UIColor clearColor];
-    self.userInteractionEnabled = YES;
+- (float) getY
+{
+    return 0;
 }
-
 
 
 @end

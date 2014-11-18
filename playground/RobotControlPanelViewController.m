@@ -10,6 +10,7 @@
 #import "ControlLightsViewController.h"
 #import "ControlEyeRingViewController.h"
 #import "ControlDriveViewController.h"
+#import "ControlHeadViewController.h"
 
 @interface RobotControlPanelViewController ()
 
@@ -34,7 +35,9 @@
     ControlLightsViewController *lights = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlLightsViewController class])];
     ControlEyeRingViewController *eyeRing = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlEyeRingViewController class])];
     ControlDriveViewController *drive= [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlDriveViewController class])];
-    self.controlsVC = @[lights, eyeRing, drive];
+    ControlHeadViewController *head= [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlHeadViewController class])];
+
+    self.controlsVC = @[lights, eyeRing, drive, head];
     
     [self presentRobotControlsVC:[self.controlsVC firstObject]];    
 }
