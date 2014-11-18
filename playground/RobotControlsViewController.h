@@ -6,10 +6,15 @@
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
-@interface RobotControlsViewController : UIViewController <WWRobotDelegate>
+@class RobotControlViewController;
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@interface RobotControlsViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *controlsSelector;
+@property (weak, nonatomic) IBOutlet UIView *controlsView;
+@property (nonatomic, strong) RobotControlViewController *activeControlVC;
+
+- (IBAction)switchControls:(id)sender;
 
 @end
 

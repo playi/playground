@@ -12,7 +12,7 @@
 
 @interface RobotListViewController : UITableViewController<WWRobotManagerDelegate>
 
-@property (strong, nonatomic) RobotControlsViewController *RobotControlsViewController;
+@property (strong, nonatomic) RobotControlsViewController *robotControlsViewController;
 @property (nonatomic, strong) WWRobotManager *manager;
 
 @end

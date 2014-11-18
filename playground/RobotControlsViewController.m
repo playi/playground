@@ -7,40 +7,67 @@
 //
 
 #import "RobotControlsViewController.h"
+#import "ControlLightsViewController.h"
 
 @interface RobotControlsViewController ()
 
+@property (nonatomic, strong) NSArray *controlsVC;
+
+- (void) presentRobotControlsVC:(RobotControlViewController *)vc;
+
 @end
+
+#define CONTROL_LIGHTS 0
+#define CONTROL_EYE_RING 1
+#define CONTROL_JOYSTICK 2
+#define CONTROL_SOUND 3
+#define CONTROL_SENSORS 4
 
 @implementation RobotControlsViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-            
-        // Update the view.
-        [self configureView];
-    }
-}
-
-- (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ControlLightsViewController *lights = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlLightsViewController class])];
+    self.controlsVC = @[lights];
+    
+    [self presentRobotControlsVC:[self.controlsVC firstObject]];    
+}
+
+- (IBAction)switchControls:(id)sender {
+    UISegmentedControl *control = sender;
+    
+    RobotControlViewController *newVC = (RobotControlViewController *)[self.controlsVC objectAtIndex:control.selectedSegmentIndex];
+    [self presentRobotControlsVC:newVC];
+}
+
+- (void) presentRobotControlsVC:(RobotControlViewController *)vc
+{
+    if (![self.activeControlVC isEqual:vc]) {
+        [self.activeControlVC.view removeFromSuperview];
+        [self.activeControlVC removeFromParentViewController];
+        
+        self.activeControlVC = vc;
+        [self addChildViewController:self.activeControlVC];
+        [self.controlsView addSubview:self.activeControlVC.view];
+        [self.activeControlVC didMoveToParentViewController:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - WWRobotDelegate
+- (void) robot:(WWRobot *)robot didReceiveRobotState:(WWSensorSet *)state {
+    
+}
+
+- (void) robot:(WWRobot *)robot eventsTriggered:(NSArray *)events {
+    for (WWEvent *event in events) {
+    }
 }
 
 @end

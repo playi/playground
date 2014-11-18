@@ -22,6 +22,8 @@
 		0A304C341A1A833B001A67B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C331A1A833B001A67B7 /* Foundation.framework */; };
 		0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */; };
 		0A304C3D1A1A8619001A67B7 /* RobotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */; };
+		0A304C401A1AB963001A67B7 /* ControlLightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */; };
+		0A304C431A1ABD6D001A67B7 /* RobotControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C421A1ABD6D001A67B7 /* RobotControlViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableViewCell.h; sourceTree = "<group>"; };
 		0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableViewCell.m; sourceTree = "<group>"; };
 		0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotListTableViewCell.xib; sourceTree = "<group>"; };
+		0A304C3E1A1AB963001A67B7 /* ControlLightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlLightsViewController.h; sourceTree = "<group>"; };
+		0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlLightsViewController.m; sourceTree = "<group>"; };
+		0A304C411A1ABD6D001A67B7 /* RobotControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotControlViewController.h; sourceTree = "<group>"; };
+		0A304C421A1ABD6D001A67B7 /* RobotControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotControlViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,10 @@
 		0A304C361A1A85D2001A67B7 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A304C3E1A1AB963001A67B7 /* ControlLightsViewController.h */,
+				0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */,
+				0A304C411A1ABD6D001A67B7 /* RobotControlViewController.h */,
+				0A304C421A1ABD6D001A67B7 /* RobotControlViewController.m */,
 				0A304C061A1A6FEF001A67B7 /* RobotListViewController.h */,
 				0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */,
 				0A304C091A1A6FEF001A67B7 /* RobotControlsViewController.h */,
@@ -271,11 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A304C431A1ABD6D001A67B7 /* RobotControlViewController.m in Sources */,
 				0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */,
 				0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */,
 				0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */,
 				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
 				0A304C0B1A1A6FEF001A67B7 /* RobotControlsViewController.m in Sources */,
+				0A304C401A1AB963001A67B7 /* ControlLightsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

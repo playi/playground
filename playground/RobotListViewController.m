@@ -8,6 +8,7 @@
 
 #import "RobotListViewController.h"
 #import "RobotControlsViewController.h"
+#import "RobotControlViewController.h"
 #import "RobotListTableViewCell.h"
 
 @interface RobotListViewController ()
@@ -30,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.RobotControlsViewController = (RobotControlsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.robotControlsViewController = (RobotControlsViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.robots = [NSMutableArray new];
     
     // load custom nib
@@ -71,9 +72,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.robots[indexPath.row];
         RobotControlsViewController *controller = (RobotControlsViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -167,6 +166,12 @@
 - (void) manager:(WWRobotManager *)manager didConnectRobot:(WWRobot *)robot {
     // connected with robot, refresh
     [self.tableView reloadData];
+    [self.robotControlsViewController.activeControlVC refreshConnectedRobots];
+}
+
+- (void) manager:(WWRobotManager *)manager didFailToConnectRobot:(WWRobot *)robot error:(WWError *)error {
+    NSLog(@"failed to connect to robot: %@, with error: %@", robot.name, error);
+    [NSNumber numberWithUnsignedInteger:WW_SENSOR_BUTTON_MAIN];
 }
 
 - (void) manager:(WWRobotManager *)manager didDisconnectRobot:(WWRobot *)robot {
