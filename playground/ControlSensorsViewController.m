@@ -92,9 +92,9 @@
         WWSensorDistance *SDistFRF = (WWSensorDistance *)[sensorData sensorForIndex:WW_SENSOR_DISTANCE_FRONT_LEFT_FACING];
         WWSensorDistance *SDistRRF = (WWSensorDistance *)[sensorData sensorForIndex:WW_SENSOR_DISTANCE_BACK];
         [detail appendFormat:@"Distance: "];
-        [detail appendFormat:@"Left-Facing: %2.2f cm, ", SDistFLF ? SDistFLF.distance : NAN];
-        [detail appendFormat:@"Dist Right-Facing: %2.2f cm, ", SDistFRF ? SDistFRF.distance : NAN];
-        [detail appendFormat:@"Dist Tail: %2.2f cm", SDistRRF ? SDistRRF.distance : NAN];
+        [detail appendFormat:@"Left-Facing: %2.2f, ", SDistFLF ? SDistFLF.reflectance : NAN];
+        [detail appendFormat:@"Dist Right-Facing: %2.2f, ", SDistFRF ? SDistFRF.reflectance : NAN];
+        [detail appendFormat:@"Dist Tail: %2.2f", SDistRRF ? SDistRRF.reflectance : NAN];
         [detail appendFormat:@"\n"];
         
         //gyro

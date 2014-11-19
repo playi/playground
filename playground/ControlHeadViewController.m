@@ -19,48 +19,24 @@
     [super viewDidLoad];
 }
 
-- (IBAction) onMiddleBtnTouch:(id)sender
-{
+- (IBAction) onMiddleBtnTouch:(id)sender {
     [self updateRobotHeadWithPan:0 andTilt:0];
 }
 
-- (IBAction) onTopBtnTouch:(id)sender
-{
+- (IBAction) onTopBtnTouch:(id)sender {
     [self updateRobotHeadWithPan:0 andTilt:-15];
 }
 
-- (IBAction) onBottomBtnTouch:(id)sender
-{
+- (IBAction) onBottomBtnTouch:(id)sender {
     [self updateRobotHeadWithPan:0 andTilt:10];
 }
 
-- (IBAction) onLeftBtnTouch:(id)sender
-{
+- (IBAction) onLeftBtnTouch:(id)sender {
     [self updateRobotHeadWithPan:-90 andTilt:0];
 }
 
-- (IBAction) onRightBtnTouch:(id)sender
-{
+- (IBAction) onRightBtnTouch:(id)sender {
     [self updateRobotHeadWithPan:90 andTilt:0];
-}
-
-- (IBAction) onSound1BtnTouch:(id)sender
-{
-    [self playRobotSound:WW_SOUNDFILE_HI];
-}
-
-- (IBAction) onSound2BtnTouch:(id)sender
-{
-    [self playRobotSound:WW_SOUNDFILE_LETS_GO];
-}
-
-- (void) playRobotSound:(NSString *)soundName
-{
-    WWCommandSet *speakerCommand = [WWCommandSet new];
-    WWCommandSpeaker *speaker = [[WWCommandSpeaker alloc] initWithSound:soundName directory:@"SYST"];
-    [speakerCommand setSound:speaker];
-    
-    [self sendCommandSetToRobots:speakerCommand];
 }
 
 - (void) updateRobotHeadWithPan:(float)panDegree andTilt:(float)tiltDegree

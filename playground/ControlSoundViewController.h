@@ -10,4 +10,8 @@
 
 @interface ControlSoundViewController : RobotControlViewController
 
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
+
+- (IBAction)playSoundPressed:(id)sender;
+
 @end

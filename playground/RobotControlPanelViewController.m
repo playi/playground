@@ -11,6 +11,7 @@
 #import "ControlEyeRingViewController.h"
 #import "ControlDriveViewController.h"
 #import "ControlHeadViewController.h"
+#import "ControlSoundViewController.h"
 #import "ControlSensorsViewController.h"
 
 @interface RobotControlPanelViewController ()
@@ -31,9 +32,10 @@
     ControlEyeRingViewController *eyeRing = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlEyeRingViewController class])];
     ControlDriveViewController *drive = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlDriveViewController class])];
     ControlHeadViewController *head = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlHeadViewController class])];
+    ControlSoundViewController *sound = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlSoundViewController class])];
     ControlSensorsViewController *sensor = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlSensorsViewController class])];
 
-    self.controlsVC = @[lights, eyeRing, drive, head, sensor];
+    self.controlsVC = @[lights, eyeRing, drive, head, sound, sensor];
     
     [self presentRobotControlsVC:[self.controlsVC firstObject]];    
 }

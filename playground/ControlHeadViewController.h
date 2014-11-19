@@ -10,4 +10,10 @@
 
 @interface ControlHeadViewController : RobotControlViewController
 
+- (IBAction) onMiddleBtnTouch:(id)sender;
+- (IBAction) onTopBtnTouch:(id)sender;
+- (IBAction) onBottomBtnTouch:(id)sender;
+- (IBAction) onLeftBtnTouch:(id)sender;
+- (IBAction) onRightBtnTouch:(id)sender;
+
 @end

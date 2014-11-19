@@ -33,9 +33,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Lights"/>
-                                    <segment title="EyeRing"/>
+                                    <segment title="Eye"/>
                                     <segment title="Drive"/>
                                     <segment title="Head"/>
+                                    <segment title="Sound"/>
                                     <segment title="Sensors"/>
                                 </segments>
                                 <connections>
@@ -457,6 +458,47 @@
             </objects>
             <point key="canvasLocation" x="209" y="1074"/>
         </scene>
+        <!--Control Sound View Controller-->
+        <scene sceneID="Syg-El-D0N">
+            <objects>
+                <viewController storyboardIdentifier="ControlSoundViewController" id="NJB-jg-pov" customClass="ControlSoundViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cbc-Vh-IbM">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uvf-kF-XzQ">
+                                <rect key="frame" x="255" y="129" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play &quot;hi&quot;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSoundPressed:" destination="NJB-jg-pov" eventType="touchUpInside" id="NIJ-9d-fEz"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Iex-Pg-1Xh">
+                                <rect key="frame" x="267" y="183" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TLA-M5-GUB">
+                                <rect key="frame" x="186" y="187" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="volumeSlider" destination="Iex-Pg-1Xh" id="dyi-Qr-Epa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUE-3d-3NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209" y="1452"/>
+        </scene>
         <!--Control Sensors View Controller-->
         <scene sceneID="UMT-eY-Wyo">
             <objects>
@@ -558,26 +600,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onBottomBtnTouch:" destination="SDR-LH-amH" eventType="touchUpInside" id="xcZ-8X-1z2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Ya-bs-tfG">
-                                <rect key="frame" x="209" y="180" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SOUND 2">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSound2BtnTouch:" destination="SDR-LH-amH" eventType="touchUpInside" id="yet-kM-o2w"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DLj-fg-A6c">
-                                <rect key="frame" x="83" y="180" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SOUND 1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSound1BtnTouch:" destination="SDR-LH-amH" eventType="touchUpInside" id="bnq-bR-1hP"/>
                                 </connections>
                             </button>
                         </subviews>
