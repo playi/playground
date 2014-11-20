@@ -114,13 +114,9 @@
 		0A304BF31A1A6FEF001A67B7 = {
 			isa = PBXGroup;
 			children = (
-				0A304C331A1A833B001A67B7 /* Foundation.framework */,
-				0A304C311A1A8332001A67B7 /* UIKit.framework */,
-				0A304C2C1A1A70E7001A67B7 /* libc++.dylib */,
-				0A304C2A1A1A70E0001A67B7 /* CoreBluetooth.framework */,
-				0A304C281A1A70DC001A67B7 /* WWRobotAPI.framework */,
 				0A304BFE1A1A6FEF001A67B7 /* playground */,
 				0A304C1B1A1A6FF0001A67B7 /* playgroundTests */,
+				0A304C5A1A1D12C4001A67B7 /* Frameworks */,
 				0A304BFD1A1A6FEF001A67B7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -213,6 +209,18 @@
 				0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		0A304C5A1A1D12C4001A67B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A304C2C1A1A70E7001A67B7 /* libc++.dylib */,
+				0A304C2A1A1A70E0001A67B7 /* CoreBluetooth.framework */,
+				0A304C331A1A833B001A67B7 /* Foundation.framework */,
+				0A304C311A1A8332001A67B7 /* UIKit.framework */,
+				0A304C281A1A70DC001A67B7 /* WWRobotAPI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
