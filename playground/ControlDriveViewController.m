@@ -32,7 +32,7 @@
     double lin = [self.joystick getY] * ROBOT_SPEED;
     double ang = [self.joystick getX] * joystickPower * 3.14159 * 2.0;
     
-    NSLog(@"sending linear: %5.2f angular: %5.2f", lin, ang);
+    //NSLog(@"sending linear: %5.2f angular: %5.2f", lin, ang);
     
     // fudge factor to be tweaked
     ang *= 0.5;
