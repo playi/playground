@@ -9,13 +9,16 @@
 #import "WWCommand.h"
 
 /**
- *  `WWCommandBodyLinearAngular` objects are used to instruct a `WWRobot` how to position its body
+ *  `WWCommandBodyLinearAngular` objects instruct a `WWRobot` how to position its body
  *  in terms of linear and angular velocity, assuming that the center point is the center point of the
  *  robot.
  *
- *  @todo doc: add threshold values.
- *  @todo doc: how do I best describe linear/angular?
- *             - maybe some examples ?  eg
+ *  Valid linear velocity values range from -100 to 100 cm/s and angular velocity values range from -8 to 8 radians/s.
+ *  Wonder Workshop robots prioritize angular precision over linear precision, which helps them drive straight. So, if
+ *  the command expressed max linear (100cm/s) and max angular (8rad/s) velocity, the robot will likely spin
+ *  in place to achieve desired angular velocity, rather than move forward.  
+ *
+ *  Note: The actual speed will vary based on surface conditions (e.g., carpet speed will be slower).
  *
  * | Linear (cm/s) | Angular (radians/s) | Result                                                                                                       |
  * |---------------|---------------------|-------                                                                                                       |
@@ -32,13 +35,13 @@
 @property (nonatomic) double linearVelocity;
 
 /**
- *  Specifies the angular velocity (in radian/s) for this command.
+ *  Specify the angular velocity (in radian/s) for this command.
  */
 @property (nonatomic) double angularVelocity;
 
 
 /**
- *  Initializes the command with specified linear and angular velocity.
+ *  Initialize the command with specified linear and angular velocity.
  *
  *  @param linear  The linear velocity in cm/s.
  *  @param angular The angular velocity in radian/s.

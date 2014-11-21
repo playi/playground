@@ -14,25 +14,25 @@ typedef BOOL(^WWEventAlertBlock)(WWEvent *event, WWSensorHistory *history);
 
 
 /**
- * Certain events recognize "phases" in the event, and can be configured to trigger upon entry into any of these phases.
+ * Certain events recognize "phases" in the event and can be configured to trigger upon entry into any of these phases.
  *
  * As of this writing, these events are `gestureSlideAlongAxis` and `gestureDrop`.
  */
 typedef enum {
-    WW_EVENT_GESTURE_IDLE         = 1 << 0,      /// nothing is happening; waiting for event to start.
-    WW_EVENT_GESTURE_STARTED      = 1 << 1,      /// the gesture might be starting. but it might be some other gesture..
-    WW_EVENT_GESTURE_ESTABLISHED  = 1 << 2,      /// the gesture has definitely started.
-    WW_EVENT_GESTURE_COMPLETED    = 1 << 3,      /// the gesture has finished.
-    WW_EVENT_GESTURE_CANCELLED    = 1 << 4,      /// the gesture started, but it was a false positive - it wasn't this gesture after all.
+    WW_EVENT_GESTURE_IDLE         = 1 << 0,      /// Nothing is happening; waiting for event to start.
+    WW_EVENT_GESTURE_STARTED      = 1 << 1,      /// The gesture might be starting, but it might be some other gesture.
+    WW_EVENT_GESTURE_ESTABLISHED  = 1 << 2,      /// The gesture has started.
+    WW_EVENT_GESTURE_COMPLETED    = 1 << 3,      /// The gesture has finished.
+    WW_EVENT_GESTURE_CANCELLED    = 1 << 4,      /// The gesture started, but it was a false positive (it wasn't this gesture after all).
 } WWEventPhase;
 
-typedef unsigned int WWEventPhaseMask; /// bitwise-OR of `WWEventPhase` enums.
+typedef unsigned int WWEventPhaseMask; /// The bitwise-OR of `WWEventPhase` enums.
 
 /**
  *  The `WWEvent` object registers `WWRobot` for event notification.
  *
  *  Because a registered `WWEvent` is evaluated on every arrival of `WWSensor` data for `WWRobot`,
- *  it is highly recommended to make sure the shouldAlertBlock execution code is relatively lightweight
+ *  Wonder Workshop recommends that the shouldAlertBlock execution code should be relatively lightweight
  *  and non-blocking to prevent performance degradation.
  *
  */
@@ -44,12 +44,12 @@ typedef unsigned int WWEventPhaseMask; /// bitwise-OR of `WWEventPhase` enums.
 @property (nonatomic, strong) NSString *identifier;
 
 /**
- *  Carries any additional information to use during alert block execution (optional).
+ *  Carries additional information to use during alert block execution (optional).
  */
 @property (nonatomic, strong) NSMutableDictionary *information;
 
 /**
- *  The main execution block of `WWEvent`.  If true, robot:eventsTriggered: method of `WWRobotDelegate` is invoked.
+ *  The main execution block of `WWEvent`.  If true, the robot:eventsTriggered: method of `WWRobotDelegate` is invoked.
  */
 @property (copy) WWEventAlertBlock shouldAlertBlock;
 
@@ -96,33 +96,33 @@ typedef unsigned int WWEventPhaseMask; /// bitwise-OR of `WWEventPhase` enums.
 - (id) initWithShouldAlertBlock:(WWEventAlertBlock)block identifier:(NSString *)identifier;
 
 /**
- * Tells the `WWEvent` to trigger when it enters specific `WWEventPhase`s
- * Certain events recognize "phases" in the event, and can be configured to trigger upon entry into any of these phases.
+ * Tells the `WWEvent` to trigger when it enters specific `WWEventPhase` phases.
+ * Certain events recognize phases in the event, and can be configured to trigger upon entry into any of these phases.
  *
  * As of this writing, these events are `gestureSlideAlongAxis` and `gestureDrop`.
  * - WW_EVENT_GESTURE_IDLE
- *   nothing is happening; waiting for event to start.
+ *   Nothing is happening; waiting for event to start.
  * - WW_EVENT_GESTURE_STARTED
- *   the gesture might be starting. but it might be some other gesture..
+ *   The gesture might be starting. but it might be some other gesture..
  * - WW_EVENT_GESTURE_ESTABLISHED
- *   the gesture has definitely started.
+ *   The gesture has definitely started.
  * - WW_EVENT_GESTURE_COMPLETED
- *   the gesture has finished.
+ *   The gesture has finished.
  * - WW_EVENT_GESTURE_CANCELLED
- *   the gesture started, but it was a false positive - it wasn't this gesture after all.
+ *   The gesture started, but it was a false positive (it wasn't this gesture after all).
  *
- *  @param mask bitwise-OR of `WWEventPhase` enums.
+ *  @param mask Bitwise-OR of `WWEventPhase` enums.
  *
- *  @return returns the `WWEvent` itself.
+ *  @return Returns the `WWEvent` itself.
  */
 - (WWEvent*) setPhaseSignalMask:(WWEventPhaseMask)mask;
 
 /**
- * Convert a `WWEventPhase` enum to an `NSString`.
+ * Converts a `WWEventPhase` enum to an `NSString`.
  *
  * @param phase The `WWEventPhase` to convert.
  *
- * @return `NSString` human-readable phase name.
+ * @return `NSString` The human-readable phase name.
  */
 + (NSString *) eventPhaseToString:(WWEventPhase)phase;
 

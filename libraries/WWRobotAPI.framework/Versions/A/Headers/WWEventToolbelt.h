@@ -37,9 +37,9 @@
 + (WWEvent *) detectObjectBack:(NSNumber *)sensorLimitNumber;
 
 /**
- *  Initializes a `WWEvent` object that is triggered when a specific button is transitioning from normal to pressed.
+ *  Initializes a `WWEvent` object that is triggered when a specific button transitions from normal to pressed.
  *
- *  This is analogus to "onTouchDown" event for UIButton.
+ *  This is analogus to an "onTouchDown" event for UIButton.
  *
  *  @param indexNumber Corresponds to the WWComponentId of the button.
  *
@@ -48,9 +48,9 @@
 + (WWEvent *) buttonOnDown:(NSNumber *)indexNumber;
 
 /**
- *  Initializes a `WWEvent` object that will be triggered when a specific button is transitioning from pressed to normal.
+ *  Initializes a `WWEvent` object that will be triggered when a specific button transitions from pressed to normal.
  *
- *  This is analogus to "onTouchUp" event for UIButton.
+ *  This is analogus to an "onTouchUp" event for UIButton.
  *
  *  @param indexNumber Corresponds to the WWComponentId of the button.
  *
@@ -60,7 +60,7 @@
 
 
 /**
- * Initializes a `WWEvent` object which will trigger events relating to a "Slide" gesture in any one of the six cardinal directions.
+ * Initializes a `WWEvent` object which triggers events relating to a "Slide" gesture in any one of the six cardinal directions.
  *
  * A "Slide" means the robot has moved along the specified axis and then stopped.
  *
@@ -75,7 +75,7 @@
  * - *Positive Z* : Slide the robot up. (aka lift the robot) Default identifier is "gestureSlide +z".
  * - *Negative Z* : Slide the robot down. (aka set the robot down)Default identifier is "gestureSlide -z".
  *
- * This `WWEvent` recognizes the five different `WWEventPhase` phases.
+ * The `WWEvent` recognizes five different `WWEventPhase` phases.
  *
  * | WWEventPhases                |
  * |------------------------------|
@@ -91,26 +91,27 @@
  * | WW_EVENT_GESTURE_STARTED     | WW_EVENT_GESTURE_ESTABLISHED | Time in phase > some threshhold         | Time has passed w/o stopping moving.                   |
  * | WW_EVENT_GESTURE_STARTED     | WW_EVENT_GESTURE_CANCELLED   | Acceleration on axis < some threshhold  | Stopped moving before enough time passed.              |
  * | WW_EVENT_GESTURE_ESTABLISHED | WW_EVENT_GESTURE_COMPLETED   | Acceleration on axis < some threshhold  | Stopped moving after enough time passed.               |
- * | WW_EVENT_GESTURE_ESTABLISHED | WW_EVENT_GESTURE_CANCELLED   | Time in phase > some threshhold         | Too much time passed w/o stopping moving. This happens w/ the tail of the reverse gesture, ie setting the robot down.|
+ * | WW_EVENT_GESTURE_ESTABLISHED | WW_EVENT_GESTURE_CANCELLED   | Time in phase > some threshhold         | Too much time passed w/o stopping moving. This happens w/ the tail of the reverse gesture (i.e., setting the robot down).|
  * | WW_EVENT_GESTURE_COMPLETED   | WW_EVENT_GESTURE_IDLE        | Automatic                               |                                                        |
  * | WW_EVENT_GESTURE_CANCELLED   | WW_EVENT_GESTURE_IDLE        | Automatic                               |                                                        |
  *
- * By default, this `WWEvent` will be triggered only for WW_EVENT_GESTURE_COMPLETED, however you can set a custom mask using WWEvent:setPhaseSignalMask:.
+ * By default, `WWEvent` is only triggered for WW_EVENT_GESTURE_COMPLETED. However, you can set a custom mask using WWEvent:setPhaseSignalMask:.
+ * Please also note that robot must be oriented vertically.
  *
- * @param axisName 'x', 'y', or 'z': which axis to detect the slide along.
+ * @param axisName 'x', 'y', or 'z': the axis to detect.
  *
- * @param inPositiveDirection YES or NO: whether to detect slide in the positive direction along this axis, or the negative direction.
+ * @param inPositiveDirection YES or NO: detect whether the slide is in the positive or negative direction along the axis.
  *
  * @return A `WWEvent` instance.
  *
  * @see WWEvent:setPhaseSignalMask:
  */
-+ (WWEvent *) gestureSlideAlongAxis:(NSString*)axisName inPositiveDirection:(BOOL)positive;   // robot must be oriented vertically. see todo in .mm
++ (WWEvent *) gestureSlideAlongAxis:(NSString*)axisName inPositiveDirection:(BOOL)positive;
 
 /**
- * Initializes a `WWEvent` object which will trigger events relating to a "Drop" gesture.
+ * Initializes a `WWEvent` object which triggers events relating to a "Drop" gesture.
  *
- * A "Drop" means the robot has been dropped.
+ * A "Drop" means the robot has been physically dropped.
  *
  * The default identifier for this event is gestureDrop.
  *
@@ -133,7 +134,7 @@
  * | WW_EVENT_GESTURE_COMPLETED   | WW_EVENT_GESTURE_IDLE        | Automatic                               |                                                        |
  * | WW_EVENT_GESTURE_CANCELLED   | WW_EVENT_GESTURE_IDLE        | Automatic                               |                                                        |
  *
- * By default, this `WWEvent` will be triggered only for WW_EVENT_GESTURE_COMPLETED, however you can set a custom mask using WWEvent:setPhaseSignalMask:.
+ * By default, this `WWEvent` is only triggered for WW_EVENT_GESTURE_COMPLETED. However, you can set a custom mask using WWEvent:setPhaseSignalMask:.
  *
  * @return A `WWEvent` instance.
  *
