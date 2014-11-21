@@ -11,7 +11,7 @@ Please refer to our [developer portal](https://developer.makewonder.com/#/gettin
 * If you **love what we are doing**, we are always looking for [awesome engineers](https://www.makewonder.com/careers) to help us change the way children learn how to program!
 
 ### Requirements
-
+todo still
 
 ### Contact
 * Email: developers@makewonder.com
