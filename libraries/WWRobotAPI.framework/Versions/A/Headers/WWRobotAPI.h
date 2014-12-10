@@ -27,6 +27,7 @@
 #import <WWRobotAPI/WWSensorEncoder.h>
 #import <WWRobotAPI/WWSensorMicrophone.h>
 #import <WWRobotAPI/WWSensorHeadPosition.h>
+#import <WWRobotAPI/WWSensorBodyPose.h>
 
 // complex command sets
 #import <WWRobotAPI/WWComponentSet.h>
