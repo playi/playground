@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Wonder Workshop inc. (https://www.makewonder.com/) All rights reserved.
 //
 
+#import "WWConstants.h"
 #import "WWEventDataSource.h"
 
 typedef enum {
@@ -22,7 +23,7 @@ typedef enum {
 
 
 /**
- *  `WWRobot` is a subclass of `WWEventDataSource` object; it has a 1-to-1 direct
+ *  `WWRobot` is a subclass of the `WWEventDataSource` object; it has a 1-to-1
  *  mapping to a physical Wonder Workshop robot.  
  *
  *  Caller can execute robot commands (via `WWCommandSet`) and analyze robot state data 
@@ -31,7 +32,7 @@ typedef enum {
 @interface WWRobot : WWEventDataSource
 
 /**
- *  The delegate object to interact with robot.
+ *  The delegate object to interact with the robot.
  */
 @property (nonatomic, weak) id<WWRobotDelegate> delegate;
 
@@ -87,7 +88,7 @@ typedef enum {
  */
 
 /**
- *  Returns true if robot has not been properly configured by the Wonder Workshop Go app.
+ *  Returns true if robot is not properly configured by the Wonder Workshop Go app.
  *
  *  @return Returns true if unconfigured, false otherwise.
  */
@@ -121,11 +122,11 @@ typedef enum {
  */
 
 /**
- *  Sends the given `WWCommandSet` to the physical robot to be executed. 
+ *  Sends the given `WWCommandSet` to the physical robot to execute.
  * 
- *  The given command may not be sent immediately, but will be sent between now and 50ms in the future.  If sendRobotCommandSet: is called multiple times immediately, the
- *  `WWRobot` might aggregate the commands together and send it as a single command set. If
- *  there are collisions during command aggregation, the latest command will
+ *  The given command might not be sent immediately, but will be sent within 50ms.  If sendRobotCommandSet: is called multiple times immediately, the
+ *  `WWRobot` might aggregate and send them as a single command set. If
+ *  there are collisions during command aggregation, the latest command might
  *  override earlier commands.
  *
  *  @param command The desired command set to send to the robot.
@@ -134,12 +135,67 @@ typedef enum {
 
 
 /**---------------------------------------------------------------------------------------
+ *  @name Executing command sequences
+ *  ---------------------------------------------------------------------------------------
+ */
+
+/**
+ *  Starts to execute the given `WWCommandSetSequence` immediately, while respecting the options passed in.  Caller can specify the
+ *  WWCommandSequenceStartFrameIndexKey and WWCommandSequenceStartFrameTimeOffsetKey values or nil to execute the sequence from
+ *  the very beginning.
+ * 
+ *  Multiple sequences can be executed at once, although the results may be unpredictable as the robots will attempt to merge
+ *  the execution commands together.
+ *
+ *  @param sequence `WWCommandSetSequence` object to execute on.
+ *  @param options  A set of option to respect during execution.  If nil, execution will start at the beginning of the sequence.
+ */
+- (void) executeCommandSequence:(WWCommandSetSequence *)sequence withOptions:(NSDictionary *)options;
+
+/**
+ *  Stops execution of the given `WWCommandSetSequence` object. If this robot is not currently executing 
+ *  this sequence, then this is a no-op.
+ *
+ *  @param sequence `WWCommandSetSequence` object to stop execution on.
+ */
+- (void) stopCommandSequence:(WWCommandSetSequence *)sequence;
+
+/**
+ *  Returns the current execution result for this given sequence.  If the sequence isn't being executed
+ *  currently, nil will be returned instead.
+ *
+ *  @param sequence `WWCommandSetSequence` object that is currently being executed.
+ *
+ *  @return Execution result of the `WWcommandSetSequence`.
+ */
+- (NSDictionary *) commandSequenceResults:(WWCommandSetSequence *)sequence;
+
+/**
+ *  Returns all the `WWCommandSetSequence` objects that the robots are currently executing.  Returns nil
+ *  if robot is not currently executing any sequence.
+ *
+ *  @return Array of current sequences that are being executed.
+ */
+- (NSArray *) allExecutingCommandSequences;
+
+/**
+ *  Returns YES if the given `WWCommandSetSequence` object is being executed by this robot. Otherwise, returns NO.
+ *
+ *  @param sequence `WWCommandSetSequence` object that is being tested for execution.
+ *
+ *  @return YES if the given `WWCommandSetSequence` object is being executed by this robot. Otherwise, returns NO.
+ */
+- (BOOL) isExecutingCommandSequence:(WWCommandSetSequence *)sequence;
+
+
+
+/**---------------------------------------------------------------------------------------
  *  @name Modifying robot
  *  ---------------------------------------------------------------------------------------
  */
 
 /**
- *  Power cycles the physical robot, and clear any queued commands.
+ *  Power cycles the physical robot and clears any queued commands.
  */
 - (void) reboot;
 
@@ -149,7 +205,7 @@ typedef enum {
  *  Initial state means:
  *  - Lights will reflect its personality color.
  *  - All movements are stopped.
- *  - Head faces center and is levelled.
+ *  - The head faces center and is level.
  *  - The eye blinks.
  */
 - (void) resetState;
@@ -170,7 +226,7 @@ typedef enum {
 /**
  *  Invoked when 1+ `WWEvent` was triggered for the last `WWSensor` received.
  *
- *  @param robot  The robot that the event(s) triggered on.
+ *  @param robot  The robot on which the event(s) triggered.
  *  @param events The set of events that were triggered.
  */
 - (void) robot:(WWRobot *)robot eventsTriggered:(NSArray *)events;
@@ -182,5 +238,27 @@ typedef enum {
  *  @param state The set of sensor data that was received from the robot.
  */
 - (void) robot:(WWRobot *)robot didReceiveRobotState:(WWSensorSet *)state;
+
+/**
+ *  Invoked when a robot stopped execution of a `WWCommandSetSequence`.  This callback is usually trigger when caller stops
+ *  the execution with `stopCommandSequence:` method call.  
+ *  
+ *  The execution result will be returned, which can be passed in when invoking the `executeCommandSequence:withOptions:` method to
+ *  resume execution (if needed).
+ *
+ *  @param robot    The robot that was executing the `WWCommandSetSequence` object.
+ *  @param sequence The `WWCommmandSetSequence` object that was being executed on.
+ *  @param results  The execution result at the time that sequence stopped executing.
+ */
+- (void) robot:(WWRobot *)robot didStopExecutingCommandSequence:(WWCommandSetSequence *)sequence withResults:(NSDictionary *)results;
+
+/**
+ *  Invoked when a robot finished executing a `WWCommandSetSequence` object to the end.  This callback is not
+ *  triggered if the caller stops the sequence execution prematurely.
+ *
+ *  @param robot    The robot that was executing the `WWCommandSetSequence` object.
+ *  @param sequence The `WWCommmandSetSequence` object that was being executed on.
+ */
+- (void) robot:(WWRobot *)robot didFinishCommandSequence:(WWCommandSetSequence *)sequence;
 
 @end

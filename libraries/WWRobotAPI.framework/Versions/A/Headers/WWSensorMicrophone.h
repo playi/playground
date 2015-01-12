@@ -13,7 +13,8 @@
  *
  *  `WWRobot` will try to detect sound from a two-dimensional plane and returns the calculated 
  *  amplitude.  If sound is loud enough, `WWRobot` will also triangulate the direction where the 
- *  sound is coming from and return it as triangulationAngle in radians.
+ *  sound is coming from and return it as triangulationAngle in radians.  If the sound amplitude
+ *  is too low to be detected, then triangulationAngle will return WW_ANGLE_UNDEFINED.
  */
 @interface WWSensorMicrophone : WWSensor
 

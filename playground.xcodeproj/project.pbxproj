@@ -29,6 +29,7 @@
 		0A304C4E1A1AE8FC001A67B7 /* ControlDriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */; };
 		0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */; };
 		0A304C581A1C0DA4001A67B7 /* ControlSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */; };
+		0A412C581A6468110045A7B0 /* wiggle.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A412C571A6468110045A7B0 /* wiggle.json */; };
 		780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D964F1A1B844000B109CC /* CircleJoystickView.m */; };
 		780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D96521A1B8F1800B109CC /* ControlHeadViewController.m */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlSensorsViewController.m; sourceTree = "<group>"; };
 		0A304C561A1C0DA4001A67B7 /* ControlSoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlSoundViewController.h; sourceTree = "<group>"; };
 		0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlSoundViewController.m; sourceTree = "<group>"; };
+		0A412C571A6468110045A7B0 /* wiggle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wiggle.json; sourceTree = "<group>"; };
 		780D964E1A1B844000B109CC /* CircleJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleJoystickView.h; sourceTree = "<group>"; };
 		780D964F1A1B844000B109CC /* CircleJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleJoystickView.m; sourceTree = "<group>"; };
 		780D96511A1B8F1800B109CC /* ControlHeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHeadViewController.h; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		0A304BFE1A1A6FEF001A67B7 /* playground */ = {
 			isa = PBXGroup;
 			children = (
+				0A412C561A6468060045A7B0 /* animations */,
 				0A304C361A1A85D2001A67B7 /* controllers */,
 				0A304C351A1A85CB001A67B7 /* views */,
 				0A304C031A1A6FEF001A67B7 /* AppDelegate.h */,
@@ -223,6 +226,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0A412C561A6468060045A7B0 /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				0A412C571A6468110045A7B0 /* wiggle.json */,
+			);
+			name = animations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A304C3D1A1A8619001A67B7 /* RobotListTableViewCell.xib in Resources */,
+				0A412C581A6468110045A7B0 /* wiggle.json in Resources */,
 				0A304C0E1A1A6FEF001A67B7 /* Main.storyboard in Resources */,
 				0A304C131A1A6FEF001A67B7 /* LaunchScreen.xib in Resources */,
 				0A304C101A1A6FEF001A67B7 /* Images.xcassets in Resources */,

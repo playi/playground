@@ -17,6 +17,7 @@
 // max/min boundaries
 #define WW_LIGHT_BRIGHTNESS_MAX 1.0
 #define WW_LIGHT_BRIGHTNESS_MIN 0.0
+#define WW_ANGLE_UNDEFINED MAXFLOAT
 #define WW_VOLUME_MAX 1.0
 #define WW_VOLUME_MUTE 0.0
 #define WW_VOULUME_UNDEFINED 1.1
@@ -90,6 +91,23 @@ typedef unsigned int WWPersonalityAnimationIndex;
 #endif
 
 #define WW_SOUND_SYSTEM_DIR             __wwstr__"SYST"
+#define WW_COMMAND_SEQUENCE_DATA                          __wwstr__"data"
+#define WW_COMMAND_SET_DURATION                           __wwstr__"duration"
+#define WW_COMMAND_SET_VALUES                             __wwstr__"commands"
+
+#define WW_COMMAND_VALUE_LEFT_SPEED                       __wwstr__"left_cm_s"
+#define WW_COMMAND_VALUE_RIGHT_SPEED                      __wwstr__"right_cm_s"
+#define WW_COMMAND_VALUE_SPEED_LINEAR                     __wwstr__"linear_cm_s"
+#define WW_COMMAND_VALUE_SPEED_ANGULAR                    __wwstr__"angular_cm_s"
+
+#define WW_COMMAND_VALUE_ANGLE_DEGREE                     __wwstr__"degree"
+#define WW_COMMAND_VALUE_ANGLE_RADIAN                     __wwstr__"radian"
+
+#define WW_COMMAND_VALUE_COLOR_BRIGHTNESS                 __wwstr__"brightness"
+#define WW_COMMAND_VALUE_COLOR_RED                        __wwstr__"r"
+#define WW_COMMAND_VALUE_COLOR_GREEN                      __wwstr__"g"
+#define WW_COMMAND_VALUE_COLOR_BLUE                       __wwstr__"b"
+#define WW_COMMAND_VALUE_ORDER_INDEX                      __wwstr__"index"
 
 #undef wwstr
 

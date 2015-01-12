@@ -207,6 +207,7 @@ typedef enum {
  *  @param robot   The connected robot.
  */
 - (void) manager:(WWRobotManager *)manager didConnectRobot:(WWRobot *)robot;
+- (void) wwManagerDidUpdateState:(WWRobotManager *)manager;
 
 @optional
 /**

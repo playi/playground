@@ -9,7 +9,8 @@
 #import "WWsensorSet.h"
 
 /**
- *  The `WWSensorHistory` object contains a set of `WWSensor` objects in reverse chronological order.
+ *  The `WWSensorHistory` object contains a set of `WWSensor` objects in reverse chronological order.  New sensor data are coming in
+ *  roughly every 30ms under normal conditions.  However, depending on the signal strength of the robot, it may extend out to 40ms.  
  */
 @interface WWSensorHistory : WWObject
 
@@ -27,6 +28,8 @@
 
 /**
  *  Returns the most recent `WWSensor` object received from `WWRobot`.
+ *
+ *  CurrentState is updated roughly every 30ms, depending on the signal strength of the robot.
  *
  *  @return Returns the most recent `WWSensor` object.
  */

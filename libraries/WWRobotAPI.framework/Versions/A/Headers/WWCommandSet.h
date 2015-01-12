@@ -7,9 +7,10 @@
 
 //
 
+#import "WWConstants.h"
 #import "WWComponentSet.h"
 
-@class WWCommand, WWCommandHeadPosition, WWCommandMotorWheel, WWCommandLightRGB, WWCommandEyeRing, WWCommandLightMono, WWCommandSpeaker, WWCommandBeacon, WWCommandBodyLinearAngular, WWCommandBodyWheels;
+@class WWCommand, WWCommandHeadPosition, WWCommandLightRGB, WWCommandEyeRing, WWCommandLightMono, WWCommandSpeaker, WWCommandHeadBang, WWCommandBodyLinearAngular, WWCommandBodyWheels;
 
 /**
  *  `WWCommandSet` is a subclass of `WWComponentSet` with strict type-checking and convenience
@@ -107,6 +108,13 @@
 - (void) setSound:(WWCommandSpeaker *)sound;
 
 /**
+ *  Inserts a given `WWCommandHeadBang` object to the set, overwriting an existing mapping if it exists.
+ *
+ *  @param bang The `WWCommandHeadBang` object that allows our robot to nod quickly (used for xylophone note strike).
+ */
+- (void) setHeadBang:(WWCommandHeadBang *)bang;
+
+/**
  *  Inserts a given `WWCommand` object to the set, overwriting an existing mapping if it exists.
  *
  *  @param command The `WWCommand` object to insert into the set.
@@ -136,6 +144,7 @@
  *  @param rightEar The `WWCommandLightRGB` object that specifies the right ear color.
  */
 - (void) setEarLightLeft:(WWCommandLightRGB *)leftEar right:(WWCommandLightRGB *)rightEar;
+
 
 
 /**---------------------------------------------------------------------------------------
