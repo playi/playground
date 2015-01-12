@@ -12,5 +12,9 @@
 @interface ControlDriveViewController : RobotControlViewController <JoystickDelegate>
 
 @property (nonatomic, weak) IBOutlet CircleJoystickView *joystick;
+@property (weak, nonatomic) IBOutlet UIButton *toggleWiggleBtn;
+
+- (IBAction)toggleWiggle:(id)sender;
+- (IBAction)executeNod:(id)sender;
 
 @end

@@ -12,6 +12,11 @@
 
 @interface ControlDriveViewController ()
 
+@property (nonatomic) BOOL isWiggling;
+@property (nonatomic) BOOL isNodding;
+@property (nonatomic, strong) WWCommandSetSequence *wiggleAnimation;
+@property (nonatomic, strong) WWCommandSetSequence *nodAnimation;
+
 @end
 
 @implementation ControlDriveViewController
@@ -21,6 +26,19 @@
     
     self.joystick.type = DRIVE_JOYSTICK;
     [self.joystick updateDraggerImage];
+    self.isWiggling = NO;
+    self.isNodding = NO;
+    
+    self.wiggleAnimation = [WWCommandSetSequence sequenceFromFileInBundle:@"wiggle" fileType:@"json"];
+    self.nodAnimation = [WWCommandSetSequence new];
+    WWCommandSet *lookup = [WWCommandSet new];
+    [lookup setHeadPositionTilt:[[WWCommandHeadPosition alloc] initWithDegree:-20]];
+    WWCommandSet *lookdown = [WWCommandSet new];
+    [lookdown setHeadPositionTilt:[[WWCommandHeadPosition alloc] initWithDegree:7.5]];
+    [self.nodAnimation addCommandSet:lookup withDuration:0.4];
+    [self.nodAnimation addCommandSet:lookdown withDuration:0.4];
+    [self.nodAnimation addCommandSet:lookup withDuration:0.4];
+    [self.nodAnimation addCommandSet:lookdown withDuration:0.4];
 }
 
 - (WWCommandSet *) commandFromJoystick
@@ -62,4 +80,55 @@
 }
 
 
+- (IBAction)toggleWiggle:(id)sender
+{
+    NSString *btnText;
+    for (WWRobot *robot in self.connectedRobots) {
+        if (self.isWiggling) {
+            [robot stopCommandSequence:self.wiggleAnimation];
+            btnText = @"Start wiggle";
+        }
+        else {
+            // always start from the beginning of animation
+            [robot executeCommandSequence:self.wiggleAnimation withOptions:nil];
+            btnText = @"Stop wiggle";
+        }
+    }
+    
+    [self.toggleWiggleBtn setTitle:btnText forState:UIControlStateNormal];
+    self.isWiggling = !self.isWiggling; // toggle
+}
+
+- (IBAction)executeNod:(id)sender
+{
+    if (!self.isNodding && !self.isWiggling) {
+        for (WWRobot *robot in self.connectedRobots) {
+            [robot executeCommandSequence:self.nodAnimation withOptions:nil];
+        }
+    }
+}
+
+- (void) robot:(WWRobot *)robot didFinishCommandSequence:(WWCommandSetSequence *)sequence
+{
+    if ([sequence isEqual:self.wiggleAnimation]) {
+        if (self.isWiggling) {
+            // continue to wiggle until user stops
+            for (WWRobot *robot in self.connectedRobots) {
+                [robot executeCommandSequence:self.wiggleAnimation withOptions:nil];
+            }
+        }
+    }
+    else {
+        // this is a nod sequence
+        self.isNodding = NO;
+    }
+}
+
+- (void) robot:(WWRobot *)robot didStopExecutingCommandSequence:(WWCommandSetSequence *)sequence withResults:(NSDictionary *)results
+{
+    NSLog(@"wiggle sequence terminated by user.");
+    for (WWRobot *robot in self.connectedRobots) {
+        [robot resetState];
+    }
+}
 @end
