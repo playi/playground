@@ -14,6 +14,9 @@
 
 /** number constant definitions **/
 
+/** placeholder for body pose **/
+#define WW_SENSOR_BODY_POSE 2002
+
 // max/min boundaries
 #define WW_LIGHT_BRIGHTNESS_MAX 1.0
 #define WW_LIGHT_BRIGHTNESS_MIN 0.0
