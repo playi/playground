@@ -1,16 +1,19 @@
 package play_i.playground;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import com.w2.api.engine.robots.Robot;
+
+import controls.RobotControl;
+import fragments.BaseFragment;
+import fragments.EyesControlFragment;
+import fragments.LightsControlFragment;
+import fragments.SelectRobotFragment;
 
 
 public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
@@ -20,6 +23,16 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
    * current dropdown position.
    */
   private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
+
+  private static final int INDEX_SELECT_ROBOT = 0;
+  private static final int INDEX_LIGHTS_CONTROL = 1;
+  private static final int INDEX_EYES_CONTROL = 2;
+  private static final int INDEX_WHEEL_CONTROL = 3;
+  private static final int INDEX_HEAD_CONTROL = 4;
+  private static final int INDEX_SOUND_CONTROL = 5;
+  private static final int INDEX_SENSORS = 6;
+
+  private RobotControl robotControl = new RobotControl();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +47,20 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
     // Set up the dropdown list navigation in the action bar.
     actionBar.setListNavigationCallbacks(
             // Specify a SpinnerAdapter to populate the dropdown list.
-      new ArrayAdapter<String>(
-        actionBar.getThemedContext(),
-        android.R.layout.simple_list_item_1,
-        android.R.id.text1,
-        new String[]{
-          getString(R.string.title_select_robot),
-          getString(R.string.title_lights_control),
-          getString(R.string.title_eyes_control),
-          getString(R.string.title_wheel_control),
-          getString(R.string.title_head_control),
-          getString(R.string.title_sound_control),
-          getString(R.string.title_sensors),
-        }),
-      this);
+            new ArrayAdapter<String>(
+                    actionBar.getThemedContext(),
+                    android.R.layout.simple_list_item_1,
+                    android.R.id.text1,
+                    new String[]{
+                            getString(R.string.title_select_robot),
+                            getString(R.string.title_lights_control),
+                            getString(R.string.title_eyes_control),
+                            getString(R.string.title_wheel_control),
+                            getString(R.string.title_head_control),
+                            getString(R.string.title_sound_control),
+                            getString(R.string.title_sensors),
+                    }),
+            this);
   }
 
   @Override
@@ -93,45 +106,36 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
   public boolean onNavigationItemSelected(int position, long id) {
     // When the given dropdown item is selected, show its contents in the
     // container view.
-    getSupportFragmentManager().beginTransaction()
-            .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-            .commit();
+
+    BaseFragment fragment;
+
+    switch (position){
+      case INDEX_SELECT_ROBOT:
+        fragment = SelectRobotFragment.newInstance(robotSelectionFragmentDelegate);
+        break;
+      case INDEX_LIGHTS_CONTROL:
+        fragment = LightsControlFragment.newInstance(robotControl);
+        break;
+      case INDEX_EYES_CONTROL:
+        fragment = EyesControlFragment.newInstance();
+        break;
+      default:
+        fragment = BaseFragment.newInstance();
+        break;
+    }
+
+    getSupportFragmentManager()
+      .beginTransaction()
+      .replace(R.id.container, fragment)
+      .commitAllowingStateLoss();
     return true;
   }
 
-  /**
-   * A placeholder fragment containing a simple view.
-   */
-  public static class PlaceholderFragment extends Fragment {
-    /**
-     * The fragment argument representing the section number for this
-     * fragment.
-     */
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
-    public static PlaceholderFragment newInstance(int sectionNumber) {
-      PlaceholderFragment fragment = new PlaceholderFragment();
-      Bundle args = new Bundle();
-      args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-      fragment.setArguments(args);
-      return fragment;
-    }
-
-    public PlaceholderFragment() {
-    }
-
+  private SelectRobotFragment.RobotSelectedDelegate robotSelectionFragmentDelegate = new SelectRobotFragment.RobotSelectedDelegate() {
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-      View rootView = inflater.inflate(R.layout.fragment_robots_selection, container, false);
-      TextView label = (TextView) rootView.findViewById(R.id.hello_works_text_view);
-      label.setText(String.format("Selected index %d", getArguments().getInt(ARG_SECTION_NUMBER)));
-      return rootView;
+    public void onSelected(Robot robot) {
+      robotControl.setActiveRobot(robot);
     }
-  }
+  };
 
 }
