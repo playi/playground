@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Playground</string>
+
+
+    <string name="title_select_robot">Select a Robot</string>
+    <string name="title_lights_control">Lights Control</string>
+    <string name="title_eyes_control">Eyes Control</string>
+    <string name="title_wheel_control">Wheel Control</string>
+    <string name="title_head_control">Head Control</string>
+    <string name="title_sound_control">Sound Control</string>
+    <string name="title_sensors">Sensors</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
