@@ -31,4 +31,12 @@ public interface ControlInterfaces {
     public void playWiggleAnimation();
     public void playNodAnimation();
   }
+
+  interface IHeadControl {
+    public void setHeadPosition(double tilt, double pan);
+  }
+
+  interface ISoundControl {
+    public void playHiSound(double volume);
+  }
 }

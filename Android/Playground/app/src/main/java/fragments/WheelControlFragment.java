@@ -57,14 +57,14 @@ public class WheelControlFragment extends BaseFragment {
   private View.OnClickListener onNodClickListener = new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-      wheelControl.playWiggleAnimation();
+      wheelControl.playNodAnimation();
     }
   };
 
   private View.OnClickListener onWigglyClickListener = new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-      wheelControl.playNodAnimation();
+      wheelControl.playWiggleAnimation();
     }
   };
 

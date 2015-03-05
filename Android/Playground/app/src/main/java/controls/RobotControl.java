@@ -8,6 +8,7 @@ import com.w2.api.engine.components.commands.EyeRing;
 import com.w2.api.engine.components.commands.HeadPosition;
 import com.w2.api.engine.components.commands.LightMono;
 import com.w2.api.engine.components.commands.LightRGB;
+import com.w2.api.engine.components.commands.Speaker;
 import com.w2.api.engine.operators.RobotCommandSet;
 import com.w2.api.engine.robots.Robot;
 
@@ -19,8 +20,6 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.util.Hashtable;
 
-import play_i.playground.R;
-
 /**
  * Created by ilitvinenko on 3/4/15.
  * DataArt
@@ -28,7 +27,9 @@ import play_i.playground.R;
 public class RobotControl implements ControlInterfaces.IRobotManagement,
                                      ControlInterfaces.ILightsControl,
                                      ControlInterfaces.IEyeControl,
-                                     ControlInterfaces.IWheelControl {
+                                     ControlInterfaces.IWheelControl,
+                                     ControlInterfaces.IHeadControl,
+ControlInterfaces.ISoundControl{
 
   private Robot activeRobot;
   private Hashtable<Integer, JSONObject> cachedAnimations = new Hashtable<>();
@@ -151,10 +152,10 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
   @Override
   public void playWiggleAnimation() {
     if (!isActiveRobotAvailable()) return;
-
-    RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    commandSet.fromJson(loadAnimationWithId(R.raw.wiggle));
-    activeRobot.sendCommandSet(commandSet);
+    //TODO: Update wiggly animation json
+//    RobotCommandSet commandSet = RobotCommandSet.emptySet();
+//    commandSet.fromJson(loadAnimationWithId(R.raw.wiggle));
+//    activeRobot.sendCommandSet(commandSet);
   }
 
   @Override
@@ -166,6 +167,25 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
     commandSet.addCommandHeadPositionTilt(new HeadPosition(7.5));
     commandSet.addCommandHeadPositionTilt(new HeadPosition(-20));
     commandSet.addCommandHeadPositionTilt(new HeadPosition(7.5));
+    activeRobot.sendCommandSet(commandSet);
+  }
+
+  @Override
+  public void setHeadPosition(double tilt, double pan) {
+    if (!isActiveRobotAvailable()) return;
+
+    RobotCommandSet commandSet = RobotCommandSet.emptySet();
+    commandSet.addCommandHeadPositionTiltAndPan(new HeadPosition(tilt), new HeadPosition(pan));
+    activeRobot.sendCommandSet(commandSet);
+  }
+
+  @Override
+  public void playHiSound(double volume) {
+    if (!isActiveRobotAvailable()) return;
+
+    RobotCommandSet commandSet = RobotCommandSet.emptySet();
+    //TODO: Add constant for Hi sound
+    commandSet.addCommandSound(new Speaker("WW_SOUNDFILE_HI", volume));
     activeRobot.sendCommandSet(commandSet);
   }
 }

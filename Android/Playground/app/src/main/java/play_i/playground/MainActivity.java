@@ -13,8 +13,10 @@ import com.w2.api.engine.robots.Robot;
 import controls.RobotControl;
 import fragments.BaseFragment;
 import fragments.EyesControlFragment;
+import fragments.HeadControlFragment;
 import fragments.LightsControlFragment;
 import fragments.SelectRobotFragment;
+import fragments.SoundControlFragment;
 import fragments.WheelControlFragment;
 
 
@@ -133,6 +135,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
         break;
       case INDEX_WHEEL_CONTROL:
         fragment = WheelControlFragment.newInstance(robotControl);
+        break;
+      case INDEX_HEAD_CONTROL:
+        fragment = HeadControlFragment.newInstance(robotControl);
+        break;
+      case INDEX_SOUND_CONTROL:
+        fragment = SoundControlFragment.newInstance(robotControl, robotControl);
         break;
       default:
         fragment = BaseFragment.newInstance();
