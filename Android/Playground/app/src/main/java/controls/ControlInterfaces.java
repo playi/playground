@@ -22,6 +22,13 @@ public interface ControlInterfaces {
   }
 
   interface IEyeControl {
+    public void setEyesLightAndBrightness(boolean[] states, double brightness);
+    public void startEyeBlinkAnimation();
+  }
 
+  interface IWheelControl {
+    public void setWheelAttributes(double linear, double angle);
+    public void playWiggleAnimation();
+    public void playNodAnimation();
   }
 }

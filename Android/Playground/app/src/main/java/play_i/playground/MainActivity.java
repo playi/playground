@@ -1,5 +1,6 @@
 package play_i.playground;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -14,6 +15,7 @@ import fragments.BaseFragment;
 import fragments.EyesControlFragment;
 import fragments.LightsControlFragment;
 import fragments.SelectRobotFragment;
+import fragments.WheelControlFragment;
 
 
 public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
@@ -33,11 +35,14 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
   private static final int INDEX_SENSORS = 6;
 
   private RobotControl robotControl = new RobotControl();
+  private BaseFragment activeFragment;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    robotControl.setHolder(this);
 
     // Set up the action bar to show a dropdown list.
     final ActionBar actionBar = getSupportActionBar();
@@ -103,6 +108,13 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
   }
 
   @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    if (activeFragment != null) {
+      activeFragment.onConfigurationChanged(newConfig);
+    }
+  }
+
+  @Override
   public boolean onNavigationItemSelected(int position, long id) {
     // When the given dropdown item is selected, show its contents in the
     // container view.
@@ -117,7 +129,10 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
         fragment = LightsControlFragment.newInstance(robotControl);
         break;
       case INDEX_EYES_CONTROL:
-        fragment = EyesControlFragment.newInstance();
+        fragment = EyesControlFragment.newInstance(robotControl);
+        break;
+      case INDEX_WHEEL_CONTROL:
+        fragment = WheelControlFragment.newInstance(robotControl);
         break;
       default:
         fragment = BaseFragment.newInstance();
@@ -128,6 +143,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
       .beginTransaction()
       .replace(R.id.container, fragment)
       .commitAllowingStateLoss();
+
+    activeFragment = fragment;
     return true;
   }
 

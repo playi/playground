@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <views.EyeControlSquareView
+        android:id="@+id/eyes_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <SeekBar
+            android:id="@+id/seek_bar_brightness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="80dp"
+            android:progress="50"
+            android:max="100"/>
+        </views.EyeControlSquareView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/button_start_eyes_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Start Eyes Show"/>
+
+        <Button
+            android:id="@+id/button_blink_animtion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Blink Animation"/>
+        </LinearLayout>
+</LinearLayout>
