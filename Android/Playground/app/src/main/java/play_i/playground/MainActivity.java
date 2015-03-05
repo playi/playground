@@ -159,6 +159,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
   private SelectRobotFragment.RobotSelectedDelegate robotSelectionFragmentDelegate = new SelectRobotFragment.RobotSelectedDelegate() {
     @Override
     public void onSelected(Robot robot) {
+      robot.connect(MainActivity.this);
       robotControl.setActiveRobot(robot);
     }
   };

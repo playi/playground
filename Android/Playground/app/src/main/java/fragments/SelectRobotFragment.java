@@ -3,6 +3,8 @@ package fragments;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +16,11 @@ import android.widget.TextView;
 
 import com.w2.api.engine.robots.Robot;
 import com.w2.api.engine.robots.RobotManager;
+import com.w2.api.engine.robots.RobotManagerFactory;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import play_i.playground.R;
 
@@ -42,15 +45,41 @@ public class SelectRobotFragment extends BaseFragment {
   private RobotSelectedDelegate delegate;
   private RobotManager robotManager;
 
-  public static SelectRobotFragment newInstance(){
-    return new SelectRobotFragment();
-  }
+  private Handler updateHandler = new Handler(Looper.getMainLooper());
 
   public static SelectRobotFragment newInstance(RobotSelectedDelegate delegate){
     //Not a good solution but to make it simple it's okay
     SelectRobotFragment result = new SelectRobotFragment();
     result.setDelegate(delegate);
     return result;
+  }
+
+  @Override
+  public void onResume() {
+    super.onStart();
+    robotManager.startPeriodicScan(1, TimeUnit.SECONDS);
+    startUpateingRobots();
+  }
+
+  @Override
+  public void onPause() {
+    robotManager.stopScan();
+    stopUpdatingRobots();
+    super.onStop();
+  }
+
+  private void startUpateingRobots(){
+    refreshRobotsList();
+    updateHandler.postDelayed(new Runnable() {
+      @Override
+      public void run() {
+        startUpateingRobots();
+      }
+    }, 1000);
+  }
+
+  private void stopUpdatingRobots(){
+    updateHandler.removeCallbacksAndMessages(null);
   }
 
   public void setDelegate(RobotSelectedDelegate delegate) {
@@ -70,7 +99,7 @@ public class SelectRobotFragment extends BaseFragment {
 
     rootView.findViewById(R.id.button_refresh).setOnClickListener(onRefreshButtonClickListener);
 
-//    robotManager = RobotManagerFactory.getRobotManager(getActivity());
+    robotManager = RobotManagerFactory.getRobotManager(getActivity());
 
     return rootView;
   }
@@ -82,7 +111,7 @@ public class SelectRobotFragment extends BaseFragment {
   }
 
   private List<IRobotListItem> getRobotItemsList(){
-    List<Robot> knownRobots = /*RobotManagerFactory.getRobotManager(getActivity()).getAllKnownRobots();*/ Collections.EMPTY_LIST;
+    List<Robot> knownRobots = RobotManagerFactory.getRobotManager(getActivity()).getAllKnownRobots();
     List<IRobotListItem> result = new ArrayList<>(knownRobots.size());
 
     for (final Robot robot : knownRobots){
@@ -118,7 +147,7 @@ public class SelectRobotFragment extends BaseFragment {
       if (selectedRobot != null){
         if (delegate != null) { delegate.onSelected(selectedRobot); }
       }
-      refreshRobotsList();
+      view.setBackgroundColor(Color.YELLOW);
     }
   };
 

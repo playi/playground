@@ -15,10 +15,17 @@ import com.w2.api.engine.robots.Robot;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.lang.ref.WeakReference;
 import java.util.Hashtable;
+
+import play_i.playground.R;
 
 /**
  * Created by ilitvinenko on 3/4/15.
@@ -70,11 +77,20 @@ ControlInterfaces.ISoundControl{
   private String loadJsonStringFromFile(Context context, int resourceId) throws IOException {
     if (context == null) { return "";  }
 
-    InputStream file = context.getResources().openRawResource(resourceId);
-    byte[] data = new byte[file.available()];
-    file.read(data);
-    file.close();
-    return new String(data);
+    InputStream is = context.getResources().openRawResource(resourceId);
+    Writer writer = new StringWriter();
+    char[] buffer = new char[1024];
+    try {
+      Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+      int n;
+      while ((n = reader.read(buffer)) != -1) {
+        writer.write(buffer, 0, n);
+      }
+    } finally {
+      is.close();
+    }
+
+    return writer.toString();
   }
 
   @Override
@@ -153,9 +169,9 @@ ControlInterfaces.ISoundControl{
   public void playWiggleAnimation() {
     if (!isActiveRobotAvailable()) return;
     //TODO: Update wiggly animation json
-//    RobotCommandSet commandSet = RobotCommandSet.emptySet();
-//    commandSet.fromJson(loadAnimationWithId(R.raw.wiggle));
-//    activeRobot.sendCommandSet(commandSet);
+    RobotCommandSet commandSet = RobotCommandSet.emptySet();
+    commandSet.fromJson(loadAnimationWithId(R.raw.wiggle));
+    activeRobot.sendCommandSet(commandSet);
   }
 
   @Override

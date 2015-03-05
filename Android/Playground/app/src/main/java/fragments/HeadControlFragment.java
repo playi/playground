@@ -27,11 +27,11 @@ public class HeadControlFragment extends BaseFragment {
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     View rootView = inflater.inflate(R.layout.fragment_head_control, container, false);
 
-    rootView.findViewById(R.id.button_head_top).setOnClickListener(createOnClickListener(0, -15));
-    rootView.findViewById(R.id.button_head_left).setOnClickListener(createOnClickListener(-90, 0));
+    rootView.findViewById(R.id.button_head_top).setOnClickListener(createOnClickListener(90, 0));
+    rootView.findViewById(R.id.button_head_left).setOnClickListener(createOnClickListener(0, -15));
     rootView.findViewById(R.id.button_head_middle).setOnClickListener(createOnClickListener(0, 0));
-    rootView.findViewById(R.id.button_head_right).setOnClickListener(createOnClickListener(90, 0));
-    rootView.findViewById(R.id.button_head_top).setOnClickListener(createOnClickListener(0, 10));
+    rootView.findViewById(R.id.button_head_right).setOnClickListener(createOnClickListener(0, 15));
+    rootView.findViewById(R.id.button_head_bottom).setOnClickListener(createOnClickListener(-90, 0));
 
     return rootView;
   }
