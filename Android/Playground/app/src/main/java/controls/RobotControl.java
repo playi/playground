@@ -200,8 +200,7 @@ ControlInterfaces.ISoundControl{
     if (!isActiveRobotAvailable()) return;
 
     RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    //TODO: Add constant for Hi sound
-    commandSet.addCommandSound(new Speaker("WW_SOUNDFILE_HI", volume));
+    commandSet.addCommandSound(new Speaker(Speaker.SOUNDFILE_HI, volume));
     activeRobot.sendCommandSet(commandSet);
   }
 }
