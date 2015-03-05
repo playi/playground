@@ -9,6 +9,7 @@ import com.w2.api.engine.components.commands.HeadPosition;
 import com.w2.api.engine.components.commands.LightMono;
 import com.w2.api.engine.components.commands.LightRGB;
 import com.w2.api.engine.components.commands.Speaker;
+import com.w2.api.engine.operators.CommandSetSequence;
 import com.w2.api.engine.operators.RobotCommandSet;
 import com.w2.api.engine.robots.Robot;
 
@@ -168,10 +169,9 @@ ControlInterfaces.ISoundControl{
   @Override
   public void playWiggleAnimation() {
     if (!isActiveRobotAvailable()) return;
-    //TODO: Update wiggly animation json
-    RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    commandSet.fromJson(loadAnimationWithId(R.raw.wiggle));
-    activeRobot.sendCommandSet(commandSet);
+    CommandSetSequence commandSetSequence = new CommandSetSequence();
+    commandSetSequence.fromJson(loadAnimationWithId(R.raw.wiggle));
+    activeRobot.startCommandSetSequence(commandSetSequence);
   }
 
   @Override

@@ -35,6 +35,15 @@
           "right_cm_s": -20
         }
       }
+    },
+    {
+          "duration": 0.5,
+          "commands": {
+            "211": {
+              "left_cm_s": 0,
+              "right_cm_s": 0
+            }
+          }
     }
   ]
 }
