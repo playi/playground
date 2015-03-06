@@ -211,7 +211,7 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
     if (!isActiveRobotAvailable()) return;
 
     RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    commandSet.addCommandSound(new Speaker("DASH_HI_VO", volume));
+    commandSet.addCommandSound(new Speaker(Speaker.SOUNDFILE_HI, volume));
     activeRobot.sendCommandSet(commandSet);
   }
 
