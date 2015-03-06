@@ -17,3 +17,5 @@ DerivedData
 .idea/
 *.hmap
 *.xccheckout
+Android/**/*.iml
+
