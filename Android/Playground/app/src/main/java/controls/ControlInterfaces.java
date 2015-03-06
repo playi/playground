@@ -2,6 +2,8 @@ package controls;
 
 import com.w2.api.engine.robots.Robot;
 
+import java.util.HashMap;
+
 /**
  * Created by ilitvinenko on 3/4/15.
  * DataArt
@@ -38,5 +40,9 @@ public interface ControlInterfaces {
 
   interface ISoundControl {
     public void playHiSound(double volume);
+  }
+
+  interface ISensorsDataSource {
+    public HashMap<String, String> getRobotSensorsData();
   }
 }

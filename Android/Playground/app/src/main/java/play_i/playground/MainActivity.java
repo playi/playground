@@ -16,6 +16,7 @@ import fragments.EyesControlFragment;
 import fragments.HeadControlFragment;
 import fragments.LightsControlFragment;
 import fragments.SelectRobotFragment;
+import fragments.SensorsFragment;
 import fragments.SoundControlFragment;
 import fragments.WheelControlFragment;
 
@@ -141,6 +142,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
         break;
       case INDEX_SOUND_CONTROL:
         fragment = SoundControlFragment.newInstance(robotControl, robotControl);
+        break;
+      case INDEX_SENSORS:
+        fragment = SensorsFragment.newInstance(robotControl);
         break;
       default:
         fragment = BaseFragment.newInstance();

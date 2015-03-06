@@ -44,6 +44,7 @@ public class SelectRobotFragment extends BaseFragment {
   private ListView listView;
   private RobotSelectedDelegate delegate;
   private RobotManager robotManager;
+  private Robot connectingRobot;
 
   private Handler updateHandler = new Handler(Looper.getMainLooper());
 
@@ -124,7 +125,19 @@ public class SelectRobotFragment extends BaseFragment {
     return new IRobotListItem() {
       @Override
       public String getState() {
-        return robot.isConnected() ? "Connected" : "Idle";
+        String state = "";
+
+        if (robot.isConnected()){
+          state = "Connected";
+          connectingRobot = null;
+        } else {
+          if (connectingRobot != null && connectingRobot.isSameRobot(robot)){
+            state = "Connecting";
+          } else {
+            state = "Idle";
+          }
+        }
+        return state;
       }
 
       @Override
@@ -147,6 +160,8 @@ public class SelectRobotFragment extends BaseFragment {
       if (selectedRobot != null){
         if (delegate != null) { delegate.onSelected(selectedRobot); }
       }
+      connectingRobot = selectedRobot;
+
       view.setBackgroundColor(Color.YELLOW);
     }
   };
@@ -193,7 +208,14 @@ public class SelectRobotFragment extends BaseFragment {
       holder.statusTextLabel.setText(item.getState());
       holder.nameTextLabel.setText(item.getName());
 
-      int backgroundColor = item.getState() == "Connected" ? Color.WHITE : Color.GREEN;
+      int backgroundColor = Color.WHITE;
+
+      if (item.getState() == "Connecting"){
+        backgroundColor = Color.YELLOW;
+      } else if (item.getState() == "Connected"){
+        backgroundColor = Color.GREEN;
+      }
+
       convertView.setBackgroundColor(backgroundColor);
 
       return convertView;
