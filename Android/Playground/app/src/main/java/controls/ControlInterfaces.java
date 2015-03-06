@@ -2,7 +2,9 @@ package controls;
 
 import com.w2.api.engine.robots.Robot;
 
-import java.util.HashMap;
+import org.apache.http.NameValuePair;
+
+import java.util.List;
 
 /**
  * Created by ilitvinenko on 3/4/15.
@@ -43,6 +45,6 @@ public interface ControlInterfaces {
   }
 
   interface ISensorsDataSource {
-    public HashMap<String, String> getRobotSensorsData();
+    public List<NameValuePair> getRobotSensorsData();
   }
 }

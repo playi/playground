@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.apache.http.NameValuePair;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import controls.ControlInterfaces;
 import play_i.playground.R;
@@ -74,12 +74,12 @@ public class SensorsFragment extends BaseFragment {
   }
 
   private void updateSensorsData(){
-    HashMap<String, String> sensorsData = dataSource.getRobotSensorsData();
+    List<NameValuePair> sensorsData = dataSource.getRobotSensorsData();
 
-    List<String> parameters = new ArrayList<>(sensorsData.entrySet().size());
+    List<String> parameters = new ArrayList<>(sensorsData.size());
 
-    for (Map.Entry entry : sensorsData.entrySet()){
-      parameters.add(String.format("%s: %s", entry.getKey(), entry.getValue()));
+    for (NameValuePair pair : sensorsData){
+      parameters.add(String.format("%s: %s", pair.getName(), pair.getValue()));
     }
 
     listArrayAdapter.clear();

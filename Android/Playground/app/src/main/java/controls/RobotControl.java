@@ -22,6 +22,8 @@ import com.w2.api.engine.operators.RobotCommandSet;
 import com.w2.api.engine.operators.RobotSensorHistory;
 import com.w2.api.engine.robots.Robot;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,8 +35,10 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.ref.WeakReference;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Hashtable;
+import java.util.List;
 
 import play_i.playground.R;
 
@@ -216,49 +220,48 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
   }
 
   @Override
-  public HashMap<String, String> getRobotSensorsData() {
-    if (!isActiveRobotAvailable()) return new HashMap<>();
+  public List<NameValuePair> getRobotSensorsData() {
+    if (!isActiveRobotAvailable()) return Collections.EMPTY_LIST;
 
-    HashMap<String, String> result = new HashMap<>();
+    List<NameValuePair> result = new ArrayList<>();
 
     RobotSensorHistory sensorHistory = activeRobot.getHistory();
 
-    result.put("Name", activeRobot.getName());
+    result.add(new BasicNameValuePair("Name", activeRobot.getName()));
 
     Button mainButton = (Button) sensorHistory.getCurrentState().getSensor(RobotSensorId.BUTTON_MAIN);
     Button button1 = (Button) sensorHistory.getCurrentState().getSensor(RobotSensorId.BUTTON_1);
     Button button2 = (Button) sensorHistory.getCurrentState().getSensor(RobotSensorId.BUTTON_2);
     Button button3 = (Button) sensorHistory.getCurrentState().getSensor(RobotSensorId.BUTTON_3);
 
-    result.put("Button Main", String.valueOf(mainButton.isPressed()));
-    result.put("Button 1", String.valueOf(button1.isPressed()));
-    result.put("Button 2", String.valueOf(button2.isPressed()));
-    result.put("Button 3", String.valueOf(button3.isPressed()));
+    result.add(new BasicNameValuePair("Button Main", String.valueOf(mainButton.isPressed())));
+    result.add(new BasicNameValuePair("Button 1", String.valueOf(button1.isPressed())));
+    result.add(new BasicNameValuePair("Button 2", String.valueOf(button2.isPressed())));
+    result.add(new BasicNameValuePair("Button 3", String.valueOf(button3.isPressed())));
 
     Accelerometer accelerometer = (Accelerometer) sensorHistory.getCurrentState().getSensor(RobotSensorId.ACCELEROMETER);
-    result.put("Accelerometer", String.format("X: %3.2f, Y: %3.2f, Z: %3.2f", accelerometer.getX(), accelerometer.getY(), accelerometer.getZ()));
+    result.add(new BasicNameValuePair("Accelerometer", String.format("X: %3.2f, Y: %3.2f, Z: %3.2f", accelerometer.getX(), accelerometer.getY(), accelerometer.getZ())));
 
     Microphone microphone = (Microphone) sensorHistory.getCurrentState().getSensor(RobotSensorId.MICROPHONE);
-    result.put("Microphone", String.format("Amplitude: %03f, Angle %3.2f degrees", microphone.getAmplitude(), Math.toDegrees(microphone.getTriangulationAngle())));
+    result.add(new BasicNameValuePair("Microphone", String.format("Amplitude: %03f, Angle %3.2f degrees", microphone.getAmplitude(), Math.toDegrees(microphone.getTriangulationAngle()))));
 
     if (activeRobot.getRobotType() == RobotType.DASH){
       Distance distanceFlf = (Distance) sensorHistory.getCurrentState().getSensor(RobotSensorId.DISTANCE_FRONT_LEFT_FACING);
       Distance distanceFrf = (Distance) sensorHistory.getCurrentState().getSensor(RobotSensorId.DISTANCE_FRONT_RIGHT_FACING);
       Distance distanceRrf = (Distance) sensorHistory.getCurrentState().getSensor(RobotSensorId.DISTANCE_BACK);
 
-      result.put("Distance", String.format("Left-Facing: %2.2f, Dist Right-Facing: %2.2f, Dist Tail: %2.2f", distanceFlf.getReflectance(), distanceFrf.getReflectance(), distanceRrf.getReflectance()));
+      result.add(new BasicNameValuePair("Distance", String.format("Left-Facing: %2.2f, Dist Right-Facing: %2.2f, Dist Tail: %2.2f", distanceFlf.getReflectance(), distanceFrf.getReflectance(), distanceRrf.getReflectance())));
 
       Gyroscope gyroscope = (Gyroscope) sensorHistory.getCurrentState().getSensor(RobotSensorId.GYROSCOPE);
-      result.put("Gyroscope", String.format("yaw: %3.2f, pitch: %3.2f, roll: %3.2f", gyroscope.getX(), gyroscope.getY(), gyroscope.getZ()));
+      result.add(new BasicNameValuePair("Gyroscope", String.format("yaw: %3.2f, pitch: %3.2f, roll: %3.2f", gyroscope.getX(), gyroscope.getY(), gyroscope.getZ())));
 
       com.w2.api.engine.components.sensors.HeadPosition headPositionPan = (com.w2.api.engine.components.sensors.HeadPosition) sensorHistory.getCurrentState().getSensor(RobotSensorId.HEAD_POSITION_PAN);
       com.w2.api.engine.components.sensors.HeadPosition headPositionTilt = (com.w2.api.engine.components.sensors.HeadPosition) sensorHistory.getCurrentState().getSensor(RobotSensorId.HEAD_POSITION_TILT);
-      result.put("Head", String.format("Pan: %3.2f degrees, Tilt: %3.2f degrees", Math.toDegrees(headPositionPan.getAngle()), Math.toDegrees(headPositionTilt.getAngle())));
+      result.add(new BasicNameValuePair("Head", String.format("Pan: %3.2f degrees, Tilt: %3.2f degrees", Math.toDegrees(headPositionPan.getAngle()), Math.toDegrees(headPositionTilt.getAngle()))));
 
       Encoder encoderLw = (Encoder) sensorHistory.getCurrentState().getSensor(RobotSensorId.ENCODER_LEFT_WHEEL);
       Encoder encoderRw = (Encoder) sensorHistory.getCurrentState().getSensor(RobotSensorId.ENCODER_RIGHT_WHEEL);
-      result.put("Encoder", String.format("Left: %4.2f cm, Right: %4.2f cm", encoderLw.getDistance(), encoderRw.getDistance()));
-
+      result.add(new BasicNameValuePair("Encoder", String.format("Left: %4.2f cm, Right: %4.2f cm", encoderLw.getDistance(), encoderRw.getDistance())));
     }
 
     return result;
