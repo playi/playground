@@ -8,7 +8,6 @@ import com.w2.api.engine.components.commands.EyeRing;
 import com.w2.api.engine.components.commands.HeadPosition;
 import com.w2.api.engine.components.commands.LightMono;
 import com.w2.api.engine.components.commands.LightRGB;
-import com.w2.api.engine.components.commands.Speaker;
 import com.w2.api.engine.operators.CommandSetSequence;
 import com.w2.api.engine.operators.RobotCommandSet;
 import com.w2.api.engine.robots.Robot;
@@ -200,7 +199,8 @@ ControlInterfaces.ISoundControl{
     if (!isActiveRobotAvailable()) return;
 
     RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    commandSet.addCommandSound(new Speaker(Speaker.SOUNDFILE_HI, volume));
+    //TODO: Uncomment on new api
+    //commandSet.addCommandSound(new Speaker(Speaker.SOUNDFILE_HI, volume));
     activeRobot.sendCommandSet(commandSet);
   }
 }

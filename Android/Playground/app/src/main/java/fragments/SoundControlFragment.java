@@ -7,9 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SeekBar;
 
+import com.w2.api.engine.components.sensors.Button;
+import com.w2.api.engine.components.sensors.HeadPosition;
+import com.w2.api.engine.constants.RobotSensorId;
+import com.w2.api.engine.events.EventBusFactory;
 import com.w2.api.engine.events.gesture.GestureAlertHandler;
 import com.w2.api.engine.events.gesture.GestureEvent;
 import com.w2.api.engine.operators.RobotSensorHistory;
+
+import java.util.HashMap;
 
 import controls.ControlInterfaces;
 import play_i.playground.R;
@@ -20,11 +26,18 @@ import play_i.playground.R;
  */
 public class SoundControlFragment extends BaseFragment {
 
+  private static final String ARG_HEAD_POSITION_SENSOR = "head_position";
+  private static final String ARG_BUTTON_STATE_SENSOR = "button_sensor";
+
+  private static final double PARAMETER_PAN_MIN_VALUE = -2.0;
+  private static final double PARAMETER_PAN_MAX_VALUE = 2.0;
+
   private ControlInterfaces.ISoundControl soundControl;
   private ControlInterfaces.IRobotManagement robotManagement;
   private SeekBar volumeSeekBar;
 
   private GestureEvent headPositionEvent;
+  private GestureEvent mainButtonChangedEvent;
 
   public static SoundControlFragment newInstance(ControlInterfaces.ISoundControl control, ControlInterfaces.IRobotManagement management) {
     SoundControlFragment result = new SoundControlFragment();
@@ -58,13 +71,32 @@ public class SoundControlFragment extends BaseFragment {
   private void setupListeningEvents(){
     if (robotManagement.getActiveRobot() != null){
       headPositionEvent = new GestureEvent("head", robotManagement.getActiveRobot(), headPanPositionGestureHandler);
+      mainButtonChangedEvent = new GestureEvent("main_button", robotManagement.getActiveRobot(), mainButtonGestureAlert);
+
       robotManagement.getActiveRobot().subscribeEvent(headPositionEvent);
+      robotManagement.getActiveRobot().subscribeEvent(mainButtonChangedEvent);
     }
+    EventBusFactory.getRobotEventBus(robotManagement.getActiveRobot().getRobotId()).register(this);
   }
 
   private void removeEventListener(){
     if (robotManagement.getActiveRobot() != null){
       robotManagement.getActiveRobot().unsubscribeEvent(headPositionEvent);
+      robotManagement.getActiveRobot().unsubscribeEvent(mainButtonChangedEvent);
+    }
+    EventBusFactory.getRobotEventBus(robotManagement.getActiveRobot().getRobotId()).unregister(this);
+  }
+
+  public void onEvent(GestureEvent event){
+    if (event.getIdentifier().equals(headPositionEvent.getIdentifier())){
+      HeadPosition panPosition = (HeadPosition) event.getInformation().get(ARG_HEAD_POSITION_SENSOR);
+      if (panPosition != null) {
+        double normalizedAngle = (panPosition.getAngle() - PARAMETER_PAN_MIN_VALUE) / (PARAMETER_PAN_MAX_VALUE - PARAMETER_PAN_MIN_VALUE);
+        volumeSeekBar.setProgress((int) (volumeSeekBar.getMax() * normalizedAngle));
+      }
+    } else if (event.getIdentifier().equals(mainButtonChangedEvent.getIdentifier())){
+      int progress = volumeSeekBar.getProgress() == volumeSeekBar.getMax() ? 0 : volumeSeekBar.getMax();
+      volumeSeekBar.setProgress(progress);
     }
   }
 
@@ -80,23 +112,34 @@ public class SoundControlFragment extends BaseFragment {
   private GestureAlertHandler headPanPositionGestureHandler = new GestureAlertHandler() {
     @Override
     public boolean shouldAlert(GestureEvent gestureEvent, RobotSensorHistory robotSensorHistory) {
-      //TODO: It's not clear how should it works
-      return true;
+      HeadPosition currentPanPosition = (HeadPosition) robotSensorHistory.getCurrentState().getSensor(RobotSensorId.HEAD_POSITION_PAN);
+      HeadPosition previousPanPosition = (HeadPosition) robotSensorHistory.getPreviousState().getSensor(RobotSensorId.HEAD_POSITION_PAN);
+      boolean shouldTrigger = Math.abs(currentPanPosition.getAngle() - previousPanPosition.getAngle()) > 0.05;
+
+      if (shouldTrigger){
+        HashMap<String, Object> parameters = new HashMap<>();
+        parameters.put(ARG_HEAD_POSITION_SENSOR, currentPanPosition);
+        gestureEvent.setInformation(parameters);
+      }
+
+      return shouldTrigger;
     }
   };
 
-  private GestureAlertHandler onMainButtonTouchedGestureHandler = new GestureAlertHandler() {
+  private GestureAlertHandler mainButtonGestureAlert = new GestureAlertHandler() {
     @Override
     public boolean shouldAlert(GestureEvent gestureEvent, RobotSensorHistory robotSensorHistory) {
-      int progress = volumeSeekBar.getProgress();
-      if (progress == 0){
-        progress = volumeSeekBar.getMax();
-      } else {
-        progress = 0;
+      Button mainButtonCurrent = (Button) robotSensorHistory.getCurrentState().getSensor(RobotSensorId.BUTTON_MAIN);
+      Button mainButtonPrev = (Button) robotSensorHistory.getPreviousState().getSensor(RobotSensorId.BUTTON_MAIN);
+      boolean shouldTrigger = (mainButtonCurrent.isPressed() != mainButtonPrev.isPressed()) && mainButtonCurrent.isPressed() == false ;
+
+      if (shouldTrigger){
+        HashMap<String, Object> parameters = new HashMap<>();
+        parameters.put(ARG_BUTTON_STATE_SENSOR, mainButtonCurrent);
+        gestureEvent.setInformation(parameters);
       }
-      volumeSeekBar.setProgress(progress);
-      //TODO: Or false??
-      return true;
+
+      return shouldTrigger;
     }
   };
 }
