@@ -8,6 +8,7 @@ import com.w2.api.engine.components.commands.EyeRing;
 import com.w2.api.engine.components.commands.HeadPosition;
 import com.w2.api.engine.components.commands.LightMono;
 import com.w2.api.engine.components.commands.LightRGB;
+import com.w2.api.engine.components.commands.Speaker;
 import com.w2.api.engine.components.sensors.Accelerometer;
 import com.w2.api.engine.components.sensors.Button;
 import com.w2.api.engine.components.sensors.Distance;
@@ -210,8 +211,7 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
     if (!isActiveRobotAvailable()) return;
 
     RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    //TODO: Uncomment on new api
-    //commandSet.addCommandSound(new Speaker(Speaker.SOUNDFILE_HI, volume));
+    commandSet.addCommandSound(new Speaker("DASH_HI_VO", volume));
     activeRobot.sendCommandSet(commandSet);
   }
 
