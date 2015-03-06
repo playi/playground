@@ -114,6 +114,9 @@ public class SoundControlFragment extends BaseFragment {
     public boolean shouldAlert(GestureEvent gestureEvent, RobotSensorHistory robotSensorHistory) {
       HeadPosition currentPanPosition = (HeadPosition) robotSensorHistory.getCurrentState().getSensor(RobotSensorId.HEAD_POSITION_PAN);
       HeadPosition previousPanPosition = (HeadPosition) robotSensorHistory.getPreviousState().getSensor(RobotSensorId.HEAD_POSITION_PAN);
+
+      if (currentPanPosition == null || previousPanPosition == null) return false;
+
       boolean shouldTrigger = Math.abs(currentPanPosition.getAngle() - previousPanPosition.getAngle()) > 0.05;
 
       if (shouldTrigger){

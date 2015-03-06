@@ -110,9 +110,15 @@ public class JoystickView extends SquareFrameLayout {
 
   private double[] calculateValues(int xOffset, int yOffset){
     double linearMaxSpeed = MAXIMUM_SPEED;
-    double speed = -linearMaxSpeed * yOffset / (getCircleRadius() - control.getWidth());
+    int controlSize = getResources().getDimensionPixelSize(R.dimen.stick_control_size);
 
-    double angle = -(MAX_ANGULAR_SPEED * xOffset) / (getCircleRadius() - control.getWidth());
+    double yOffsetNormalized = (double)yOffset / (double)(getCircleRadius() - controlSize / 2);
+    double xOffsetNormalized = (double)xOffset / (double)(getCircleRadius() - controlSize / 2);
+
+    double speed = -linearMaxSpeed * yOffsetNormalized;
+
+    double angle = -MAX_ANGULAR_SPEED * xOffsetNormalized;
+
     return new double[]{speed, angle};
   }
 

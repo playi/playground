@@ -3,7 +3,7 @@ package controls;
 import android.app.Activity;
 import android.content.Context;
 
-import com.w2.api.engine.components.commands.BodyWheels;
+import com.w2.api.engine.components.commands.BodyLinearAngular;
 import com.w2.api.engine.components.commands.EyeRing;
 import com.w2.api.engine.components.commands.HeadPosition;
 import com.w2.api.engine.components.commands.LightMono;
@@ -177,7 +177,7 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
     if (!isActiveRobotAvailable()) return;
 
     RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    commandSet.addCommandBodyWheels(new BodyWheels(linear, angle));
+    commandSet.addCommandBodyLinearAngular(new BodyLinearAngular(linear, angle));
     activeRobot.sendCommandSet(commandSet);
   }
 
