@@ -24,7 +24,7 @@ import play_i.playground.R;
  */
 public class SensorsFragment extends BaseFragment {
 
-  private static final int PARAMETER_UPDATE_INTERVAL = 1000; //1sec
+  private static final int PARAMETER_UPDATE_INTERVAL = 250; //250ms
 
   private ControlInterfaces.ISensorsDataSource dataSource;
   private ArrayAdapter<String> listArrayAdapter;
