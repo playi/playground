@@ -18,6 +18,7 @@ import com.w2.api.engine.operators.RobotSensorHistory;
 import java.util.HashMap;
 
 import controls.ControlInterfaces;
+import de.greenrobot.event.EventBus;
 import play_i.playground.R;
 
 /**
@@ -76,7 +77,10 @@ public class SoundControlFragment extends BaseFragment {
       robotManagement.getActiveRobot().subscribeEvent(headPositionEvent);
       robotManagement.getActiveRobot().subscribeEvent(mainButtonChangedEvent);
     }
-    EventBusFactory.getRobotEventBus(robotManagement.getActiveRobot().getRobotId()).register(this);
+    EventBus robotBus = EventBusFactory.getRobotEventBus(robotManagement.getActiveRobot().getRobotId());
+    if (robotBus != null) {
+      robotBus.register(this);
+    }
   }
 
   private void removeEventListener(){
@@ -84,7 +88,10 @@ public class SoundControlFragment extends BaseFragment {
       robotManagement.getActiveRobot().unsubscribeEvent(headPositionEvent);
       robotManagement.getActiveRobot().unsubscribeEvent(mainButtonChangedEvent);
     }
-    EventBusFactory.getRobotEventBus(robotManagement.getActiveRobot().getRobotId()).unregister(this);
+    EventBus robotBus = EventBusFactory.getRobotEventBus(robotManagement.getActiveRobot().getRobotId());
+    if (robotBus != null) {
+      robotBus.unregister(this);
+    }
   }
 
   public void onEvent(GestureEvent event){
