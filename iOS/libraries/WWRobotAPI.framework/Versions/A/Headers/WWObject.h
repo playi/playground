@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Wonder Workshop inc. (https://www.makewonder.com/) All rights reserved.
 //
 
+#ifndef _WWOBJECT_H_
+#define _WWOBJECT_H_
+
+#import <Foundation/Foundation.h>
+
 /**
  *  Parent class to all API objects, similar to NSObject for iOS.
  */
@@ -19,3 +24,5 @@
 - (void) setup;
 
 @end
+
+#endif // _WWOBJECT_H_

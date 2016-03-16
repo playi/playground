@@ -26,4 +26,9 @@
  */
 @property (nonatomic, readonly) double radians;
 
+/**
+ *  Returns the angle of the current head position (in degrees).
+ */
+@property (nonatomic, readonly) double degrees;
+
 @end

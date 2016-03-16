@@ -40,8 +40,8 @@
     // setup robot manager
     self.manager = [WWRobotManager manager];
     NSAssert(self.manager, @"unable to instantiate robot manager");
-    self.manager.delegate = self;
-    [self.manager startScanningForRobots:2.0f];
+  [self.manager addManagerObserver:self];
+  [self.manager startScanningForRobots:2.0f];
     
     self.tableView.rowHeight = 130;
     UIColor *start = [UIColor colorWithRed:58/255.0 green:108/255.0 blue:183/255.0 alpha:0.15];

@@ -19,7 +19,7 @@ typedef enum {
 } WWRobotConnectionState;
 
 @class WWRobotManager, WWCommandSetSequence, WWCommandSet, WWSensorSet, WWCommandSetSequenceExecution, WWComponentSet, WWSensorHistory;
-@protocol WWRobotDelegate;
+@protocol WWRobotObserver;
 
 
 /**
@@ -30,11 +30,6 @@ typedef enum {
  *  (via `WWSensorSet`) to control robots as desired.
  */
 @interface WWRobot : WWEventDataSource
-
-/**
- *  The delegate object to interact with the robot.
- */
-@property (nonatomic, weak) id<WWRobotDelegate> delegate;
 
 /**
  *  Returns the human-readable name of the robot (read-only).
@@ -72,15 +67,27 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSString *serialNumber;
 
 /**
+ *  Returns the hardware revision of this robot (read-only).
+ */
+@property (nonatomic, readonly) uint8_t hardwareRevision;
+
+/**
  *  Returns the firmware version that is currently running on this robot (read-only).
  */
 @property (nonatomic, strong, readonly) NSString *firmwareVersion;
+
+/**
+ *  Returns the resource version that is currently on this robot (read-only).
+ */
+@property (nonatomic, strong, readonly) NSNumber *resourceVersion;
 
 /**
  *  Returns the signal strength of this robot (read-only).
  */
 @property (nonatomic, strong, readonly) NSNumber *signalStrength;
 
+- (void) addRobotObserver:(id<WWRobotObserver>)observer;
+- (void) removeRobotObserver:(id<WWRobotObserver>)observer;
 
 /**---------------------------------------------------------------------------------------
  *  @name Querying robot
@@ -216,11 +223,11 @@ typedef enum {
 
 
 /**
- *  The `WWRobotDelegate` protocol defines the methods that a delegate of a `WWRobot`
- *  object must adopt.  The optional methods of the protocol allows the delegate to respond
+ *  The `WWRobotObserver` protocol defines the methods that an observer of a `WWRobot`
+ *  object must adopt.  The optional methods of the protocol allows the observer to react
  *  to the current state of the physical robot.
  */
-@protocol WWRobotDelegate <NSObject>
+@protocol WWRobotObserver <NSObject>
 
 @optional
 /**
@@ -240,7 +247,7 @@ typedef enum {
 - (void) robot:(WWRobot *)robot didReceiveRobotState:(WWSensorSet *)state;
 
 /**
- *  Invoked when a robot stopped execution of a `WWCommandSetSequence`.  This callback is usually trigger when caller stops
+ *  Invoked when a robot stopped execution of a `WWCommandSetSequence`.  This callback is usually triggered when caller stops
  *  the execution with `stopCommandSequence:` method call.  
  *  
  *  The execution result will be returned, which can be passed in when invoking the `executeCommandSequence:withOptions:` method to

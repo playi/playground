@@ -8,6 +8,8 @@
 
 // default eye animations
 FOUNDATION_EXPORT NSString *const WW_EYEANIM_FULL_BLINK;
+FOUNDATION_EXPORT NSString *const WW_EYEANIM_SWIRL;
+FOUNDATION_EXPORT NSString *const WW_EYEANIM_WINK;
 
 // defualt robot sounds"
 FOUNDATION_EXPORT NSString *const WW_SOUNDFILE_GIGGLE;
