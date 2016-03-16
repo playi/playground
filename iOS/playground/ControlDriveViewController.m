@@ -135,22 +135,20 @@
 
 #pragma mark pose slider methods
 - (IBAction)didChangePoseDistanceValue:(id)sender {
-  self.poseLabel.text = [NSString stringWithFormat:@"%f", ((UISlider*)sender).value];
+  self.poseLabel.text = [NSString stringWithFormat:@"%d", (int)((UISlider*)sender).value];
 }
 
 - (IBAction)MoveDashByFixedDistance:(id)sender {
   
   WWCommandSet *cmdToSend = [WWCommandSet new];
   
-  float distance = self.poseLabel.text.floatValue;
+  int distance =  self.poseLabel.text.intValue;
   
   
-  WWCommandBodyPose *bodyPose = [[WWCommandBodyPose alloc] initWithGlobalX:distance Y:0 Radians:0 Time:2.0f];
+  WWCommandBodyPose *bodyPose = [[WWCommandBodyPose alloc] initWithRelativeMeasuredX:distance Y:0.0f Radians:0.0f Time:2.0f];
  
   [cmdToSend setBodyPose:bodyPose];
-  for (WWRobot *robot in self.connectedRobots) {
-    [robot executeCommandSequence:cmdToSend withOptions:nil];
-  }
+  [self sendCommandSetToRobots:cmdToSend];
   
 }
 

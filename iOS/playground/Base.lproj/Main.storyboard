@@ -346,7 +346,6 @@
                                 </state>
                                 <connections>
                                     <action selector="MoveDashByFixedDistance:" destination="j8l-l0-vIs" eventType="touchUpInside" id="dYV-DC-AdW"/>
-                                    <action selector="executeNod:" destination="j8l-l0-vIs" eventType="touchUpInside" id="d7e-fA-ZsT"/>
                                 </connections>
                             </button>
                         </subviews>
