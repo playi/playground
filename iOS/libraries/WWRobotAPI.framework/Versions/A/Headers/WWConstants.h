@@ -153,6 +153,27 @@ typedef unsigned int WWBeaconDataType;
 #define WW_COMMAND_VALUE_COLOR_BLUE                       __wwstr__"b"
 #define WW_COMMAND_VALUE_ORDER_INDEX                      __wwstr__"index"
 
+
+typedef enum {
+  WW_POSE_MODE_GLOBAL = 0,
+  WW_POSE_MODE_RELATIVE_COMMAND,
+  WW_POSE_MODE_RELATIVE_MEASURED,
+  WW_POSE_MODE_SET_GLOBAL,
+  WW_POSE_MODE_SET_TEMP_GLOBAL,
+  WW_POSE_MODE_TEMP_GLOBAL
+} WWPoseMode;
+
+typedef enum {
+  WW_POSE_DIRECTION_FORWARD = 0,
+  WW_POSE_DIRECTION_BACKWARD,
+  WW_POSE_DIRECTION_INFERRED,
+} WWPoseDirection;
+
+typedef enum {
+  WW_POSE_WRAP_OFF = 0,
+  WW_POSE_WRAP_ON,
+} WWPoseWrap;
+
 #undef wwstr
 
 #endif

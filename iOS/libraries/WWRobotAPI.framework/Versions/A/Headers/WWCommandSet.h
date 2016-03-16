@@ -10,7 +10,7 @@
 #import "WWConstants.h"
 #import "WWComponentSet.h"
 
-@class WWCommand, WWCommandHeadPosition, WWCommandLightRGB, WWCommandEyeRing, WWCommandLightMono, WWCommandSpeaker, WWCommandHeadBang, WWCommandBodyLinearAngular, WWCommandBodyWheels, WWCommandLauncherFling, WWCommandLauncherReload;
+@class WWCommand, WWCommandHeadPosition, WWCommandLightRGB, WWCommandEyeRing, WWCommandLightMono, WWCommandSpeaker, WWCommandHeadBang, WWCommandBodyLinearAngular, WWCommandBodyWheels, WWCommandLauncherFling, WWCommandLauncherReload, WWCommandBodyPose;
 
 /**
  *  `WWCommandSet` is a subclass of `WWComponentSet` with strict type-checking and convenience
@@ -92,6 +92,14 @@
  *  @param mainButton The `WWCommandLightMono` object that specifies the mainButton brightness.
  */
 - (void) setMainButtonLight:(WWCommandLightMono *)mainButton;
+
+
+
+/**
+ TODO: add description for this method
+ */
+- (void) setBodyPose:(WWCommandBodyPose *)bodyPose;
+
 
 /**
  *  Inserts a given `WWCommandLightMono` object to the set, overwriting an existing mapping if it exists.
