@@ -10,7 +10,7 @@
 
 @class RobotControlPanelViewController;
 
-@interface RobotListViewController : UITableViewController<WWRobotManagerDelegate>
+@interface RobotListViewController : UITableViewController<WWRobotManagerObserver>
 
 @property (strong, nonatomic) RobotControlPanelViewController *controlPanelViewController;
 @property (nonatomic, strong) WWRobotManager *manager;

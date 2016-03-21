@@ -39,6 +39,24 @@
  */
 @property (nonatomic) double angularVelocity;
 
+/**
+ *  Specify the linear acceleration magnitude (in cm/s^2) for this command.
+ *  The magnitude must be positive. If it's set to negative, it will be flipped.
+ */
+@property (nonatomic) double linearAccelerationMagnitude;
+
+/**
+ *  Specify the angular acceleration magnitude (in radian/s^2) for this command.
+ *  The magnitude must be positive. If it's set to negative, it will be flipped.
+ */
+@property (nonatomic) double angularAccelerationMagnitude;
+
+/**
+ *  For the flavour without acceleration, whether or not to use a different BT command,
+ *  which is implemented on-robot via Pose commands.
+ */
+@property (nonatomic) BOOL usePose;
+
 
 /**
  *  Initialize the command with specified linear and angular velocity.
@@ -49,5 +67,35 @@
  *  @return Returns a newly initialized `WWCommandBodyLinearAngular`.
  */
 - (id) initWithLinear:(double)linear angular:(double)angular;
+
+/**
+ *  Initialize the command with specified linear and angular velocity and whether to use pose.
+ *
+ *  @param linear  The linear velocity in cm/s.
+ *  @param angular The angular velocity in radian/s.
+ *  @param usePose Whether to use the pose-based version.
+ *
+ *  @return Returns a newly initialized `WWCommandBodyLinearAngular`.
+ */
+- (id) initWithLinear:(double)linear angular:(double)angular usePose:(BOOL)usePose;
+
+
+/**
+ *  Initialize the command with specified target linear, angular velocity and linear, angular acceleration.
+ *
+ *  @param linear                       The target linear velocity in cm/s.
+ *  @param angular                      The target angular velocity in radian/s.
+ *  @param linearAccelerationMagnitude  The linear acceleration magnitude in cm/s^2.
+ *  @param acgularAccelerationMagnitude The angular acceleration magnitude in radian/s^2.
+ *
+ *  @return Returns a newly initialized `WWCommandBodyLinearAngular`.
+ *  
+ *  NOTE: If the acceleration magnitude is set to 0, the robot will stay in the current velocity.
+ *        Acceleration magnitude should be non-negative. So the developer don't need to worry about if the
+ *        acceleration should be positive or negative. The robot will decide according to the current velocity
+ *        and target velocity.
+ */
+- (id) initWithLinear:(double)linearVel angular:(double)angularVel
+   linearAccelerationMagnitude: (double)linearAccMag angularAccelerationMagnitude: (double) angularAccMag;
 
 @end

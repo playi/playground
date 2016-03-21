@@ -10,7 +10,7 @@
 #import "WWConstants.h"
 #import "WWComponentSet.h"
 
-@class WWCommand, WWCommandHeadPosition, WWCommandLightRGB, WWCommandEyeRing, WWCommandLightMono, WWCommandSpeaker, WWCommandHeadBang, WWCommandBodyLinearAngular, WWCommandBodyWheels;
+@class WWCommand, WWCommandHeadPosition, WWCommandLightRGB, WWCommandEyeRing, WWCommandLightMono, WWCommandSpeaker, WWCommandHeadBang, WWCommandBodyLinearAngular, WWCommandBodyWheels, WWCommandLauncherFling, WWCommandLauncherReload, WWCommandBodyPose;
 
 /**
  *  `WWCommandSet` is a subclass of `WWComponentSet` with strict type-checking and convenience
@@ -93,6 +93,14 @@
  */
 - (void) setMainButtonLight:(WWCommandLightMono *)mainButton;
 
+
+
+/**
+ TODO: add description for this method
+ */
+- (void) setBodyPose:(WWCommandBodyPose *)bodyPose;
+
+
 /**
  *  Inserts a given `WWCommandLightMono` object to the set, overwriting an existing mapping if it exists.
  *
@@ -145,7 +153,19 @@
  */
 - (void) setEarLightLeft:(WWCommandLightRGB *)leftEar right:(WWCommandLightRGB *)rightEar;
 
+/**
+ *  Inserts a given `WWCommandLauncherFling` object to the set, overwriting an existing mapping if it exists.
+ *
+ *  @param fling The `WWCommandLauncherFling` object that specifies the how hard to fling the ball.  Must have ball launcher accessory!
+ */
+- (void) setLauncherFling:(WWCommandLauncherFling *)fling;
 
+/**
+ *  Inserts a given `WWCommandLauncherReload` object to the set, overwriting an existing mapping if it exists.
+ *
+ *  @param fling The `WWCommandLauncherReload` object that specifies which ball to reload from.  Must have ball launcher accessory!
+ */
+- (void) setLauncherReload:(WWCommandLauncherReload *)reload;
 
 /**---------------------------------------------------------------------------------------
  *  @name Querying command set

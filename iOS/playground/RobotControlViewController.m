@@ -29,7 +29,7 @@
 {
     self.connectedRobots = [[WWRobotManager manager] allConnectedRobots];
     for (WWRobot *robot in self.connectedRobots) {
-        robot.delegate = self;
+        [robot addRobotObserver:self];
     }
 }
 

@@ -16,6 +16,7 @@
 @property (nonatomic) BOOL isNodding;
 @property (nonatomic, strong) WWCommandSetSequence *wiggleAnimation;
 @property (nonatomic, strong) WWCommandSetSequence *nodAnimation;
+@property (weak, nonatomic) IBOutlet UILabel *poseLabel;
 
 @end
 
@@ -131,4 +132,24 @@
         [robot resetState];
     }
 }
+
+#pragma mark pose slider methods
+- (IBAction)didChangePoseDistanceValue:(id)sender {
+  self.poseLabel.text = [NSString stringWithFormat:@"%d", (int)((UISlider*)sender).value];
+}
+
+- (IBAction)MoveDashByFixedDistance:(id)sender {
+  
+  WWCommandSet *cmdToSend = [WWCommandSet new];
+  
+  int distance =  self.poseLabel.text.intValue;
+  
+  
+  WWCommandBodyPose *bodyPose = [[WWCommandBodyPose alloc] initWithRelativeMeasuredX:distance Y:0.0f Radians:0.0f Time:2.0f];
+ 
+  [cmdToSend setBodyPose:bodyPose];
+  [self sendCommandSetToRobots:cmdToSend];
+  
+}
+
 @end

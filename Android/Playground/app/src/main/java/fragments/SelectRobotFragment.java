@@ -14,9 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.w2.api.engine.errorhandling.APIException;
 import com.w2.api.engine.robots.Robot;
 import com.w2.api.engine.robots.RobotManager;
 import com.w2.api.engine.robots.RobotManagerFactory;
+import com.w2.logging.LoggingHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +47,8 @@ public class SelectRobotFragment extends BaseFragment {
   private RobotSelectedDelegate delegate;
   private RobotManager robotManager;
   private Robot connectingRobot;
+
+  private static final String TAG = "SelectRobotFragment";
 
   private Handler updateHandler = new Handler(Looper.getMainLooper());
 
@@ -100,7 +104,12 @@ public class SelectRobotFragment extends BaseFragment {
 
     rootView.findViewById(R.id.button_refresh).setOnClickListener(onRefreshButtonClickListener);
 
-    robotManager = RobotManagerFactory.getRobotManager(getActivity());
+    try {
+      robotManager = RobotManagerFactory.getRobotManager(getActivity());
+    }
+    catch (APIException e) {
+      LoggingHelper.e(TAG, "Error fetching an instance of Robot Manager" + e);
+    }
 
     return rootView;
   }
@@ -112,7 +121,14 @@ public class SelectRobotFragment extends BaseFragment {
   }
 
   private List<IRobotListItem> getRobotItemsList(){
-    List<Robot> knownRobots = RobotManagerFactory.getRobotManager(getActivity()).getAllKnownRobots();
+    List<Robot> knownRobots = null;
+    try {
+      knownRobots = RobotManagerFactory.getRobotManager(getActivity()).getAllKnownRobots();
+    }
+    catch (APIException e) {
+      LoggingHelper.e(TAG, "Error fetching an instance of Robot Manager" + e);
+    }
+
     List<IRobotListItem> result = new ArrayList<>(knownRobots.size());
 
     for (final Robot robot : knownRobots){

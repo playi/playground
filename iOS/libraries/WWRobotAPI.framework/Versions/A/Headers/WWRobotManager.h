@@ -18,7 +18,7 @@ typedef enum {
 } WWRobotManagerState;
 
 @class WWError;
-@protocol WWRobotManagerDelegate;
+@protocol WWRobotManagerObserver;
 
 /**
  *  `WWRobotManager` objects are used to manage a discovered or connected Wonder Workshop `WWRobot` (represented by `WWRobot`), including scanning for,
@@ -28,15 +28,10 @@ typedef enum {
  */
 @interface WWRobotManager : WWObject
 
-/**---------------------------------------------------------------------------------------
+/** ---------------------------------------------------------------------------------------
  *  @name Monitoring properties
  *  ---------------------------------------------------------------------------------------
  */
-
-/**
- *  The delegate object to receive connection events.
- */
-@property (nonatomic, weak) id<WWRobotManagerDelegate> delegate;
 
 /**
  *  Returns the current state of the manager
@@ -152,8 +147,8 @@ typedef enum {
 /**
  *  Establishes connection to a robot.
  *
- *  If a connection to robot is successfully established (or if the robot is already connected), the robot manager calls the 
- *  `manager:didConnectRobot:` method of its delegate object. If the connection attempt fails, the robot manager calls the 
+ *  If a connection to robot is successfully established (or if the robot is already connected), the robot manager calls the
+ *  `manager:didConnectRobot:` method of its delegate object. If the connection attempt fails, the robot manager calls the
  *  `manager:didFailToConnectRobot:error:` method of its delegate object instead.
  *
  *  @param robot The robot to which the manager is attempting to connect.
@@ -162,13 +157,16 @@ typedef enum {
 
 /**
  *  Disconnects an active connection from a robot.
- *  
+ *
  *  This method is nonblocking and does not fail, so caller should consider the robot disconnected once this method finishes. Once
  *  the robot is successfully disconnected, the robot manager calls the `manager:didDisconnect:` delegate method.
  *
  *  @param robot The robot to which the maanger is attempting to disconnect.
  */
 - (void) disconnectFromRobot:(WWRobot *)robot;
+
+- (void) addManagerObserver:(id<WWRobotManagerObserver>)observer;
+- (void) removeManagerObserver:(id<WWRobotManagerObserver>)observer;
 
 @end
 
@@ -179,7 +177,7 @@ typedef enum {
  *  The `WWRobotManagerDelegate` protocol defines the methods that a delegate of a `WWRobotManager` object must adopt.  The optional methods of the protocol allows the
  *   delegate to monitor state changes of known robots.
  */
-@protocol WWRobotManagerDelegate <NSObject>
+@protocol WWRobotManagerObserver <NSObject>
 
 /**---------------------------------------------------------------------------------------
  *  @name Discovering and Connecting robots
@@ -189,7 +187,7 @@ typedef enum {
 /**
  *  Invoked when the robot manager discovers a robot while scanning.
  *
- *  The discovered robot can also be accessed through `allDiscoveredRobots`. At this point, caller can safely invoke `connectToRobot:` 
+ *  The discovered robot can also be accessed through `allDiscoveredRobots`. At this point, caller can safely invoke `connectToRobot:`
  *  method on the robot.
  *
  *  @param manager The robot manager providing the update.
@@ -207,13 +205,15 @@ typedef enum {
  *  @param robot   The connected robot.
  */
 - (void) manager:(WWRobotManager *)manager didConnectRobot:(WWRobot *)robot;
-- (void) wwManagerDidUpdateState:(WWRobotManager *)manager;
 
 @optional
+
+- (void) manager:(WWRobotManager *)manager didUpdateState:(WWRobotManagerState)state;
+
 /**
  *  Invoked when the robot manager receives update robot information during scanning.
  *
- *  The robot should be in ROBOT_CONNECTION_DISCOVERED state, and any of the potential information can be updated (name, greeting color/animation, 
+ *  The robot should be in ROBOT_CONNECTION_DISCOVERED state, and any of the potential information can be updated (name, greeting color/animation,
  *  battery level, signal strength). These updated information will be reflected in the corresponding robot property.
  *
  *  @param manager The robot manager providing the update.
@@ -222,7 +222,7 @@ typedef enum {
 - (void) manager:(WWRobotManager *)manager didUpdateDiscoveredRobots:(WWRobot *)robot;
 
 /**
- *  Invoked when the robot manager lost a robot while scanning. 
+ *  Invoked when the robot manager lost a robot while scanning.
  *
  *  A robot can only be "lost" when it is discovered in the previous scan, but not discovered in the current scan.  This means that false-positives
  *  can happen more often as scans intervals get larger, so it is best to respond to this method when calling `startScanningForRobots:`.
@@ -246,7 +246,7 @@ typedef enum {
 /**
  *  Invoked when the robot manager fails to create a connection with a robot.
  *
- *  This method is invoked when a connection initiated via `connectToRobot:` method fails to complete. The failure reasons will be detailed in the 
+ *  This method is invoked when a connection initiated via `connectToRobot:` method fails to complete. The failure reasons will be detailed in the
  *  `WWError` class.
  *
  *  @param manager The robot manager providing the update.

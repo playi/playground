@@ -18,8 +18,9 @@
 
 /**
  *  The `WWSensorGyroscope` object provides gyroscope-related data from `WWRobot`.
- *  As the robot moves, its hardware reports linear acceleration changes along the primary axes in
+ *  As the robot moves, its hardware reports angular changes around the primary axes in
  *  three-dimensional space.
+ *  These are reported in Radians Per Second.
  *
  *  This is read-only data from `WWRobot`, and the axis uses the "right-hand" coordinate system space,
  *  where axis values are represented as:

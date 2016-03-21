@@ -17,10 +17,12 @@ import com.w2.api.engine.components.sensors.Gyroscope;
 import com.w2.api.engine.components.sensors.Microphone;
 import com.w2.api.engine.constants.RobotSensorId;
 import com.w2.api.engine.constants.RobotType;
+import com.w2.api.engine.errorhandling.APIException;
 import com.w2.api.engine.operators.CommandSetSequence;
 import com.w2.api.engine.operators.RobotCommandSet;
 import com.w2.api.engine.operators.RobotSensorHistory;
 import com.w2.api.engine.robots.Robot;
+import com.w2.logging.LoggingHelper;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -57,6 +59,8 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
   private Robot activeRobot;
   private Hashtable<Integer, JSONObject> cachedAnimations = new Hashtable<>();
   private WeakReference<Activity> holder;
+
+  private static final String TAG = "RobotControl";
 
   public Robot getActiveRobot() {
     return activeRobot;
@@ -116,6 +120,7 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
     RobotCommandSet commandSet = RobotCommandSet.emptySet();
     commandSet.addCommandLeftEarLight(new LightRGB(red, green, blue));
     activeRobot.sendCommandSet(commandSet);
+    
   }
 
   @Override
@@ -185,7 +190,13 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
   public void playWiggleAnimation() {
     if (!isActiveRobotAvailable()) return;
     CommandSetSequence commandSetSequence = new CommandSetSequence();
-    commandSetSequence.fromJson(loadAnimationWithId(R.raw.wiggle));
+    try {
+      commandSetSequence.fromJson(loadAnimationWithId(R.raw.wiggle));
+    }
+    catch (JSONException e) {
+      LoggingHelper.i(TAG, "Ignore JSOn exception while parsing wiggle animation");
+    }
+
     activeRobot.startCommandSetSequence(commandSetSequence);
   }
 
@@ -215,7 +226,12 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
     if (!isActiveRobotAvailable()) return;
 
     RobotCommandSet commandSet = RobotCommandSet.emptySet();
-    commandSet.addCommandSound(new Speaker(Speaker.SOUNDFILE_HI, volume));
+    try {
+      commandSet.addCommandSound(new Speaker(Speaker.SOUNDFILE_HI, volume));
+    }
+    catch (APIException e) {
+      LoggingHelper.e(TAG, "API exception thrown while playing a sound" + e);
+    }
     activeRobot.sendCommandSet(commandSet);
   }
 
