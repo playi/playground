@@ -86,10 +86,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="appcompat-v7-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="eventbus-2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="W2AndroidAPI-1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="slf4j-jdk14-1.7.7" level="project" />
-    <orderEntry type="library" exported="" name="W2AndroidAPI-1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="stateless4j-2.5.0" level="project" />
     <orderEntry type="library" exported="" name="slf4j-api-1.7.7" level="project" />
   </component>

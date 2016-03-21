@@ -22,7 +22,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.makewonder:W2AndroidAPI:1.0-SNAPSHOT@aar'
+    compile 'com.makewonder:W2AndroidAPI:1.1@aar'
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'com.github.oxo42:stateless4j:2.5.0'
 }
