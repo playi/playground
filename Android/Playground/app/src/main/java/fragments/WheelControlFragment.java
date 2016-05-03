@@ -32,8 +32,9 @@ public class WheelControlFragment extends BaseFragment {
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     rootLayout = (LinearLayout) inflater.inflate(R.layout.fragment_wheel_control, container, false);
 
-    rootLayout.findViewById(R.id.button_start_wiggle).setOnClickListener(onWigglyClickListener);
+    rootLayout.findViewById(R.id.button_start_celebration).setOnClickListener(onCelebrationClickListener);
     rootLayout.findViewById(R.id.button_start_nod).setOnClickListener(onNodClickListener);
+    rootLayout.findViewById(R.id.button_cancel_anim).setOnClickListener(onCancelClickListener);
 
     joystickView = (JoystickView) rootLayout.findViewById(R.id.view_joystick);
     joystickView.setDelegate(joystickViewDelegate);
@@ -61,12 +62,21 @@ public class WheelControlFragment extends BaseFragment {
     }
   };
 
-  private View.OnClickListener onWigglyClickListener = new View.OnClickListener() {
+  private View.OnClickListener onCelebrationClickListener = new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-      wheelControl.playWiggleAnimation();
+      wheelControl.playCelebrationAnimation();
     }
   };
+
+  private View.OnClickListener onCancelClickListener = new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+      wheelControl.cancelAnimation();
+    }
+  };
+
+
 
   private JoystickView.JoystickViewDelegate joystickViewDelegate = new JoystickView.JoystickViewDelegate() {
     @Override

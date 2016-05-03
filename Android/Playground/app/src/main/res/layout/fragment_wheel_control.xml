@@ -16,12 +16,20 @@
         android:layout_gravity="center"
         android:orientation="vertical">
         <Button
-            android:id="@+id/button_start_wiggle"
+            android:id="@+id/button_start_celebration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Start Wiggle"/>
+            android:text="Start Celebration"/>
+
+        <Button
+            android:id="@+id/button_cancel_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Cancel Celebration"/>
 
         <Button
             android:id="@+id/button_start_nod"
@@ -30,6 +38,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:text="Programmatic Nod"/>
+
+
     </LinearLayout>
 
 </LinearLayout>

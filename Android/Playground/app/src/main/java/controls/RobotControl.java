@@ -187,14 +187,20 @@ public class RobotControl implements ControlInterfaces.IRobotManagement,
   }
 
   @Override
-  public void playWiggleAnimation() {
+  public void cancelAnimation(){
+    if (!isActiveRobotAvailable()) return;
+    activeRobot.cancelCommandSetSequence();
+  }
+
+  @Override
+  public void playCelebrationAnimation() {
     if (!isActiveRobotAvailable()) return;
     CommandSetSequence commandSetSequence = new CommandSetSequence();
     try {
-      commandSetSequence.fromJson(loadAnimationWithId(R.raw.wiggle));
+      commandSetSequence.fromJson(loadAnimationWithId(R.raw.dash_confident_rc_celebration));
     }
     catch (JSONException e) {
-      LoggingHelper.i(TAG, "Ignore JSOn exception while parsing wiggle animation");
+      LoggingHelper.i(TAG, "Ignore JSOn exception while parsing celebration animation");
     }
 
     activeRobot.startCommandSetSequence(commandSetSequence);

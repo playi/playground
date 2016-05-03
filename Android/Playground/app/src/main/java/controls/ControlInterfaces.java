@@ -32,8 +32,9 @@ public interface ControlInterfaces {
 
   interface IWheelControl {
     public void setWheelAttributes(double linear, double angle);
-    public void playWiggleAnimation();
+    public void playCelebrationAnimation();
     public void playNodAnimation();
+    public void cancelAnimation();
   }
 
   interface IHeadControl {
