@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A304C021A1A6FEF001A67B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C011A1A6FEF001A67B7 /* main.m */; };
 		0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C041A1A6FEF001A67B7 /* AppDelegate.m */; };
-		0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */; };
+		0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */; };
 		0A304C0B1A1A6FEF001A67B7 /* RobotControlPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C0A1A1A6FEF001A67B7 /* RobotControlPanelViewController.m */; };
 		0A304C0E1A1A6FEF001A67B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0C1A1A6FEF001A67B7 /* Main.storyboard */; };
 		0A304C101A1A6FEF001A67B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */; };
@@ -30,6 +30,9 @@
 		0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */; };
 		0A304C581A1C0DA4001A67B7 /* ControlSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */; };
 		0A412C581A6468110045A7B0 /* wiggle.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A412C571A6468110045A7B0 /* wiggle.json */; };
+		6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9021DD3BF24005DF517 /* RobotController.swift */; };
+		6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */; };
+		6007A9071DD3CE3B005DF517 /* RobotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9061DD3CE3B005DF517 /* RobotViewController.swift */; };
 		780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D964F1A1B844000B109CC /* CircleJoystickView.m */; };
 		780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D96521A1B8F1800B109CC /* ControlHeadViewController.m */; };
 /* End PBXBuildFile section */
@@ -50,8 +53,7 @@
 		0A304C011A1A6FEF001A67B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A304C031A1A6FEF001A67B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A304C041A1A6FEF001A67B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0A304C061A1A6FEF001A67B7 /* RobotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotListViewController.h; sourceTree = "<group>"; };
-		0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotListViewController.m; sourceTree = "<group>"; };
+		0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotListViewController.swift; sourceTree = "<group>"; };
 		0A304C091A1A6FEF001A67B7 /* RobotControlPanelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotControlPanelViewController.h; sourceTree = "<group>"; };
 		0A304C0A1A1A6FEF001A67B7 /* RobotControlPanelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotControlPanelViewController.m; sourceTree = "<group>"; };
 		0A304C0D1A1A6FEF001A67B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,10 @@
 		0A304C561A1C0DA4001A67B7 /* ControlSoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlSoundViewController.h; sourceTree = "<group>"; };
 		0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlSoundViewController.m; sourceTree = "<group>"; };
 		0A412C571A6468110045A7B0 /* wiggle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wiggle.json; sourceTree = "<group>"; };
+		6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "playground-Bridging-Header.h"; sourceTree = "<group>"; };
+		6007A9021DD3BF24005DF517 /* RobotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotController.swift; sourceTree = "<group>"; };
+		6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Bridging-Helper.m"; sourceTree = "<group>"; };
+		6007A9061DD3CE3B005DF517 /* RobotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotViewController.swift; sourceTree = "<group>"; };
 		780D964E1A1B844000B109CC /* CircleJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleJoystickView.h; sourceTree = "<group>"; };
 		780D964F1A1B844000B109CC /* CircleJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleJoystickView.m; sourceTree = "<group>"; };
 		780D96511A1B8F1800B109CC /* ControlHeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHeadViewController.h; sourceTree = "<group>"; };
@@ -144,6 +150,10 @@
 				0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */,
 				0A304C111A1A6FEF001A67B7 /* LaunchScreen.xib */,
 				0A304BFF1A1A6FEF001A67B7 /* Supporting Files */,
+				6007A9021DD3BF24005DF517 /* RobotController.swift */,
+				6007A9061DD3CE3B005DF517 /* RobotViewController.swift */,
+				6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */,
+				6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */,
 			);
 			path = playground;
 			sourceTree = "<group>";
@@ -196,8 +206,7 @@
 				0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */,
 				0A304C411A1ABD6D001A67B7 /* RobotControlViewController.h */,
 				0A304C421A1ABD6D001A67B7 /* RobotControlViewController.m */,
-				0A304C061A1A6FEF001A67B7 /* RobotListViewController.h */,
-				0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */,
+				0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */,
 				0A304C461A1AD28A001A67B7 /* ControlEyeRingViewController.h */,
 				0A304C471A1AD28A001A67B7 /* ControlEyeRingViewController.m */,
 				0A304C091A1A6FEF001A67B7 /* RobotControlPanelViewController.h */,
@@ -283,7 +292,8 @@
 				TargetAttributes = {
 					0A304BFB1A1A6FEF001A67B7 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 6AS2VXQ4XQ;
+						DevelopmentTeam = XP2D8KRSZE;
+						LastSwiftMigration = 0810;
 					};
 					0A304C171A1A6FF0001A67B7 = {
 						CreatedOnToolsVersion = 6.1;
@@ -338,13 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6007A9071DD3CE3B005DF517 /* RobotViewController.swift in Sources */,
 				0A304C431A1ABD6D001A67B7 /* RobotControlViewController.m in Sources */,
 				0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */,
+				6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */,
 				0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */,
 				0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */,
 				0A304C581A1C0DA4001A67B7 /* ControlSoundViewController.m in Sources */,
 				780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */,
-				0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */,
+				0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */,
 				0A304C481A1AD28A001A67B7 /* ControlEyeRingViewController.m in Sources */,
 				0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */,
 				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
@@ -352,6 +364,7 @@
 				780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */,
 				0A304C0B1A1A6FEF001A67B7 /* RobotControlPanelViewController.m in Sources */,
 				0A304C401A1AB963001A67B7 /* ControlLightsViewController.m in Sources */,
+				6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,8 +488,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XP2D8KRSZE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,6 +503,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "playground/playground-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -496,8 +514,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XP2D8KRSZE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,6 +529,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "playground/playground-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -516,6 +538,7 @@
 		0A304C261A1A6FF0001A67B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -535,6 +558,7 @@
 		0A304C271A1A6FF0001A67B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
