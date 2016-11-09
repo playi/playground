@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Wonder Workshop inc. (https://www.makewonder.com/) All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 // common
 #import <WWRobotAPI/WWConstants.h>
 #import <WWRobotAPI/WWContentDefinitions.h>

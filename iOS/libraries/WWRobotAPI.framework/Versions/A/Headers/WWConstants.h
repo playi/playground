@@ -77,11 +77,11 @@ typedef unsigned int WWComponentId;
 #define WW_SENSOR_ENCODER_RIGHT_WHEEL 3004
 #define WW_SENSOR_MICROPHONE 3005
 
-
-typedef unsigned int WWRobotType;
-#define WW_ROBOT_UNKNOWN 1000
-#define WW_ROBOT_DASH 1001
-#define WW_ROBOT_DOT 1002
+typedef NS_ENUM(NSInteger, WWRobotType) {
+    WW_ROBOT_UNKNOWN = 1000,
+    WW_ROBOT_DASH = 1001,
+    WW_ROBOT_DOT = 1002,
+};
 
 typedef unsigned int WWPersonalityColorIndex;
 #define WW_PERSONALITY_COLOR_NONE      0            // aka white

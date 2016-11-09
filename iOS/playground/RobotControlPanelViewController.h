@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
+@import UIKit;
 @class RobotControlViewController;
 
 @interface RobotControlPanelViewController : UIViewController
