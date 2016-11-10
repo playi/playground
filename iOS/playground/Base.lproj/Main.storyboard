@@ -93,11 +93,11 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <rect key="frame" x="16" y="0.0" width="324" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,7 +142,7 @@
         <!--Control Lights View Controller-->
         <scene sceneID="xsb-HO-UJC">
             <objects>
-                <viewController storyboardIdentifier="ControlLightsViewController" id="DKG-RV-Am4" customClass="ControlLightsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ControlLightsViewController" id="DKG-RV-Am4" customClass="ControlLightsViewController" customModule="playground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RcB-r8-iTj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,6 +152,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="setRGBLights:" destination="DKG-RV-Am4" eventType="valueChanged" id="Ia5-6Z-O2b"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="ZBz-3A-6sm">
+                                <rect key="frame" x="24" y="47" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="setRGBLights:" destination="DKG-RV-Am4" eventType="valueChanged" id="Mv1-Ul-3nw"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Nas-pP-nU3">
@@ -214,7 +221,7 @@
                                 <rect key="frame" x="215" y="141" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="setRGBLights:" destination="DKG-RV-Am4" eventType="valueChanged" id="QlG-8l-2lK"/>
+                                    <action selector="setRGBLights" destination="DKG-RV-Am4" eventType="valueChanged" id="Lew-zY-5wO"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main button" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cZQ-ez-bPv">
@@ -259,37 +266,30 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleLightShow:" destination="DKG-RV-Am4" eventType="touchUpInside" id="XCP-gk-0bS"/>
+                                    <action selector="toggleLightShow:" destination="DKG-RV-Am4" eventType="touchUpInside" id="HFT-yj-JzF"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="ZBz-3A-6sm">
-                                <rect key="frame" x="24" y="47" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="setRGBLights:" destination="DKG-RV-Am4" eventType="valueChanged" id="WIm-Vj-BD1"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="backMonoSlider" destination="60g-gx-QId" id="q88-8F-6N8"/>
-                        <outlet property="chestBSlider" destination="d7O-i2-BwR" id="u82-6d-aL6"/>
-                        <outlet property="chestGSlider" destination="YOp-cM-2Qn" id="51g-id-JX8"/>
-                        <outlet property="chestRSlider" destination="eM3-1c-jkL" id="vQQ-OP-tJU"/>
+                        <outlet property="backMonoSlider" destination="60g-gx-QId" id="Jvg-ey-9F6"/>
+                        <outlet property="chestBSlider" destination="d7O-i2-BwR" id="2wi-Q5-d4K"/>
+                        <outlet property="chestGSlider" destination="YOp-cM-2Qn" id="NCe-Wf-oZZ"/>
+                        <outlet property="chestRSlider" destination="eM3-1c-jkL" id="yOG-6T-8gk"/>
                         <outlet property="leftEarBSlider" destination="Nas-pP-nU3" id="bDT-A9-t61"/>
-                        <outlet property="leftEarGSlider" destination="ZBz-3A-6sm" id="i7v-K9-prk"/>
-                        <outlet property="leftEarRSlider" destination="fBw-iv-nmA" id="uKe-jJ-CUz"/>
+                        <outlet property="leftEarGSlider" destination="ZBz-3A-6sm" id="kb2-Lf-W9K"/>
+                        <outlet property="leftEarRSlider" destination="fBw-iv-nmA" id="qqw-NX-gGh"/>
                         <outlet property="lightShowButton" destination="OU6-0T-YIc" id="bIM-rk-43c"/>
-                        <outlet property="mainButtonMonoSlider" destination="j2F-r3-KrP" id="Osi-rv-Nt3"/>
-                        <outlet property="rightEarBSlider" destination="rxC-RU-Ra5" id="hk4-x1-n46"/>
-                        <outlet property="rightEarGSlider" destination="Fbx-0E-IEO" id="Xdz-p4-y7z"/>
-                        <outlet property="rightEarRSlider" destination="Vrg-7u-uMT" id="b5p-cN-Csu"/>
+                        <outlet property="mainButtonMonoSlider" destination="j2F-r3-KrP" id="r9h-ux-amB"/>
+                        <outlet property="rightEarBSlider" destination="rxC-RU-Ra5" id="UIK-w6-MIq"/>
+                        <outlet property="rightEarGSlider" destination="Fbx-0E-IEO" id="Nmr-bs-cYH"/>
+                        <outlet property="rightEarRSlider" destination="Vrg-7u-uMT" id="aQO-bI-AC7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUf-Ah-naS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="677"/>
+            <point key="canvasLocation" x="101" y="868"/>
         </scene>
         <!--Joystick Delegate-->
         <scene sceneID="ZQd-cX-Zh1">
@@ -580,11 +580,11 @@
                                         <rect key="frame" x="0.0" y="22" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5h-o2-yY5" id="sYU-hp-CZQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Data" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="j5w-V8-uca">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="199"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="200"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

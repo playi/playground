@@ -7,12 +7,12 @@
 //
 
 #import "RobotControlPanelViewController.h"
-#import "ControlLightsViewController.h"
 #import "ControlEyeRingViewController.h"
 #import "ControlDriveViewController.h"
 #import "ControlHeadViewController.h"
 #import "ControlSoundViewController.h"
 #import "ControlSensorsViewController.h"
+#import "Playground-Swift.h"
 
 @interface RobotControlPanelViewController ()
 
@@ -28,12 +28,12 @@
     [super viewDidLoad];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ControlLightsViewController *lights = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlLightsViewController class])];
-    ControlEyeRingViewController *eyeRing = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlEyeRingViewController class])];
-    ControlDriveViewController *drive = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlDriveViewController class])];
-    ControlHeadViewController *head = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlHeadViewController class])];
-    ControlSoundViewController *sound = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlSoundViewController class])];
-    ControlSensorsViewController *sensor = [sb instantiateViewControllerWithIdentifier:NSStringFromClass([ControlSensorsViewController class])];
+    RobotControlViewController *lights = [sb instantiateViewControllerWithIdentifier:ControlLightsViewController.nameOfClass];
+    RobotControlViewController *eyeRing = [sb instantiateViewControllerWithIdentifier:ControlEyeRingViewController.nameOfClass];
+    RobotControlViewController *drive = [sb instantiateViewControllerWithIdentifier:ControlDriveViewController.nameOfClass];
+    RobotControlViewController *head = [sb instantiateViewControllerWithIdentifier:ControlHeadViewController.nameOfClass];
+    RobotControlViewController *sound = [sb instantiateViewControllerWithIdentifier:ControlSoundViewController.nameOfClass];
+    RobotControlViewController *sensor = [sb instantiateViewControllerWithIdentifier:ControlSensorsViewController.nameOfClass];
 
     self.controlsVC = @[lights, eyeRing, drive, head, sound, sensor];
     

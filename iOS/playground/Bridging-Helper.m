@@ -6,11 +6,10 @@
 //  Copyright © 2016 Wonder Workshop. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
+#import <WWRobotAPI/WWRobotAPI.h>
 
 @implementation WWRobotManager (shared)
 + (WWRobotManager*) sharedManager {
     return [WWRobotManager manager];
-};
+}
 @end

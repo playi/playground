@@ -33,7 +33,6 @@ class RobotListViewController : UITableViewController {
         
         // setup robot manager
         let manager : WWRobotManager = WWRobotManager.shared();
-//            NSAssert(self.manager, @"unable to instantiate robot manager");
         manager.add(self)
         
         self.manager = manager
@@ -70,6 +69,7 @@ class RobotListViewController : UITableViewController {
     }
 }
 
+// MARK: -
 // MARK: Table View methods
 extension RobotListViewController {
 
@@ -138,7 +138,7 @@ extension RobotListViewController {
     
 }
 
-
+// MARK: -
 extension RobotListViewController : WWRobotManagerObserver {
     func manager(_ manager: WWRobotManager!, didDiscover robot: WWRobot!) {
         if !robots.contains(robot) {
