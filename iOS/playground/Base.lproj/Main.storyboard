@@ -613,7 +613,7 @@
         <!--Control Head View Controller-->
         <scene sceneID="BgW-Fo-jtP">
             <objects>
-                <viewController storyboardIdentifier="ControlHeadViewController" id="SDR-LH-amH" customClass="ControlHeadViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ControlHeadViewController" id="SDR-LH-amH" customClass="ControlHeadViewController" customModule="playground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p84-9O-DXR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -625,7 +625,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTopBtnTouch:" destination="SDR-LH-amH" eventType="touchUpInside" id="b0A-v9-wWS"/>
+                                    <action selector="onTopBtnTouch:" destination="SDR-LH-amH" eventType="touchUpInside" id="JxZ-uW-UdZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Btn-5Y-8UW">
@@ -665,7 +665,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onBottomBtnTouch:" destination="SDR-LH-amH" eventType="touchUpInside" id="xcZ-8X-1z2"/>
+                                    <action selector="onButtomBtnTouch:" destination="SDR-LH-amH" eventType="touchUpInside" id="uvh-X5-ZCo"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -33,10 +33,10 @@
 		604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66F61DD4838800729682 /* RobotControlViewController.swift */; };
 		604F66F91DD4885A00729682 /* ControlEyeRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66F81DD4885A00729682 /* ControlEyeRingViewController.swift */; };
 		604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */; };
+		604F66FD1DD4A80600729682 /* ControlHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66FC1DD4A80600729682 /* ControlHeadViewController.swift */; };
 		605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605653781DD47ED900354A88 /* ClassExtensions.swift */; };
 		60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */; };
 		780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D964F1A1B844000B109CC /* CircleJoystickView.m */; };
-		780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D96521A1B8F1800B109CC /* ControlHeadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,12 +89,11 @@
 		604F66F61DD4838800729682 /* RobotControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotControlViewController.swift; sourceTree = "<group>"; };
 		604F66F81DD4885A00729682 /* ControlEyeRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEyeRingViewController.swift; sourceTree = "<group>"; };
 		604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlDriveViewController.swift; sourceTree = "<group>"; };
+		604F66FC1DD4A80600729682 /* ControlHeadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlHeadViewController.swift; sourceTree = "<group>"; };
 		605653781DD47ED900354A88 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLightsViewController.swift; sourceTree = "<group>"; };
 		780D964E1A1B844000B109CC /* CircleJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleJoystickView.h; sourceTree = "<group>"; };
 		780D964F1A1B844000B109CC /* CircleJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleJoystickView.m; sourceTree = "<group>"; };
-		780D96511A1B8F1800B109CC /* ControlHeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHeadViewController.h; sourceTree = "<group>"; };
-		780D96521A1B8F1800B109CC /* ControlHeadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlHeadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,8 +212,7 @@
 				0A304C091A1A6FEF001A67B7 /* RobotControlPanelViewController.h */,
 				0A304C0A1A1A6FEF001A67B7 /* RobotControlPanelViewController.m */,
 				604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */,
-				780D96511A1B8F1800B109CC /* ControlHeadViewController.h */,
-				780D96521A1B8F1800B109CC /* ControlHeadViewController.m */,
+				604F66FC1DD4A80600729682 /* ControlHeadViewController.swift */,
 				0A304C521A1BEBC9001A67B7 /* ControlSensorsViewController.h */,
 				0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */,
 				0A304C561A1C0DA4001A67B7 /* ControlSoundViewController.h */,
@@ -357,13 +355,13 @@
 				0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */,
 				0A304C581A1C0DA4001A67B7 /* ControlSoundViewController.m in Sources */,
 				604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */,
-				780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */,
 				0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */,
 				604F66F91DD4885A00729682 /* ControlEyeRingViewController.swift in Sources */,
 				0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */,
 				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
 				604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */,
 				780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */,
+				604F66FD1DD4A80600729682 /* ControlHeadViewController.swift in Sources */,
 				605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */,
 				0A304C0B1A1A6FEF001A67B7 /* RobotControlPanelViewController.m in Sources */,
 				6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */,

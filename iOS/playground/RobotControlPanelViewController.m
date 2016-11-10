@@ -8,7 +8,6 @@
 
 #import "RobotControlPanelViewController.h"
 #import "ControlDriveViewController.h"
-#import "ControlHeadViewController.h"
 #import "ControlSoundViewController.h"
 #import "ControlSensorsViewController.h"
 #import "Playground-Swift.h"
