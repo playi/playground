@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
-@interface RobotControlViewController : UIViewController <WWRobotObserver>
+@interface RobotControlViewController : UIViewController 
 
 @property (nonatomic, strong) NSArray *connectedRobots;
 

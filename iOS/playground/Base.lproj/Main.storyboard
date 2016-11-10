@@ -512,7 +512,7 @@
         <!--Control Sound View Controller-->
         <scene sceneID="Syg-El-D0N">
             <objects>
-                <viewController storyboardIdentifier="ControlSoundViewController" id="NJB-jg-pov" customClass="ControlSoundViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ControlSoundViewController" id="NJB-jg-pov" customClass="ControlSoundViewController" customModule="playground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cbc-Vh-IbM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -524,7 +524,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playSoundPressed:" destination="NJB-jg-pov" eventType="touchUpInside" id="NIJ-9d-fEz"/>
+                                    <action selector="playSoundPressed:" destination="NJB-jg-pov" eventType="touchUpInside" id="pdn-ah-WuR"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Iex-Pg-1Xh">
@@ -556,7 +556,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="volumeSlider" destination="Iex-Pg-1Xh" id="dyi-Qr-Epa"/>
+                        <outlet property="volumeSlider" destination="Iex-Pg-1Xh" id="pQz-IY-x6w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUE-3d-3NQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -566,7 +566,7 @@
         <!--Control Sensors View Controller-->
         <scene sceneID="UMT-eY-Wyo">
             <objects>
-                <viewController storyboardIdentifier="ControlSensorsViewController" id="AZB-Si-n6q" customClass="ControlSensorsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ControlSensorsViewController" id="AZB-Si-n6q" customClass="ControlSensorsViewController" customModule="playground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AKO-RQ-DKr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -580,11 +580,11 @@
                                         <rect key="frame" x="0.0" y="22" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5h-o2-yY5" id="sYU-hp-CZQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Data" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="j5w-V8-uca">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="199"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="200"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -603,7 +603,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="dataTableView" destination="mt9-kf-g95" id="Ybu-H7-4z7"/>
+                        <outlet property="dataTableView" destination="mt9-kf-g95" id="4UX-48-Ac6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JWE-EL-UWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
