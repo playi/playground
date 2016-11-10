@@ -36,3 +36,11 @@ extension RobotControlViewController_swift : WWRobotObserver {
     
 }
 
+extension RobotControlViewController {
+    var robots : [WWRobot] {
+        guard let robots = connectedRobots as? [WWRobot] else {
+            return [WWRobot]()
+        }
+        return robots;
+    }
+}
