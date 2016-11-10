@@ -64,7 +64,7 @@ class ControlEyeRingViewController : RobotControlViewController {
         }
         else {
             eyeShowInProgress = true
-            eyeShowTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.eyeShowTimerValues(timer:)), userInfo: nil, repeats: true)
+            eyeShowTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(eyeShowTimerValues(timer:)), userInfo: nil, repeats: true)
             eyeShowTimer.fire()
             eyeShowButton.setTitle("Stop eye show", for:.normal)
         }
@@ -73,7 +73,7 @@ class ControlEyeRingViewController : RobotControlViewController {
     
     @objc func eyeShowTimerValues(timer: Timer) {
         
-        eyeShowValueState = (self.eyeShowValueState+1) % 12; // rotate
+        eyeShowValueState = (eyeShowValueState+1) % 12; // rotate
         
         eye0Switch.isOn = ((0 + eyeShowValueState) % 2) == 0
         eye1Switch.isOn = ((1 + eyeShowValueState) % 2) == 0

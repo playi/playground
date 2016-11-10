@@ -73,8 +73,8 @@ class ControlLightsViewController: RobotControlViewController {
         
         var r, g, b, mono : Float
         
-        self.lightShowValueState = (self.lightShowValueState+1) % 4; // rotate
-        switch (self.lightShowValueState) {
+        lightShowValueState = (lightShowValueState+1) % 4; // rotate
+        switch (lightShowValueState) {
         case 0:
             r = 1.0; g = 0; b = 0; mono = 1.0;
             break;

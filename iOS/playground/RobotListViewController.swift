@@ -39,12 +39,12 @@ class RobotListViewController : UITableViewController {
         manager.startScanning(forRobots:2.0)
         
         
-        self.tableView.rowHeight = 130
+        tableView.rowHeight = 130
         let start = UIColor(red:58/255.0, green:108/255.0, blue:183/255.0, alpha:0.15)
         let stop = UIColor(red: 58/255.0, green:108/255.0, blue:183/255.0, alpha:0.45)
         
         let gradient = CAGradientLayer()
-        gradient.frame = self.view.bounds
+        gradient.frame = view.bounds
         gradient.colors = [start.cgColor,stop.cgColor]
         tableView.layer.insertSublayer(gradient, at:0)
     }

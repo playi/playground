@@ -66,7 +66,7 @@ class CommandSetSequence {
 class CommandSet {
     private let originalCommandSet : WWCommandSet
     var wwCommandSet : WWCommandSet {
-        return self.originalCommandSet
+        return originalCommandSet
     }
     init() {
         originalCommandSet = WWCommandSet()

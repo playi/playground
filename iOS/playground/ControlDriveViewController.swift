@@ -65,7 +65,7 @@ class ControlDriveViewController : RobotControlViewController {
     
     @IBAction func executeNod(_ sender: Any) {
         if !isNodding && !isWiggling {
-            for robot in self.connectedRobots as! [WWRobot] {
+            for robot in connectedRobots as! [WWRobot] {
                 robot.executeCommand(nodAnimation, withOptions:nil)
             }
         }
@@ -89,7 +89,7 @@ extension ControlDriveViewController : JoystickDelegate {
         let cmdToSend = WWCommandSet()
         
         // use linear angular!
-        let joystickPower = self.joystick.power;
+        let joystickPower = joystick.power;
         let lin = joystick.getY() * ROBOT_SPEED
         var ang = joystick.getX() * joystickPower * 3.14159 * 2.0
         
@@ -134,7 +134,7 @@ extension ControlDriveViewController { // : WWRobotObserver {
 extension ControlDriveViewController {
     @IBAction func didChangePoseDistanceValue(_ sender: UISlider) {
         
-        self.poseLabel.text = "\(Int(sender.value))";
+        poseLabel.text = "\(Int(sender.value))";
     }
     
     @IBAction func MoveDashByFixedDistance(_ sender: Any) {
