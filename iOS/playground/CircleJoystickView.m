@@ -20,26 +20,6 @@ float getDistance(CGPoint p1, CGPoint p2);
     float _circleRadius;
 }
 
-- (float) angle
-{
-    CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-    CGPoint p1 = self.dotPos;
-    CGPoint p0 = center;
-    
-    CGPoint vector = CGPointMake(p1.x - p0.x, p1.y - p0.y);
-    
-    float theta_rad = atan2(vector.y,vector.x);
-
-    theta_rad += M_PI / 2.0;
-    
-    float theta_deg = (theta_rad / M_PI * 180);
-    
-    theta_deg += (theta_rad > 0 ? 0 : 360);
-
-    
-    return theta_deg;
-}
-
 // once upon a time we will get assets for joystick and remove this
 - (void) drawRect:(CGRect)rect
 {

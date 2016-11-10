@@ -9,7 +9,7 @@ protocol RobotControlViewController_P {
     func sendCommandSet(toRobots:WWCommandSet)
 }
 
-class RobotControlViewController_swift : UIViewController {
+class RobotControlViewController : UIViewController {
     var connectedRobots = [WWRobot]()
     override func viewWillAppear(_ animated:Bool) {
         super.viewWillAppear(animated)
@@ -32,15 +32,6 @@ class RobotControlViewController_swift : UIViewController {
     }
 }
 
-extension RobotControlViewController_swift : WWRobotObserver {
-    
+extension RobotControlViewController : WWRobotObserver {
 }
 
-extension RobotControlViewController {
-    var robots : [WWRobot] {
-        guard let robots = connectedRobots as? [WWRobot] else {
-            return [WWRobot]()
-        }
-        return robots;
-    }
-}

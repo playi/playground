@@ -48,14 +48,14 @@ class ControlSoundViewController: RobotControlViewController {
     
         volumeSlider.value =  Float(volume)
         
-        for robot in robots {
+        for robot in connectedRobots {
             robot.add(mainButtonTouchUp)
             robot.add(headPanPositionChanged)
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        for robot in robots {
+        for robot in connectedRobots {
             robot.removeAllEvents()
         }
     }
@@ -71,8 +71,8 @@ class ControlSoundViewController: RobotControlViewController {
 }
 
 
-
-extension ControlSoundViewController : WWRobotObserver {
+// MARK: WWRobotObserver
+extension ControlSoundViewController  {
     func robot(_ robot: WWRobot!, eventsTriggered events: [Any]!) {
         for event in events as! [WWEvent] {
             if mainButtonTouchUp == event {

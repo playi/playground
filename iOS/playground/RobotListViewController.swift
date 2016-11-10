@@ -161,7 +161,7 @@ extension RobotListViewController : WWRobotManagerObserver {
     
     func manager(_ manager: WWRobotManager!, didConnect robot: WWRobot!) {
         tableView.reloadData()
-        controlPanelViewController?.activeControlVC.refreshConnectedRobots()
+        controlPanelViewController?.activeControlVC?.refreshConnectedRobots()
     }
 
     func manager(_ manager: WWRobotManager!, didFailToConnect robot: WWRobot!, error: WWError!) {

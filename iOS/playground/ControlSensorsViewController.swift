@@ -58,7 +58,7 @@ extension ControlSensorsViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath)
-        let robot = self.robots[indexPath.row]
+        let robot = connectedRobots[indexPath.row]
         let sensorData  = robot.history.currentState() as WWSensorSet
         
         var detail = String()

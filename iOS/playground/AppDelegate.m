@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "RobotControlPanelViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 

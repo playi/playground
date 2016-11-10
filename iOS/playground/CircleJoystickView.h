@@ -10,7 +10,6 @@
 
 @interface CircleJoystickView : JoystickView
 
-- (float) angle; /* get angle [0-360] */
 @property (nonatomic) float power; /* 0-1 multiplier, which is a relative joystick dot distance from the center */
 
 @end

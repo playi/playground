@@ -49,7 +49,7 @@ class ControlDriveViewController : RobotControlViewController {
 
     @IBAction func toggleWiggle(_ sender: Any) {
         let btnText = isWiggling ? "Start wiggle" : "Stop wiggle"
-        for robot in robots {
+        for robot in connectedRobots {
             if isWiggling {
                 robot.stopCommand(wiggleAnimation)
             }
@@ -65,7 +65,7 @@ class ControlDriveViewController : RobotControlViewController {
     
     @IBAction func executeNod(_ sender: Any) {
         if !isNodding && !isWiggling {
-            for robot in robots {
+            for robot in connectedRobots {
                 robot.executeCommand(nodAnimation, withOptions:nil)
             }
         }
@@ -80,8 +80,9 @@ extension ControlDriveViewController : JoystickDelegate {
     }
     
     func onJoystickReleased() {
-        let stopCmd = WWCommandToolbelt.moveStop()
-        sendCommandSet(toRobots: stopCmd)
+        if let stopCmd = WWCommandToolbelt.moveStop() {
+            sendCommandSet(toRobots: stopCmd)
+        }
     }
     
     
@@ -113,7 +114,7 @@ extension ControlDriveViewController { // : WWRobotObserver {
         if sequence == wiggleAnimation {
             if isWiggling {
                 // continue to wiggle until user stops
-                for robot in robots {
+                for robot in connectedRobots {
                     robot.executeCommand(wiggleAnimation, withOptions: nil)
                 }
             } else {
@@ -125,7 +126,7 @@ extension ControlDriveViewController { // : WWRobotObserver {
     
     func robot(_ robot: WWRobot!, didStopExecutingCommand sequence: WWCommandSetSequence!, withResults results: [AnyHashable : Any]!) {
         print("wiggle sequence terminated by user.");
-        for robot in robots {
+        for robot in connectedRobots {
             robot.resetState()
         }
     }
