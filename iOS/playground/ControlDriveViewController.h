@@ -9,7 +9,7 @@
 #import "RobotControlViewController.h"
 #import "CircleJoystickView.h"
 
-@interface ControlDriveViewController : RobotControlViewController <JoystickDelegate>
+@interface ControlDriveViewController0 : RobotControlViewController <JoystickDelegate>
 
 @property (nonatomic, weak) IBOutlet CircleJoystickView *joystick;
 @property (weak, nonatomic) IBOutlet UIButton *toggleWiggleBtn;

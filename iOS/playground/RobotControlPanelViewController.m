@@ -7,7 +7,6 @@
 //
 
 #import "RobotControlPanelViewController.h"
-#import "ControlEyeRingViewController.h"
 #import "ControlDriveViewController.h"
 #import "ControlHeadViewController.h"
 #import "ControlSoundViewController.h"

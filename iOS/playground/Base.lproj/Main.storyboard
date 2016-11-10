@@ -294,7 +294,7 @@
         <!--Joystick Delegate-->
         <scene sceneID="ZQd-cX-Zh1">
             <objects>
-                <viewController storyboardIdentifier="ControlDriveViewController" id="j8l-l0-vIs" customClass="ControlDriveViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ControlDriveViewController" id="j8l-l0-vIs" customClass="ControlDriveViewController" customModule="playground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0u3-Rd-Zef">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -369,7 +369,7 @@
         <!--Control Eye Ring View Controller-->
         <scene sceneID="RpD-vX-GFC">
             <objects>
-                <viewController storyboardIdentifier="ControlEyeRingViewController" id="J0H-yV-QeX" customClass="ControlEyeRingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ControlEyeRingViewController" id="J0H-yV-QeX" customClass="ControlEyeRingViewController" customModule="playground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dHM-2n-P8F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -462,7 +462,7 @@
                                 <rect key="frame" x="205" y="52" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="setEyeRing:" destination="J0H-yV-QeX" eventType="valueChanged" id="wjZ-33-W9Y"/>
+                                    <action selector="setEyeRing:" destination="J0H-yV-QeX" eventType="valueChanged" id="NNP-wV-f29"/>
                                 </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9eX-us-3sR">
@@ -507,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiP-Rl-uRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="1074"/>
+            <point key="canvasLocation" x="370" y="990"/>
         </scene>
         <!--Control Sound View Controller-->
         <scene sceneID="Syg-El-D0N">
@@ -580,11 +580,11 @@
                                         <rect key="frame" x="0.0" y="22" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5h-o2-yY5" id="sYU-hp-CZQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Data" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="j5w-V8-uca">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="200"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="199"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

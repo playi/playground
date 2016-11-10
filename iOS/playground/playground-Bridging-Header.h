@@ -8,6 +8,8 @@
 #import "RobotControlPanelViewController.h"
 #import "RobotControlViewController.h"
 #import "RobotListTableViewCell.h"
+#import "JoystickView.h"
+#import "CircleJoystickView.h"
 
 @interface WWRobotManager (shared)
 + (WWRobotManager*) sharedManager;

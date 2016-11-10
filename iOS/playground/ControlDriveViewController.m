@@ -10,7 +10,7 @@
 
 #define ROBOT_SPEED 50
 
-@interface ControlDriveViewController ()
+@interface ControlDriveViewController0 ()
 
 @property (nonatomic) BOOL isWiggling;
 @property (nonatomic) BOOL isNodding;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation ControlDriveViewController
+@implementation ControlDriveViewController0
 
 - (void)viewDidLoad {
     [super viewDidLoad];

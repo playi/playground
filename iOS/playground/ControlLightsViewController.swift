@@ -68,9 +68,6 @@ class ControlLightsViewController: RobotControlViewController {
         }
         
     }
-//    - (IBAction)setRGBLights:(id)sender;
-//    - (IBAction)toggleLightShow:(id)sender;
-
     
     @objc func lightShowTimerValues(timer: Timer) {
         
