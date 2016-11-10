@@ -6,17 +6,7 @@
 //  Copyright (c) 2014 Wonder Workshop. All rights reserved.
 //
 
-//#import "RobotListViewController.h"
-//#import "RobotControlPanelViewController.h"
-//#import "RobotControlViewController.h"
-//#import "RobotListTableViewCell.h"
-//
-//@interface RobotListViewController ()
-//
-//@property NSMutableArray *robots;
-//
-//@end
-//
+
 import UIKit
 
 class RobotListViewController : UITableViewController {
@@ -78,13 +68,11 @@ class RobotListViewController : UITableViewController {
             }
         }
     }
-    
-    
-    
-    
-    
-//    #pragma mark - Table View
- 
+}
+
+// MARK: Table View methods
+extension RobotListViewController {
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -159,25 +147,10 @@ extension RobotListViewController : WWRobotManagerObserver {
         }
     }
 
-    
-    //- (void) manager:(WWRobotManager *)manager didDiscoverRobot:(WWRobot *)robot {
-    //    if (![self.robots containsObject:robot]) {
-    //        // found new robots, refresh list
-    //        [self.robots addObject:robot];
-    //        [self.tableView reloadData];
-    //    }
-    //}
-    //
-    
    
     func manager(_ manager: WWRobotManager!, didUpdateDiscoveredRobots robot: WWRobot!) {
         tableView.reloadData()
     }
-    //- (void) manager:(WWRobotManager *)manager didUpdateDiscoveredRobots:(WWRobot *)robot {
-    //    // existing robots have new data, refresh
-    //    [self.tableView reloadData];
-    //}
-    //
     
     func manager(_ manager: WWRobotManager!, didLose robot: WWRobot!) {
         if let index = robots.index(of: robot) {
@@ -185,62 +158,20 @@ extension RobotListViewController : WWRobotManagerObserver {
         }
         tableView.reloadData()
     }
-    //- (void) manager:(WWRobotManager *)manager didLoseRobot:(WWRobot *)robot {
-    //    // lost connectivity with existing robot, refresh list
-    //    [self.robots removeObject:robot];
-    //    [self.tableView reloadData];
-    //}
-    //
     
     func manager(_ manager: WWRobotManager!, didConnect robot: WWRobot!) {
         tableView.reloadData()
         controlPanelViewController?.activeControlVC.refreshConnectedRobots()
     }
-    //- (void) manager:(WWRobotManager *)manager didConnectRobot:(WWRobot *)robot {
-    //    // connected with robot, refresh
-    //    [self.tableView reloadData];
-    //    [self.controlPanelViewController.activeControlVC refreshConnectedRobots];
-    //}
-    //
+
     func manager(_ manager: WWRobotManager!, didFailToConnect robot: WWRobot!, error: WWError!) {
+        print("failed to connect to robot: \(robot.name), with error: \(error)");
+        print()
         
     }
-    //- (void) manager:(WWRobotManager *)manager didFailToConnectRobot:(WWRobot *)robot error:(WWError *)error {
-    //    NSLog(@"failed to connect to robot: %@, with error: %@", robot.name, error);
-    //    [NSNumber numberWithUnsignedInteger:WW_SENSOR_BUTTON_MAIN];
-    //}
-    //
     
     func manager(_ manager: WWRobotManager!, didDisconnectRobot robot: WWRobot!) {
         tableView.reloadData()
     }
-    //- (void) manager:(WWRobotManager *)manager didDisconnectRobot:(WWRobot *)robot {
-    //    // disconnected with robot, refresh
-    //    [self.tableView reloadData];
-    //}
-    //
 
 }
-
-//
-//- (void)insertNewObject:(id)sender {
-////    if (!self.objects) {
-////        self.objects = [[NSMutableArray alloc] init];
-////    }
-////    [self.objects insertObject:[NSDate date] atIndex:0];
-////    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-////    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
-//
-//#pragma mark - Segues
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        RobotControlPanelViewController *controller = (RobotControlPanelViewController *)[[segue destinationViewController] topViewController];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
-//    }
-//}
-////#pragma mark - RobotManagerDelegate
-////@end

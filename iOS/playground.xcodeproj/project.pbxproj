@@ -33,6 +33,8 @@
 		6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9021DD3BF24005DF517 /* RobotController.swift */; };
 		6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */; };
 		6007A9071DD3CE3B005DF517 /* RobotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9061DD3CE3B005DF517 /* RobotViewController.swift */; };
+		60E314E51DD4628700EAF47A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E314E01DD4628700EAF47A /* LaunchScreen.xib */; };
+		60E314E61DD4628700EAF47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E314E21DD4628700EAF47A /* Main.storyboard */; };
 		780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D964F1A1B844000B109CC /* CircleJoystickView.m */; };
 		780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D96521A1B8F1800B109CC /* ControlHeadViewController.m */; };
 /* End PBXBuildFile section */
@@ -90,6 +92,8 @@
 		6007A9021DD3BF24005DF517 /* RobotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotController.swift; sourceTree = "<group>"; };
 		6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Bridging-Helper.m"; sourceTree = "<group>"; };
 		6007A9061DD3CE3B005DF517 /* RobotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotViewController.swift; sourceTree = "<group>"; };
+		60E314E11DD4628700EAF47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		60E314E31DD4628700EAF47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		780D964E1A1B844000B109CC /* CircleJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleJoystickView.h; sourceTree = "<group>"; };
 		780D964F1A1B844000B109CC /* CircleJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleJoystickView.m; sourceTree = "<group>"; };
 		780D96511A1B8F1800B109CC /* ControlHeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHeadViewController.h; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 		0A304C361A1A85D2001A67B7 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				60E314DF1DD4628700EAF47A /* Base.lproj */,
 				0A304C3E1A1AB963001A67B7 /* ControlLightsViewController.h */,
 				0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */,
 				0A304C411A1ABD6D001A67B7 /* RobotControlViewController.h */,
@@ -241,6 +246,15 @@
 				0A412C571A6468110045A7B0 /* wiggle.json */,
 			);
 			name = animations;
+			sourceTree = "<group>";
+		};
+		60E314DF1DD4628700EAF47A /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				60E314E01DD4628700EAF47A /* LaunchScreen.xib */,
+				60E314E21DD4628700EAF47A /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,10 +340,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60E314E61DD4628700EAF47A /* Main.storyboard in Resources */,
 				0A304C3D1A1A8619001A67B7 /* RobotListTableViewCell.xib in Resources */,
 				0A412C581A6468110045A7B0 /* wiggle.json in Resources */,
 				0A304C0E1A1A6FEF001A67B7 /* Main.storyboard in Resources */,
 				0A304C131A1A6FEF001A67B7 /* LaunchScreen.xib in Resources */,
+				60E314E51DD4628700EAF47A /* LaunchScreen.xib in Resources */,
 				0A304C101A1A6FEF001A67B7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +417,22 @@
 				0A304C121A1A6FEF001A67B7 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		60E314E01DD4628700EAF47A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E314E11DD4628700EAF47A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		60E314E21DD4628700EAF47A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60E314E31DD4628700EAF47A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
