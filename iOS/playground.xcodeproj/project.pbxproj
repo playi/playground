@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A304C021A1A6FEF001A67B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C011A1A6FEF001A67B7 /* main.m */; };
-		0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C041A1A6FEF001A67B7 /* AppDelegate.m */; };
 		0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */; };
 		0A304C0E1A1A6FEF001A67B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0C1A1A6FEF001A67B7 /* Main.storyboard */; };
 		0A304C101A1A6FEF001A67B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */; };
@@ -34,6 +32,7 @@
 		604F67011DD4BAA900729682 /* ControlSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F67001DD4BAA900729682 /* ControlSoundViewController.swift */; };
 		605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605653781DD47ED900354A88 /* ClassExtensions.swift */; };
 		608033721DD5B28B0092A787 /* CircleJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033711DD5B28B0092A787 /* CircleJoystickView.swift */; };
+		608033B01DD5C04E0092A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033AF1DD5C04E0092A787 /* AppDelegate.swift */; };
 		60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */; };
 		60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,9 +50,6 @@
 /* Begin PBXFileReference section */
 		0A304BFC1A1A6FEF001A67B7 /* playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A304C001A1A6FEF001A67B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A304C011A1A6FEF001A67B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0A304C031A1A6FEF001A67B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0A304C041A1A6FEF001A67B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotListViewController.swift; sourceTree = "<group>"; };
 		0A304C0D1A1A6FEF001A67B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -85,6 +81,7 @@
 		604F67001DD4BAA900729682 /* ControlSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSoundViewController.swift; sourceTree = "<group>"; };
 		605653781DD47ED900354A88 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		608033711DD5B28B0092A787 /* CircleJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleJoystickView.swift; sourceTree = "<group>"; };
+		608033AF1DD5C04E0092A787 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLightsViewController.swift; sourceTree = "<group>"; };
 		60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotControlPanelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,11 +131,10 @@
 		0A304BFE1A1A6FEF001A67B7 /* playground */ = {
 			isa = PBXGroup;
 			children = (
+				608033AF1DD5C04E0092A787 /* AppDelegate.swift */,
 				0A412C561A6468060045A7B0 /* animations */,
 				0A304C361A1A85D2001A67B7 /* controllers */,
 				0A304C351A1A85CB001A67B7 /* views */,
-				0A304C031A1A6FEF001A67B7 /* AppDelegate.h */,
-				0A304C041A1A6FEF001A67B7 /* AppDelegate.m */,
 				0A304C0C1A1A6FEF001A67B7 /* Main.storyboard */,
 				0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */,
 				0A304C111A1A6FEF001A67B7 /* LaunchScreen.xib */,
@@ -157,7 +153,6 @@
 			children = (
 				0A304C2F1A1A7E5D001A67B7 /* playground-prefix.pch */,
 				0A304C001A1A6FEF001A67B7 /* Info.plist */,
-				0A304C011A1A6FEF001A67B7 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -338,18 +333,17 @@
 				6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */,
 				60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */,
 				0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */,
-				0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */,
 				604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */,
 				608033721DD5B28B0092A787 /* CircleJoystickView.swift in Sources */,
 				0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */,
 				604F66F91DD4885A00729682 /* ControlEyeRingViewController.swift in Sources */,
-				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
 				60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */,
 				604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */,
 				604F66FF1DD4ACB700729682 /* ControlSensorsViewController.swift in Sources */,
 				604F66FD1DD4A80600729682 /* ControlHeadViewController.swift in Sources */,
 				604F67011DD4BAA900729682 /* ControlSoundViewController.swift in Sources */,
 				605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */,
+				608033B01DD5C04E0092A787 /* AppDelegate.swift in Sources */,
 				6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
