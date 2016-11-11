@@ -19,9 +19,7 @@
 		0A304C341A1A833B001A67B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C331A1A833B001A67B7 /* Foundation.framework */; };
 		0A304C3D1A1A8619001A67B7 /* RobotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */; };
 		0A412C581A6468110045A7B0 /* wiggle.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A412C571A6468110045A7B0 /* wiggle.json */; };
-		6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9021DD3BF24005DF517 /* RobotController.swift */; };
 		6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */; };
-		6007A9071DD3CE3B005DF517 /* RobotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9061DD3CE3B005DF517 /* RobotViewController.swift */; };
 		604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66F61DD4838800729682 /* RobotControlViewController.swift */; };
 		604F66F91DD4885A00729682 /* ControlEyeRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66F81DD4885A00729682 /* ControlEyeRingViewController.swift */; };
 		604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */; };
@@ -67,9 +65,7 @@
 		0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotListTableViewCell.xib; sourceTree = "<group>"; };
 		0A412C571A6468110045A7B0 /* wiggle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wiggle.json; sourceTree = "<group>"; };
 		6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "playground-Bridging-Header.h"; sourceTree = "<group>"; };
-		6007A9021DD3BF24005DF517 /* RobotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotController.swift; sourceTree = "<group>"; };
 		6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Bridging-Helper.m"; sourceTree = "<group>"; };
-		6007A9061DD3CE3B005DF517 /* RobotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotViewController.swift; sourceTree = "<group>"; };
 		604F66F61DD4838800729682 /* RobotControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotControlViewController.swift; sourceTree = "<group>"; };
 		604F66F81DD4885A00729682 /* ControlEyeRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEyeRingViewController.swift; sourceTree = "<group>"; };
 		604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlDriveViewController.swift; sourceTree = "<group>"; };
@@ -140,8 +136,6 @@
 				0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */,
 				0A304C111A1A6FEF001A67B7 /* LaunchScreen.xib */,
 				0A304BFF1A1A6FEF001A67B7 /* Supporting Files */,
-				6007A9021DD3BF24005DF517 /* RobotController.swift */,
-				6007A9061DD3CE3B005DF517 /* RobotViewController.swift */,
 				6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */,
 				6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */,
 				605653781DD47ED900354A88 /* ClassExtensions.swift */,
@@ -327,8 +321,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6007A9071DD3CE3B005DF517 /* RobotViewController.swift in Sources */,
-				6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */,
 				60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */,
 				604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */,
 				608033B41DD660220092A787 /* helper.swift in Sources */,
