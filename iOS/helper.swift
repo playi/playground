@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 func clamp(_ d: CGFloat , _ min : CGFloat ,_ max : CGFloat) -> CGFloat {

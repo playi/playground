@@ -17,7 +17,6 @@
 		0A304C2D1A1A70E7001A67B7 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C2C1A1A70E7001A67B7 /* libc++.dylib */; };
 		0A304C321A1A8332001A67B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C311A1A8332001A67B7 /* UIKit.framework */; };
 		0A304C341A1A833B001A67B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C331A1A833B001A67B7 /* Foundation.framework */; };
-		0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */; };
 		0A304C3D1A1A8619001A67B7 /* RobotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */; };
 		0A412C581A6468110045A7B0 /* wiggle.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A412C571A6468110045A7B0 /* wiggle.json */; };
 		6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9021DD3BF24005DF517 /* RobotController.swift */; };
@@ -34,6 +33,7 @@
 		608033B01DD5C04E0092A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033AF1DD5C04E0092A787 /* AppDelegate.swift */; };
 		608033B21DD5E6880092A787 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033B11DD5E6880092A787 /* JoystickView.swift */; };
 		608033B41DD660220092A787 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033B31DD660220092A787 /* helper.swift */; };
+		608033B61DD67A730092A787 /* RobotListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033B51DD67A730092A787 /* RobotListTableViewCell.swift */; };
 		60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */; };
 		60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */; };
 /* End PBXBuildFile section */
@@ -64,8 +64,6 @@
 		0A304C2F1A1A7E5D001A67B7 /* playground-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "playground-prefix.pch"; sourceTree = "<group>"; };
 		0A304C311A1A8332001A67B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A304C331A1A833B001A67B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableViewCell.h; sourceTree = "<group>"; };
-		0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableViewCell.m; sourceTree = "<group>"; };
 		0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotListTableViewCell.xib; sourceTree = "<group>"; };
 		0A412C571A6468110045A7B0 /* wiggle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wiggle.json; sourceTree = "<group>"; };
 		6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "playground-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -83,6 +81,7 @@
 		608033AF1DD5C04E0092A787 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		608033B11DD5E6880092A787 /* JoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
 		608033B31DD660220092A787 /* helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
+		608033B51DD67A730092A787 /* RobotListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotListTableViewCell.swift; sourceTree = "<group>"; };
 		60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLightsViewController.swift; sourceTree = "<group>"; };
 		60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotControlPanelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,8 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				608033711DD5B28B0092A787 /* CircleJoystickView.swift */,
-				0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */,
-				0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */,
+				608033B51DD67A730092A787 /* RobotListTableViewCell.swift */,
 				0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */,
 				608033B11DD5E6880092A787 /* JoystickView.swift */,
 			);
@@ -330,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6007A9071DD3CE3B005DF517 /* RobotViewController.swift in Sources */,
-				0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */,
 				6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */,
 				60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */,
 				604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */,
@@ -342,6 +339,7 @@
 				60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */,
 				604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */,
 				604F66FF1DD4ACB700729682 /* ControlSensorsViewController.swift in Sources */,
+				608033B61DD67A730092A787 /* RobotListTableViewCell.swift in Sources */,
 				604F66FD1DD4A80600729682 /* ControlHeadViewController.swift in Sources */,
 				604F67011DD4BAA900729682 /* ControlSoundViewController.swift in Sources */,
 				605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */,

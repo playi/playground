@@ -5,9 +5,6 @@
 #import <Foundation/Foundation.h>
 #import <WWRobotAPI/WWRobotAPI.h>
 
-#import "RobotListTableViewCell.h"
-#import "JoystickView.h"
-
 @interface WWRobotManager (shared)
 + (WWRobotManager*) sharedManager;
 @end
