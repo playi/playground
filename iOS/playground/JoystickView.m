@@ -52,8 +52,8 @@
 {
     [super layoutSubviews];
     
-    _center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-    _dotPos = _center;
+    self._center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+    _dotPos = self._center;
     [self updateDraggerPosition];
 }
 
@@ -118,13 +118,13 @@
         self.returnTimer = nil;
     }
     
-    self.dotPos = _center;
+    self.dotPos = self._center;
     [self updateDraggerPosition];
 }
 
 - (void) returnJoystickToCenter
 {
-    float dist = getDistance(_center, _dotPos);
+    float dist = getDistance(self._center, _dotPos);
     if (dist < 0.1) {
         [self returnNow];
         return;
@@ -138,14 +138,14 @@
 
     // animate soft return
     [UIView animateWithDuration:self.returnTime animations:^{
-        self.draggerImgView.center = _center;
+        self.draggerImgView.center = self._center;
     }];
 }
 
 - (void) updateReturnJoystick
 {
     if (_currentReturnRatio >= 1) {
-        self.dotPos = _center;
+        self.dotPos = self._center;
     
         // means we have returned it to the center
         if ([_joystickDelegate respondsToSelector:@selector(onJoystickReleased)]) {
@@ -162,7 +162,7 @@
             [_joystickDelegate onJoystickMoved];
         }
         
-        self.dotPos = lerpPoints(_dotPos, _center, _currentReturnRatio * 0.4);
+        self.dotPos = lerpPoints(_dotPos, self._center, _currentReturnRatio * 0.4);
     }
 }
 

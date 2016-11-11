@@ -28,9 +28,9 @@ typedef enum {
 @end
 
 @interface JoystickView : UIView
-{
-    CGPoint _center;
-}
+
+    @property CGPoint _center;
+
 
 @property (nonatomic, weak) IBOutlet id<JoystickDelegate> joystickDelegate;
 @property (nonatomic) CGPoint dotPos;
