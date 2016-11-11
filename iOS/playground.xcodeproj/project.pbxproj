@@ -19,7 +19,6 @@
 		0A304C341A1A833B001A67B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C331A1A833B001A67B7 /* Foundation.framework */; };
 		0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */; };
 		0A304C3D1A1A8619001A67B7 /* RobotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */; };
-		0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4A1A1AE50B001A67B7 /* JoystickView.m */; };
 		0A412C581A6468110045A7B0 /* wiggle.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A412C571A6468110045A7B0 /* wiggle.json */; };
 		6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9021DD3BF24005DF517 /* RobotController.swift */; };
 		6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */; };
@@ -33,6 +32,8 @@
 		605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605653781DD47ED900354A88 /* ClassExtensions.swift */; };
 		608033721DD5B28B0092A787 /* CircleJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033711DD5B28B0092A787 /* CircleJoystickView.swift */; };
 		608033B01DD5C04E0092A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033AF1DD5C04E0092A787 /* AppDelegate.swift */; };
+		608033B21DD5E6880092A787 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033B11DD5E6880092A787 /* JoystickView.swift */; };
+		608033B41DD660220092A787 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033B31DD660220092A787 /* helper.swift */; };
 		60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */; };
 		60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,8 +67,6 @@
 		0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableViewCell.h; sourceTree = "<group>"; };
 		0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableViewCell.m; sourceTree = "<group>"; };
 		0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotListTableViewCell.xib; sourceTree = "<group>"; };
-		0A304C491A1AE50B001A67B7 /* JoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickView.h; sourceTree = "<group>"; };
-		0A304C4A1A1AE50B001A67B7 /* JoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickView.m; sourceTree = "<group>"; };
 		0A412C571A6468110045A7B0 /* wiggle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wiggle.json; sourceTree = "<group>"; };
 		6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "playground-Bridging-Header.h"; sourceTree = "<group>"; };
 		6007A9021DD3BF24005DF517 /* RobotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotController.swift; sourceTree = "<group>"; };
@@ -82,6 +81,8 @@
 		605653781DD47ED900354A88 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
 		608033711DD5B28B0092A787 /* CircleJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleJoystickView.swift; sourceTree = "<group>"; };
 		608033AF1DD5C04E0092A787 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		608033B11DD5E6880092A787 /* JoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
+		608033B31DD660220092A787 /* helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
 		60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLightsViewController.swift; sourceTree = "<group>"; };
 		60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotControlPanelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +113,7 @@
 		0A304BF31A1A6FEF001A67B7 = {
 			isa = PBXGroup;
 			children = (
+				608033B31DD660220092A787 /* helper.swift */,
 				0A304BFE1A1A6FEF001A67B7 /* playground */,
 				0A304C1B1A1A6FF0001A67B7 /* playgroundTests */,
 				0A304C5A1A1D12C4001A67B7 /* Frameworks */,
@@ -181,8 +183,7 @@
 				0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */,
 				0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */,
 				0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */,
-				0A304C491A1AE50B001A67B7 /* JoystickView.h */,
-				0A304C4A1A1AE50B001A67B7 /* JoystickView.m */,
+				608033B11DD5E6880092A787 /* JoystickView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -332,10 +333,11 @@
 				0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */,
 				6007A9031DD3BF24005DF517 /* RobotController.swift in Sources */,
 				60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */,
-				0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */,
 				604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */,
+				608033B41DD660220092A787 /* helper.swift in Sources */,
 				608033721DD5B28B0092A787 /* CircleJoystickView.swift in Sources */,
 				0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */,
+				608033B21DD5E6880092A787 /* JoystickView.swift in Sources */,
 				604F66F91DD4885A00729682 /* ControlEyeRingViewController.swift in Sources */,
 				60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */,
 				604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */,

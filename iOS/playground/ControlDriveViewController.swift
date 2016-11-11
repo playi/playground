@@ -42,7 +42,7 @@ class ControlDriveViewController : RobotControlViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        joystick.type = DRIVE_JOYSTICK
+        joystick.type = .DRIVE_JOYSTICK
         joystick.updateDraggerImage()
         
     }

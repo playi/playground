@@ -12,6 +12,7 @@ class CircleJoystickView: JoystickView {
     
     private var _circleRadius : Float = 0.0
     let CIRCLE_RECT_PADDING : CGFloat = 10
+
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -31,24 +32,31 @@ class CircleJoystickView: JoystickView {
         return _circleRadius - Float(DOTSIZE) / 2.0
     }
 
-    override func enforceJoystickBound(_ point: UnsafeMutablePointer<CGPoint>!) {
+    
+    override func enforceJoystickBound(_ point: CGPoint) -> CGPoint? {
 //        super.enforceJoystickBound(point)
-        let oldPoint = point.pointee
+        let oldPoint = point
         let v1 = oldPoint.x - _center.x
         let v2 = oldPoint.y - _center.y
         let length = sqrt( v1 * v1 + v2 * v2)
         let maxLength = CGFloat(circleRadius)
-        print("length \(length)  maxlength \(maxLength) ")
+//        print("length \(length)  maxlength \(maxLength) ")
         if length > maxLength {
             let phi = atan2(v2, v1)
-            print("phi \(phi) ")
+//            print("phi \(phi) ")
             let x = _center.x + maxLength * cos(phi)
             let y = _center.y + maxLength * sin(phi)
-            point.pointee = CGPoint(x: x, y: y)
+            return CGPoint(x: x, y: y)
+        } else {
+            return nil
         }
         
     }
     
+}
+
+extension CircleJoystickView {
+
     override func getX() -> Float {
         let src_min = Float(_center.x) - circleRadius
         let src_max = Float(_center.x) + circleRadius
