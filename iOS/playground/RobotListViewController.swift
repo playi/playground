@@ -95,11 +95,11 @@ extension RobotListViewController {
     
         // robot info
         var detail = String()
-        detail = detail.appendingFormat("uuId: %@\n", robot.uuId )
-        detail = detail.appendingFormat("Firmware %@\n", robot.firmwareVersion)
-        detail = detail.appendingFormat("Serial: %@\n", robot.serialNumber)
-        detail = detail.appendingFormat("RSSI %d dB\n", robot.signalStrength.intValue)
-        detail = detail.appendingFormat("Personality color: %d\n", robot.personalityColorIndex)
+        detail.append("uuId: \(robot.uuId)\n")
+        detail.append("Firmware \(robot.firmwareVersion)\n")
+        detail.append("Serial: \(robot.serialNumber)\n")
+        detail.append("RSSI \(robot.signalStrength.intValue) dB\n")
+        detail.append("Personality color: \(robot.personalityColorIndex)\n")
         cell.infoLabel.text = detail;
     
         // robot name
