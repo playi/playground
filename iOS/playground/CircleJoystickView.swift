@@ -23,8 +23,7 @@ class CircleJoystickView: JoystickView {
     
     var power : Float {
         get {
-            return Float(abs(dotPos.y - _center.y)) / circleRadius
-//            return getDistance(dotPos, self._center) / circleRadius
+            return getDistance(p1: dotPos, p2: self._center) / circleRadius
         }
     }
     
@@ -34,25 +33,20 @@ class CircleJoystickView: JoystickView {
 
     
     override func enforceJoystickBound(_ point: CGPoint) -> CGPoint? {
-//        super.enforceJoystickBound(point)
         let oldPoint = point
         let v1 = oldPoint.x - _center.x
         let v2 = oldPoint.y - _center.y
         let length = sqrt( v1 * v1 + v2 * v2)
         let maxLength = CGFloat(circleRadius)
-//        print("length \(length)  maxlength \(maxLength) ")
         if length > maxLength {
             let phi = atan2(v2, v1)
-//            print("phi \(phi) ")
             let x = _center.x + maxLength * cos(phi)
             let y = _center.y + maxLength * sin(phi)
             return CGPoint(x: x, y: y)
         } else {
             return nil
         }
-        
     }
-    
 }
 
 extension CircleJoystickView {

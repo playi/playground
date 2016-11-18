@@ -17,14 +17,6 @@ import UIKit
     @objc optional func joystickBounds() -> CGRect
 }
 
-//extension JoystickDelegate {
-//    func onJoystickMoved() {}
-//    @objc func onJoystickSoftReleased() {}
-//    func onJoystickReleased() {}
-//    @objc func joystickSoftReturnDuration() -> Float { return 0.0 }
-//}
-
-
 class JoystickView: UIView {
     
     enum JoystickType : UInt {
@@ -82,11 +74,6 @@ class JoystickView: UIView {
     }
     
 
-//}
-//
-//
-//// MARK: Joystick Layout
-//extension JoystickView {
     func updateDraggerImage() {
         let imgName : String
         switch type {
@@ -112,18 +99,6 @@ class JoystickView: UIView {
         return CGPoint(x: clamp(point.x, bounds.origin.x, bounds.width),
                        y: clamp(point.y, bounds.origin.y, bounds.height) )
     }
-    
-//    // forbid the joystick dot going out of circle
-//    override func enforceJoystickBound(_ point: UnsafeMutablePointer<CGPoint>!) {
-//        guard let bounds = joystickDelegate.joystickBounds?() else {
-//            return
-//        }
-//        let originalPoint = point.pointee
-//        point.pointee = CGPoint(x: clamp(originalPoint.x, bounds.origin.x, bounds.width),
-//                                y: clamp(originalPoint.y, bounds.origin.y, bounds.height) )
-//        
-//    }
-    
 
 }
 
@@ -206,14 +181,12 @@ extension JoystickView {
 
         updateDraggerPosition()
     }
-        
     
 }
 
 
 
 extension JoystickView {
-
 
     func updateDraggerPosition() {
         draggerImgView.center = dotPos;

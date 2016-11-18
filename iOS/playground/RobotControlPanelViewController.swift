@@ -27,10 +27,8 @@ class RobotControlPanelViewController: UIViewController {
                 let head = sb.instantiateViewController(withIdentifier: ControlHeadViewController.nameOfClass) as? RobotControlViewController,
                 let sound = sb.instantiateViewController(withIdentifier: ControlSoundViewController.nameOfClass) as? RobotControlViewController,
                 let sensor = sb.instantiateViewController(withIdentifier: ControlSensorsViewController.nameOfClass) as? RobotControlViewController {
-                
             
             controlsVC = [lights, eyeRing, drive, head, sound, sensor]
-            
             presentRobotControlsVC(vc: controlsVC.first!)
         }
     }

@@ -13,5 +13,4 @@ class RobotListTableViewCell: UITableViewCell {
     @IBOutlet var robotImageView : UIImageView!
     @IBOutlet var nameLabel : UILabel!
     @IBOutlet var infoLabel : UILabel!
-
 }

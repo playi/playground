@@ -5,11 +5,6 @@
 //
 import UIKit
 
-protocol RobotControlViewController_P {
-    func refreshConnectedRobots()
-    func sendCommandSet(toRobots:WWCommandSet)
-}
-
 class RobotControlViewController : UIViewController {
     var connectedRobots = [WWRobot]()
     override func viewWillAppear(_ animated:Bool) {

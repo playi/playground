@@ -47,20 +47,11 @@ class RobotListViewController : UITableViewController {
         tableView.layer.insertSublayer(gradient, at:0)
     }
     
-//    func insertNewObject() {
-//        
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-//            let indexPath = tableView.indexPathForSelectedRow
             if let controller = segue.destination as? RobotControlPanelViewController,
                 let splitViewController = splitViewController {
-                if #available(iOS 8.0, *) {
-                    controller.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-                } else {
-                    // Fallback on earlier versions
-                }
+                controller.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
@@ -144,7 +135,6 @@ extension RobotListViewController : WWRobotManagerObserver {
             tableView.reloadData()
         }
     }
-
    
     func manager(_ manager: WWRobotManager!, didUpdateDiscoveredRobots robot: WWRobot!) {
         tableView.reloadData()
@@ -171,5 +161,4 @@ extension RobotListViewController : WWRobotManagerObserver {
     func manager(_ manager: WWRobotManager!, didDisconnectRobot robot: WWRobot!) {
         tableView.reloadData()
     }
-
 }

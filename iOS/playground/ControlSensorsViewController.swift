@@ -22,8 +22,6 @@ class ControlSensorsViewController: RobotControlViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataTableView.rowHeight = 200;
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {

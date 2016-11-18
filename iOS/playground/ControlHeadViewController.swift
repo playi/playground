@@ -33,6 +33,4 @@ class ControlHeadViewController: RobotControlViewController {
         command.setHeadPositionTilt(tilt, pan: pan)
         sendCommandSet(toRobots: command)
     }
-    
-
 }
