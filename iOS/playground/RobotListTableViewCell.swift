@@ -9,8 +9,8 @@
 import UIKit
 
 class RobotListTableViewCell: UITableViewCell {
-    @IBOutlet var statusColorView : UIView!
-    @IBOutlet var robotImageView : UIImageView!
-    @IBOutlet var nameLabel : UILabel!
-    @IBOutlet var infoLabel : UILabel!
+    @IBOutlet var statusColorView: UIView!
+    @IBOutlet var robotImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var infoLabel: UILabel!
 }

@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-public extension NSObject{
+public extension NSObject {
     public class var nameOfClass: String {
         return String(describing: self)
     }

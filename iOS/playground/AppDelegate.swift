@@ -13,15 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+                     launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
         if let splitViewController = window?.rootViewController as? UISplitViewController {
-            splitViewController.delegate = self;
+            splitViewController.delegate = self
         }
 
         return true
     }
 
-
 }
-

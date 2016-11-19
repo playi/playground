@@ -5,13 +5,13 @@
 //
 import UIKit
 
-class RobotControlViewController : UIViewController {
+class RobotControlViewController: UIViewController {
     var connectedRobots = [WWRobot]()
-    override func viewWillAppear(_ animated:Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshConnectedRobots()
     }
-    
+
     func refreshConnectedRobots() {
         if let robots = WWRobotManager.shared().allConnectedRobots as? [WWRobot] {
             connectedRobots = robots
@@ -20,14 +20,13 @@ class RobotControlViewController : UIViewController {
             }
         }
     }
-    
-    func sendCommandSet(toRobots cmd:WWCommandSet) {
+
+    func sendCommandSet(toRobots cmd: WWCommandSet) {
         for robot in connectedRobots {
             robot.send(cmd)
         }
     }
 }
 
-extension RobotControlViewController : WWRobotObserver {
+extension RobotControlViewController: WWRobotObserver {
 }
-

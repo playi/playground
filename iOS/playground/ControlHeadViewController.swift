@@ -9,7 +9,7 @@
 import UIKit
 
 class ControlHeadViewController: RobotControlViewController {
-    
+
     @IBAction func onMiddleBtnTouch(_ sender: Any) {
         updateRobotHead(pan: 0, tilt: 0)
     }
@@ -25,8 +25,8 @@ class ControlHeadViewController: RobotControlViewController {
     @IBAction func onRightBtnTouch(_ sender: Any) {
         updateRobotHead(pan: -90, tilt: 0)
     }
-    
-    private func updateRobotHead(pan panDegree:Float, tilt tiltDegree: Float) {
+
+    private func updateRobotHead(pan panDegree: Float, tilt tiltDegree: Float) {
         let command = WWCommandSet()
         let tilt = WWCommandHeadPosition(degree: Double(tiltDegree))
         let pan = WWCommandHeadPosition(degree: Double(panDegree))
