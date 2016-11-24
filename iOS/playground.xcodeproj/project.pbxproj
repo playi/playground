@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A304C021A1A6FEF001A67B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C011A1A6FEF001A67B7 /* main.m */; };
-		0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C041A1A6FEF001A67B7 /* AppDelegate.m */; };
-		0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */; };
-		0A304C0B1A1A6FEF001A67B7 /* RobotControlPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C0A1A1A6FEF001A67B7 /* RobotControlPanelViewController.m */; };
+		0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */; };
 		0A304C0E1A1A6FEF001A67B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0C1A1A6FEF001A67B7 /* Main.storyboard */; };
 		0A304C101A1A6FEF001A67B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */; };
 		0A304C131A1A6FEF001A67B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C111A1A6FEF001A67B7 /* LaunchScreen.xib */; };
@@ -20,18 +17,23 @@
 		0A304C2D1A1A70E7001A67B7 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C2C1A1A70E7001A67B7 /* libc++.dylib */; };
 		0A304C321A1A8332001A67B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C311A1A8332001A67B7 /* UIKit.framework */; };
 		0A304C341A1A833B001A67B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A304C331A1A833B001A67B7 /* Foundation.framework */; };
-		0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */; };
 		0A304C3D1A1A8619001A67B7 /* RobotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */; };
-		0A304C401A1AB963001A67B7 /* ControlLightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */; };
-		0A304C431A1ABD6D001A67B7 /* RobotControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C421A1ABD6D001A67B7 /* RobotControlViewController.m */; };
-		0A304C481A1AD28A001A67B7 /* ControlEyeRingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C471A1AD28A001A67B7 /* ControlEyeRingViewController.m */; };
-		0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4A1A1AE50B001A67B7 /* JoystickView.m */; };
-		0A304C4E1A1AE8FC001A67B7 /* ControlDriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */; };
-		0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */; };
-		0A304C581A1C0DA4001A67B7 /* ControlSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */; };
 		0A412C581A6468110045A7B0 /* wiggle.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A412C571A6468110045A7B0 /* wiggle.json */; };
-		780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D964F1A1B844000B109CC /* CircleJoystickView.m */; };
-		780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780D96521A1B8F1800B109CC /* ControlHeadViewController.m */; };
+		6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */; };
+		604467961DDFAC5B00B4D2E8 /* CoordinatesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604467951DDFAC5B00B4D2E8 /* CoordinatesHelper.swift */; };
+		604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66F61DD4838800729682 /* RobotControlViewController.swift */; };
+		604F66F91DD4885A00729682 /* ControlEyeRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66F81DD4885A00729682 /* ControlEyeRingViewController.swift */; };
+		604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */; };
+		604F66FD1DD4A80600729682 /* ControlHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66FC1DD4A80600729682 /* ControlHeadViewController.swift */; };
+		604F66FF1DD4ACB700729682 /* ControlSensorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F66FE1DD4ACB700729682 /* ControlSensorsViewController.swift */; };
+		604F67011DD4BAA900729682 /* ControlSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604F67001DD4BAA900729682 /* ControlSoundViewController.swift */; };
+		605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605653781DD47ED900354A88 /* ClassExtensions.swift */; };
+		608033721DD5B28B0092A787 /* CircleJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033711DD5B28B0092A787 /* CircleJoystickView.swift */; };
+		608033B01DD5C04E0092A787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033AF1DD5C04E0092A787 /* AppDelegate.swift */; };
+		608033B21DD5E6880092A787 /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033B11DD5E6880092A787 /* JoystickView.swift */; };
+		608033B61DD67A730092A787 /* RobotListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608033B51DD67A730092A787 /* RobotListTableViewCell.swift */; };
+		60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */; };
+		60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +49,7 @@
 /* Begin PBXFileReference section */
 		0A304BFC1A1A6FEF001A67B7 /* playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A304C001A1A6FEF001A67B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0A304C011A1A6FEF001A67B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0A304C031A1A6FEF001A67B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0A304C041A1A6FEF001A67B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0A304C061A1A6FEF001A67B7 /* RobotListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotListViewController.h; sourceTree = "<group>"; };
-		0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotListViewController.m; sourceTree = "<group>"; };
-		0A304C091A1A6FEF001A67B7 /* RobotControlPanelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RobotControlPanelViewController.h; sourceTree = "<group>"; };
-		0A304C0A1A1A6FEF001A67B7 /* RobotControlPanelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotControlPanelViewController.m; sourceTree = "<group>"; };
+		0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotListViewController.swift; sourceTree = "<group>"; };
 		0A304C0D1A1A6FEF001A67B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0A304C121A1A6FEF001A67B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -66,28 +62,24 @@
 		0A304C2F1A1A7E5D001A67B7 /* playground-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "playground-prefix.pch"; sourceTree = "<group>"; };
 		0A304C311A1A8332001A67B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0A304C331A1A833B001A67B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotListTableViewCell.h; sourceTree = "<group>"; };
-		0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotListTableViewCell.m; sourceTree = "<group>"; };
 		0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotListTableViewCell.xib; sourceTree = "<group>"; };
-		0A304C3E1A1AB963001A67B7 /* ControlLightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlLightsViewController.h; sourceTree = "<group>"; };
-		0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlLightsViewController.m; sourceTree = "<group>"; };
-		0A304C411A1ABD6D001A67B7 /* RobotControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotControlViewController.h; sourceTree = "<group>"; };
-		0A304C421A1ABD6D001A67B7 /* RobotControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotControlViewController.m; sourceTree = "<group>"; };
-		0A304C461A1AD28A001A67B7 /* ControlEyeRingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlEyeRingViewController.h; sourceTree = "<group>"; };
-		0A304C471A1AD28A001A67B7 /* ControlEyeRingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlEyeRingViewController.m; sourceTree = "<group>"; };
-		0A304C491A1AE50B001A67B7 /* JoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickView.h; sourceTree = "<group>"; };
-		0A304C4A1A1AE50B001A67B7 /* JoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickView.m; sourceTree = "<group>"; };
-		0A304C4C1A1AE8FC001A67B7 /* ControlDriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlDriveViewController.h; sourceTree = "<group>"; };
-		0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlDriveViewController.m; sourceTree = "<group>"; };
-		0A304C521A1BEBC9001A67B7 /* ControlSensorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlSensorsViewController.h; sourceTree = "<group>"; };
-		0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlSensorsViewController.m; sourceTree = "<group>"; };
-		0A304C561A1C0DA4001A67B7 /* ControlSoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlSoundViewController.h; sourceTree = "<group>"; };
-		0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlSoundViewController.m; sourceTree = "<group>"; };
 		0A412C571A6468110045A7B0 /* wiggle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wiggle.json; sourceTree = "<group>"; };
-		780D964E1A1B844000B109CC /* CircleJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleJoystickView.h; sourceTree = "<group>"; };
-		780D964F1A1B844000B109CC /* CircleJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleJoystickView.m; sourceTree = "<group>"; };
-		780D96511A1B8F1800B109CC /* ControlHeadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHeadViewController.h; sourceTree = "<group>"; };
-		780D96521A1B8F1800B109CC /* ControlHeadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlHeadViewController.m; sourceTree = "<group>"; };
+		6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "playground-Bridging-Header.h"; sourceTree = "<group>"; };
+		6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Bridging-Helper.m"; sourceTree = "<group>"; };
+		604467951DDFAC5B00B4D2E8 /* CoordinatesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatesHelper.swift; sourceTree = "<group>"; };
+		604F66F61DD4838800729682 /* RobotControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotControlViewController.swift; sourceTree = "<group>"; };
+		604F66F81DD4885A00729682 /* ControlEyeRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEyeRingViewController.swift; sourceTree = "<group>"; };
+		604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlDriveViewController.swift; sourceTree = "<group>"; };
+		604F66FC1DD4A80600729682 /* ControlHeadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlHeadViewController.swift; sourceTree = "<group>"; };
+		604F66FE1DD4ACB700729682 /* ControlSensorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSensorsViewController.swift; sourceTree = "<group>"; };
+		604F67001DD4BAA900729682 /* ControlSoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSoundViewController.swift; sourceTree = "<group>"; };
+		605653781DD47ED900354A88 /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
+		608033711DD5B28B0092A787 /* CircleJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleJoystickView.swift; sourceTree = "<group>"; };
+		608033AF1DD5C04E0092A787 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		608033B11DD5E6880092A787 /* JoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
+		608033B51DD67A730092A787 /* RobotListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotListTableViewCell.swift; sourceTree = "<group>"; };
+		60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLightsViewController.swift; sourceTree = "<group>"; };
+		60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotControlPanelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,12 +130,15 @@
 				0A412C561A6468060045A7B0 /* animations */,
 				0A304C361A1A85D2001A67B7 /* controllers */,
 				0A304C351A1A85CB001A67B7 /* views */,
-				0A304C031A1A6FEF001A67B7 /* AppDelegate.h */,
-				0A304C041A1A6FEF001A67B7 /* AppDelegate.m */,
 				0A304C0C1A1A6FEF001A67B7 /* Main.storyboard */,
 				0A304C0F1A1A6FEF001A67B7 /* Images.xcassets */,
 				0A304C111A1A6FEF001A67B7 /* LaunchScreen.xib */,
 				0A304BFF1A1A6FEF001A67B7 /* Supporting Files */,
+				608033AF1DD5C04E0092A787 /* AppDelegate.swift */,
+				604467951DDFAC5B00B4D2E8 /* CoordinatesHelper.swift */,
+				6007A9011DD3BF24005DF517 /* playground-Bridging-Header.h */,
+				6007A9041DD3C9EF005DF517 /* Bridging-Helper.m */,
+				605653781DD47ED900354A88 /* ClassExtensions.swift */,
 			);
 			path = playground;
 			sourceTree = "<group>";
@@ -153,7 +148,6 @@
 			children = (
 				0A304C2F1A1A7E5D001A67B7 /* playground-prefix.pch */,
 				0A304C001A1A6FEF001A67B7 /* Info.plist */,
-				0A304C011A1A6FEF001A67B7 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -178,13 +172,10 @@
 		0A304C351A1A85CB001A67B7 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				780D964E1A1B844000B109CC /* CircleJoystickView.h */,
-				780D964F1A1B844000B109CC /* CircleJoystickView.m */,
-				0A304C391A1A8619001A67B7 /* RobotListTableViewCell.h */,
-				0A304C3A1A1A8619001A67B7 /* RobotListTableViewCell.m */,
+				608033711DD5B28B0092A787 /* CircleJoystickView.swift */,
+				608033B51DD67A730092A787 /* RobotListTableViewCell.swift */,
 				0A304C3B1A1A8619001A67B7 /* RobotListTableViewCell.xib */,
-				0A304C491A1AE50B001A67B7 /* JoystickView.h */,
-				0A304C4A1A1AE50B001A67B7 /* JoystickView.m */,
+				608033B11DD5E6880092A787 /* JoystickView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -192,24 +183,15 @@
 		0A304C361A1A85D2001A67B7 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A304C3E1A1AB963001A67B7 /* ControlLightsViewController.h */,
-				0A304C3F1A1AB963001A67B7 /* ControlLightsViewController.m */,
-				0A304C411A1ABD6D001A67B7 /* RobotControlViewController.h */,
-				0A304C421A1ABD6D001A67B7 /* RobotControlViewController.m */,
-				0A304C061A1A6FEF001A67B7 /* RobotListViewController.h */,
-				0A304C071A1A6FEF001A67B7 /* RobotListViewController.m */,
-				0A304C461A1AD28A001A67B7 /* ControlEyeRingViewController.h */,
-				0A304C471A1AD28A001A67B7 /* ControlEyeRingViewController.m */,
-				0A304C091A1A6FEF001A67B7 /* RobotControlPanelViewController.h */,
-				0A304C0A1A1A6FEF001A67B7 /* RobotControlPanelViewController.m */,
-				0A304C4C1A1AE8FC001A67B7 /* ControlDriveViewController.h */,
-				0A304C4D1A1AE8FC001A67B7 /* ControlDriveViewController.m */,
-				780D96511A1B8F1800B109CC /* ControlHeadViewController.h */,
-				780D96521A1B8F1800B109CC /* ControlHeadViewController.m */,
-				0A304C521A1BEBC9001A67B7 /* ControlSensorsViewController.h */,
-				0A304C531A1BEBC9001A67B7 /* ControlSensorsViewController.m */,
-				0A304C561A1C0DA4001A67B7 /* ControlSoundViewController.h */,
-				0A304C571A1C0DA4001A67B7 /* ControlSoundViewController.m */,
+				60E314E71DD46C1100EAF47A /* ControlLightsViewController.swift */,
+				604F66F61DD4838800729682 /* RobotControlViewController.swift */,
+				0A304C071A1A6FEF001A67B7 /* RobotListViewController.swift */,
+				604F66F81DD4885A00729682 /* ControlEyeRingViewController.swift */,
+				60EB766E1DD4F95B00071F47 /* RobotControlPanelViewController.swift */,
+				604F66FA1DD494DA00729682 /* ControlDriveViewController.swift */,
+				604F66FC1DD4A80600729682 /* ControlHeadViewController.swift */,
+				604F66FE1DD4ACB700729682 /* ControlSensorsViewController.swift */,
+				604F67001DD4BAA900729682 /* ControlSoundViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -283,7 +265,8 @@
 				TargetAttributes = {
 					0A304BFB1A1A6FEF001A67B7 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 6AS2VXQ4XQ;
+						DevelopmentTeam = XP2D8KRSZE;
+						LastSwiftMigration = 0810;
 					};
 					0A304C171A1A6FF0001A67B7 = {
 						CreatedOnToolsVersion = 6.1;
@@ -338,20 +321,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A304C431A1ABD6D001A67B7 /* RobotControlViewController.m in Sources */,
-				0A304C3C1A1A8619001A67B7 /* RobotListTableViewCell.m in Sources */,
-				0A304C4B1A1AE50B001A67B7 /* JoystickView.m in Sources */,
-				0A304C051A1A6FEF001A67B7 /* AppDelegate.m in Sources */,
-				0A304C581A1C0DA4001A67B7 /* ControlSoundViewController.m in Sources */,
-				780D96531A1B8F1800B109CC /* ControlHeadViewController.m in Sources */,
-				0A304C081A1A6FEF001A67B7 /* RobotListViewController.m in Sources */,
-				0A304C481A1AD28A001A67B7 /* ControlEyeRingViewController.m in Sources */,
-				0A304C541A1BEBC9001A67B7 /* ControlSensorsViewController.m in Sources */,
-				0A304C021A1A6FEF001A67B7 /* main.m in Sources */,
-				0A304C4E1A1AE8FC001A67B7 /* ControlDriveViewController.m in Sources */,
-				780D96501A1B844000B109CC /* CircleJoystickView.m in Sources */,
-				0A304C0B1A1A6FEF001A67B7 /* RobotControlPanelViewController.m in Sources */,
-				0A304C401A1AB963001A67B7 /* ControlLightsViewController.m in Sources */,
+				60E314E81DD46C1100EAF47A /* ControlLightsViewController.swift in Sources */,
+				604F66F71DD4838800729682 /* RobotControlViewController.swift in Sources */,
+				608033721DD5B28B0092A787 /* CircleJoystickView.swift in Sources */,
+				0A304C081A1A6FEF001A67B7 /* RobotListViewController.swift in Sources */,
+				608033B21DD5E6880092A787 /* JoystickView.swift in Sources */,
+				604F66F91DD4885A00729682 /* ControlEyeRingViewController.swift in Sources */,
+				60EB766F1DD4F95B00071F47 /* RobotControlPanelViewController.swift in Sources */,
+				604F66FB1DD494DA00729682 /* ControlDriveViewController.swift in Sources */,
+				604F66FF1DD4ACB700729682 /* ControlSensorsViewController.swift in Sources */,
+				608033B61DD67A730092A787 /* RobotListTableViewCell.swift in Sources */,
+				604F66FD1DD4A80600729682 /* ControlHeadViewController.swift in Sources */,
+				604F67011DD4BAA900729682 /* ControlSoundViewController.swift in Sources */,
+				605653791DD47ED900354A88 /* ClassExtensions.swift in Sources */,
+				604467961DDFAC5B00B4D2E8 /* CoordinatesHelper.swift in Sources */,
+				608033B01DD5C04E0092A787 /* AppDelegate.swift in Sources */,
+				6007A9051DD3C9EF005DF517 /* Bridging-Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,8 +460,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XP2D8KRSZE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,10 +471,13 @@
 				);
 				GCC_PREFIX_HEADER = "playground/playground-prefix.pch";
 				INFOPLIST_FILE = playground/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "playground/playground-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -496,8 +486,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XP2D8KRSZE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,10 +497,12 @@
 				);
 				GCC_PREFIX_HEADER = "playground/playground-prefix.pch";
 				INFOPLIST_FILE = playground/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "playground/playground-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -516,6 +510,7 @@
 		0A304C261A1A6FF0001A67B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -535,6 +530,7 @@
 		0A304C271A1A6FF0001A67B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
