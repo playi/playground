@@ -15,5 +15,8 @@
 @property (strong, nonatomic) RobotControlPanelViewController *controlPanelViewController;
 @property (nonatomic, strong) WWRobotManager *manager;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonBackToControls;
+
+
 @end
 

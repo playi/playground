@@ -33,7 +33,13 @@
     
     self.controlPanelViewController = (RobotControlPanelViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.robots = [NSMutableArray new];
-    
+  
+    // hack to get scene navigation to work on phones.
+    // for some reason cell-selection no longer triggers the segue back.
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.buttonBackToControls.hidden = true;
+    }
+  
     // load custom nib
     [self.tableView registerNib:[UINib nibWithNibName:@"RobotListTableViewCell" bundle:nil] forCellReuseIdentifier:@"RobotListTableViewCell"];
     
@@ -70,9 +76,9 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if (YES || [[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        RobotControlPanelViewController *controller = (RobotControlPanelViewController *)[[segue destinationViewController] topViewController];
+        RobotControlPanelViewController *controller = (RobotControlPanelViewController *)[segue destinationViewController];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
