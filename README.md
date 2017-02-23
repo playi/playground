@@ -2,16 +2,22 @@
 Welcome to wonder workshop playground app!  This is a sample application that integrates with wonder workshop's developer API to provide granular access to all the dash/dot sensors and actuators.  Feel free to modify the code here as needed to create your very own app that interacts with dash and dot in creative ways!
 
 ### How to get started
-Please refer to our [developer portal](https://developer.makewonder.com/#/gettingstarted) for how to download our API framework binary and integrate it into your application.  This project also provides examples on how to discover/connect with robots, send commands to dash/dot, and register for robot events.  
+Please refer to our [developer portal](https://developer.makewonder.com/#/gettingstarted) for how to download our API framework binary and integrate it into your application.  [Documentation](https://developer.makewonder.com/#/docs) is also at the portal.
+
+Alternatively, clone this github repo and try out the iOS or Android projects inside. The robot framework is included.  The projects demonstrate discovering & connecting to robots, sending commands, reading sensors, and registering for robot events.
 
 ### Communication
-* If you **need help**, we have a vibrant [developer forum](https://devforum.makewonder.com/) community.  Also, [stack overflow](http://stackoverflow.com/) is another good resource (Tag 'makewonder' or 'dashdot'). 
 * If you **found a bug and can provide steps to reliably reproduce it**, please send an email to developers@makewonder.com with a description of the bug, repo steps, and any debugging output/stack trace that you have!
-* If you **have a feature request**, please post your idea in our [developer forum - feature requests](https://devforum.makewonder.com/t/api-feedback-and-feature-requests/12/8) thread.
+* If you **have a feature request** or **need help**, please email us at developers@makewonder.com.
 * If you **love what we are doing**, we are always looking for [awesome engineers](https://www.makewonder.com/careers) to help us change the way children learn how to program!
 
 ### Requirements
-todo still
+* Contemporary iOS or Android development environment.
+* [Compatible iOS or Android device](https://www.makewonder.com/compatibility).
+
+### Notes
+* iOS
+    * the framework is compiled for actual ARM processors, and won't compile against the simulator.
 
 ### Contact
 * Email: developers@makewonder.com
