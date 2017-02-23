@@ -76,12 +76,14 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if (YES || [[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        RobotControlPanelViewController *controller = (RobotControlPanelViewController *)[segue destinationViewController];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
+    // oxe 201702: segue identifier is always null.
+    // if ([[segue identifier] isEqualToString:@"showDetail"]) {
+      // oxe 201702: this line seems orphaned. indexPath is unused.
+      // NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+      RobotControlPanelViewController *controller = (RobotControlPanelViewController *)[segue destinationViewController];
+      controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+      controller.navigationItem.leftItemsSupplementBackButton = YES;
+    // }
 }
 
 #pragma mark - Table View
