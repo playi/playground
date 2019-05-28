@@ -3,7 +3,7 @@ Welcome to wonder workshop playground app!  This is a sample application that in
 
 ### How to get started
 To get github access to the file you're reading now, email us. See below for details.
-Documentation is included in this repository: [Android](Android/doc/index.html), [iOS](iOS/doc/index.html).
+Documentation is included in this repository: [Android](Android/docs-android.md), [iOS](iOS/docs-ios.md).
 
 Try out the iOS or Android projects inside this repository. The robot framework is included.  The projects demonstrate discovering & connecting to robots, sending commands, reading sensors, and registering for robot events.
 
