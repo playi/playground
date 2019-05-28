@@ -1,0 +1,1564 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>WWCommandSet Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">WWRobotAPI </a></h1>
+				<a id="developerHome" href="../index.html">Wonder Workshop</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">WWCommandSet Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/mergeSet:withSet:">&nbsp;&nbsp;&nbsp;&nbsp;+ mergeSet:withSet:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/commandForIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- commandForIndex:</option>
+	
+	<option value="//api/name/removeCommandForIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- removeCommandForIndex:</option>
+	
+	<option value="//api/name/setBodyLinearAngular:">&nbsp;&nbsp;&nbsp;&nbsp;- setBodyLinearAngular:</option>
+	
+	<option value="//api/name/setBodyWheels:">&nbsp;&nbsp;&nbsp;&nbsp;- setBodyWheels:</option>
+	
+	<option value="//api/name/setChestLight:">&nbsp;&nbsp;&nbsp;&nbsp;- setChestLight:</option>
+	
+	<option value="//api/name/setCommand:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- setCommand:forKey:</option>
+	
+	<option value="//api/name/setEarLightLeft:right:">&nbsp;&nbsp;&nbsp;&nbsp;- setEarLightLeft:right:</option>
+	
+	<option value="//api/name/setEyeLight:">&nbsp;&nbsp;&nbsp;&nbsp;- setEyeLight:</option>
+	
+	<option value="//api/name/setEyeRing:">&nbsp;&nbsp;&nbsp;&nbsp;- setEyeRing:</option>
+	
+	<option value="//api/name/setHeadBang:">&nbsp;&nbsp;&nbsp;&nbsp;- setHeadBang:</option>
+	
+	<option value="//api/name/setHeadPositionPan:">&nbsp;&nbsp;&nbsp;&nbsp;- setHeadPositionPan:</option>
+	
+	<option value="//api/name/setHeadPositionTilt:">&nbsp;&nbsp;&nbsp;&nbsp;- setHeadPositionTilt:</option>
+	
+	<option value="//api/name/setHeadPositionTilt:pan:">&nbsp;&nbsp;&nbsp;&nbsp;- setHeadPositionTilt:pan:</option>
+	
+	<option value="//api/name/setLeftEarLight:">&nbsp;&nbsp;&nbsp;&nbsp;- setLeftEarLight:</option>
+	
+	<option value="//api/name/setMainButtonLight:">&nbsp;&nbsp;&nbsp;&nbsp;- setMainButtonLight:</option>
+	
+	<option value="//api/name/setMotorsAllToSpeed:">&nbsp;&nbsp;&nbsp;&nbsp;- setMotorsAllToSpeed:</option>
+	
+	<option value="//api/name/setRightEarLight:">&nbsp;&nbsp;&nbsp;&nbsp;- setRightEarLight:</option>
+	
+	<option value="//api/name/setSound:">&nbsp;&nbsp;&nbsp;&nbsp;- setSound:</option>
+	
+	<option value="//api/name/setTailLight:">&nbsp;&nbsp;&nbsp;&nbsp;- setTailLight:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adding commands">Adding commands</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Querying command set">Querying command set</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Removing commands">Removing commands</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Convenience operations">Convenience operations</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mergeSet:withSet:">mergeSet:withSet:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/commandForIndex:">commandForIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeCommandForIndex:">removeCommandForIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setBodyLinearAngular:">setBodyLinearAngular:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setBodyWheels:">setBodyWheels:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setChestLight:">setChestLight:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCommand:forKey:">setCommand:forKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setEarLightLeft:right:">setEarLightLeft:right:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setEyeLight:">setEyeLight:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setEyeRing:">setEyeRing:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHeadBang:">setHeadBang:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHeadPositionPan:">setHeadPositionPan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHeadPositionTilt:">setHeadPositionTilt:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHeadPositionTilt:pan:">setHeadPositionTilt:pan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLeftEarLight:">setLeftEarLight:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setMainButtonLight:">setMainButtonLight:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setMotorsAllToSpeed:">setMotorsAllToSpeed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRightEarLight:">setRightEarLight:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSound:">setSound:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setTailLight:">setTailLight:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="WWCommandSet Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">WWCommandSet Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/WWComponentSet.html">WWComponentSet</a> : <a href="../Classes/WWObject.html">WWObject</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">WWCommandSet.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>WWCommandSet</code> is a subclass of <a href="../Classes/WWComponentSet.html"><code>WWComponentSet</code></a> with strict type-checking and convenience
+methods to handle <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> objects.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Adding commands" name="task_Adding commands"></a>
+						<h3 class="subsubtitle task-title">Adding commands</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setBodyWheels:">&ndash;&nbsp;setBodyWheels:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setBodyLinearAngular:">&ndash;&nbsp;setBodyLinearAngular:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHeadPositionTilt:">&ndash;&nbsp;setHeadPositionTilt:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHeadPositionPan:">&ndash;&nbsp;setHeadPositionPan:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setEyeRing:">&ndash;&nbsp;setEyeRing:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setEyeLight:">&ndash;&nbsp;setEyeLight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLeftEarLight:">&ndash;&nbsp;setLeftEarLight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRightEarLight:">&ndash;&nbsp;setRightEarLight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setChestLight:">&ndash;&nbsp;setChestLight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setMainButtonLight:">&ndash;&nbsp;setMainButtonLight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setTailLight:">&ndash;&nbsp;setTailLight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSound:">&ndash;&nbsp;setSound:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHeadBang:">&ndash;&nbsp;setHeadBang:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCommand:forKey:">&ndash;&nbsp;setCommand:forKey:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setMotorsAllToSpeed:">&ndash;&nbsp;setMotorsAllToSpeed:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHeadPositionTilt:pan:">&ndash;&nbsp;setHeadPositionTilt:pan:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setEarLightLeft:right:">&ndash;&nbsp;setEarLightLeft:right:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Querying command set" name="task_Querying command set"></a>
+						<h3 class="subsubtitle task-title">Querying command set</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/commandForIndex:">&ndash;&nbsp;commandForIndex:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Removing commands" name="task_Removing commands"></a>
+						<h3 class="subsubtitle task-title">Removing commands</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeCommandForIndex:">&ndash;&nbsp;removeCommandForIndex:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Convenience operations" name="task_Convenience operations"></a>
+						<h3 class="subsubtitle task-title">Convenience operations</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mergeSet:withSet:">+&nbsp;mergeSet:withSet:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/mergeSet:withSet:" title="mergeSet:withSet:"></a>
+	<h3 class="subsubtitle method-title">mergeSet:withSet:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method that calls mergeSet:withSet method in <a href="../Classes/WWComponentSet.html"><code>WWComponentSet</code></a> with
+the right parameter checking.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (WWCommandSet *)mergeSet:(WWCommandSet *)<em>firstSet</em> withSet:(WWCommandSet *)<em>secondSet</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>firstSet</em></dt>
+			<dd><p>The first <code>WWCommandSet</code> object to merge.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secondSet</em></dt>
+			<dd><p>The second <code>WWCommandSet</code> object to merge.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A initialized <code>WWCommandSet</code> instance with merged results of firstSet and secondSet.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convenience method that calls mergeSet:withSet method in <a href="../Classes/WWComponentSet.html"><code>WWComponentSet</code></a> with
+the right parameter checking.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/commandForIndex:" title="commandForIndex:"></a>
+	<h3 class="subsubtitle method-title">commandForIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object associated with the given WWComponentId.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (WWCommand *)commandForIndex:(WWComponentId)<em>index</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>The WWComponentId mapping for the desired command.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The associated <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object in the mapping.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object associated with the given WWComponentId.</p>
+
+<p>If the mapping does not exist, null is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeCommandForIndex:" title="removeCommandForIndex:"></a>
+	<h3 class="subsubtitle method-title">removeCommandForIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object associated with the given WWComponentId.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeCommandForIndex:(WWComponentId)<em>index</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>The WWComponentId mapping for the desired command.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object associated with the given WWComponentId.</p>
+
+<p>If desired mapping doesn&rsquo;t exist, this method is a no-op.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setBodyLinearAngular:" title="setBodyLinearAngular:"></a>
+	<h3 class="subsubtitle method-title">setBodyLinearAngular:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandBodyLinearAngular.html"><code>WWCommandBodyLinearAngular</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setBodyLinearAngular:(WWCommandBodyLinearAngular *)<em>bodyLinAng</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bodyLinAng</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandBodyLinearAngular.html"><code>WWCommandBodyLinearAngular</code></a> object that specifies the body&rsquo;s linear/angular velocities.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandBodyLinearAngular.html"><code>WWCommandBodyLinearAngular</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setBodyWheels:" title="setBodyWheels:"></a>
+	<h3 class="subsubtitle method-title">setBodyWheels:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandBodyWheels.html"><code>WWCommandBodyWheels</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setBodyWheels:(WWCommandBodyWheels *)<em>wheels</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>wheels</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandBodyWheels.html"><code>WWCommandBodyWheels</code></a> object that specifies the wheel velocities.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandBodyWheels.html"><code>WWCommandBodyWheels</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setChestLight:" title="setChestLight:"></a>
+	<h3 class="subsubtitle method-title">setChestLight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setChestLight:(WWCommandLightRGB *)<em>chest</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>chest</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object that specifies the chest color.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCommand:forKey:" title="setCommand:forKey:"></a>
+	<h3 class="subsubtitle method-title">setCommand:forKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCommand:(WWCommand *)<em>command</em> forKey:(id)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>command</em></dt>
+			<dd><p>The <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object to insert into the set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The mapping index (NSNumber representation of WWComponentId).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setEarLightLeft:right:" title="setEarLightLeft:right:"></a>
+	<h3 class="subsubtitle method-title">setEarLightLeft:right:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setEarLightLeft:(WWCommandLightRGB *)<em>leftEar</em> right:(WWCommandLightRGB *)<em>rightEar</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leftEar</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object that specifies the left ear color.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rightEar</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object that specifies the right ear color.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setEyeLight:" title="setEyeLight:"></a>
+	<h3 class="subsubtitle method-title">setEyeLight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setEyeLight:(WWCommandLightRGB *)<em>eye</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eye</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object that specifies the eye color.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setEyeRing:" title="setEyeRing:"></a>
+	<h3 class="subsubtitle method-title">setEyeRing:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandEyeRing.html"><code>WWCommandEyeRing</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setEyeRing:(WWCommandEyeRing *)<em>eye</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eye</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandEyeRing.html"><code>WWCommandEyeRing</code></a> object that specifies the eye values.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandEyeRing.html"><code>WWCommandEyeRing</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHeadBang:" title="setHeadBang:"></a>
+	<h3 class="subsubtitle method-title">setHeadBang:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandHeadBang.html"><code>WWCommandHeadBang</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setHeadBang:(WWCommandHeadBang *)<em>bang</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bang</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandHeadBang.html"><code>WWCommandHeadBang</code></a> object that allows our robot to nod quickly (used for xylophone note strike).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandHeadBang.html"><code>WWCommandHeadBang</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHeadPositionPan:" title="setHeadPositionPan:"></a>
+	<h3 class="subsubtitle method-title">setHeadPositionPan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setHeadPositionPan:(WWCommandHeadPosition *)<em>pan</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pan</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object that specifies the head tilt position.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHeadPositionTilt:" title="setHeadPositionTilt:"></a>
+	<h3 class="subsubtitle method-title">setHeadPositionTilt:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setHeadPositionTilt:(WWCommandHeadPosition *)<em>tilt</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tilt</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object that specifies the head tilt position.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHeadPositionTilt:pan:" title="setHeadPositionTilt:pan:"></a>
+	<h3 class="subsubtitle method-title">setHeadPositionTilt:pan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts the given <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> objects to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setHeadPositionTilt:(WWCommandHeadPosition *)<em>tilt</em> pan:(WWCommandHeadPosition *)<em>pan</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tilt</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object that specifies the head tilt position.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pan</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> object that specifies the head pan position.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts the given <a href="../Classes/WWCommandHeadPosition.html"><code>WWCommandHeadPosition</code></a> objects to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setLeftEarLight:" title="setLeftEarLight:"></a>
+	<h3 class="subsubtitle method-title">setLeftEarLight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setLeftEarLight:(WWCommandLightRGB *)<em>leftEar</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leftEar</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object that specifies the left ear color.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setMainButtonLight:" title="setMainButtonLight:"></a>
+	<h3 class="subsubtitle method-title">setMainButtonLight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Insert a given <a href="../Classes/WWCommandLightMono.html"><code>WWCommandLightMono</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setMainButtonLight:(WWCommandLightMono *)<em>mainButton</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mainButton</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightMono.html"><code>WWCommandLightMono</code></a> object that specifies the mainButton brightness.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Insert a given <a href="../Classes/WWCommandLightMono.html"><code>WWCommandLightMono</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setMotorsAllToSpeed:" title="setMotorsAllToSpeed:"></a>
+	<h3 class="subsubtitle method-title">setMotorsAllToSpeed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts necessary <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> objects to set wheel velocities to the desired speeds.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setMotorsAllToSpeed:(double)<em>speed</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>wheels</em></dt>
+			<dd><p>The desired speed (in cm/s).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts necessary <a href="../Classes/WWCommand.html"><code>WWCommand</code></a> objects to set wheel velocities to the desired speeds.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRightEarLight:" title="setRightEarLight:"></a>
+	<h3 class="subsubtitle method-title">setRightEarLight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRightEarLight:(WWCommandLightRGB *)<em>rightEar</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rightEar</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object that specifies the right ear color.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandLightRGB.html"><code>WWCommandLightRGB</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSound:" title="setSound:"></a>
+	<h3 class="subsubtitle method-title">setSound:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandSpeaker.html"><code>WWCommandSpeaker</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSound:(WWCommandSpeaker *)<em>sound</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sound</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandSpeaker.html"><code>WWCommandSpeaker</code></a> object that specifies the sound to play.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandSpeaker.html"><code>WWCommandSpeaker</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setTailLight:" title="setTailLight:"></a>
+	<h3 class="subsubtitle method-title">setTailLight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Inserts a given <a href="../Classes/WWCommandLightMono.html"><code>WWCommandLightMono</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setTailLight:(WWCommandLightMono *)<em>tail</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tail</em></dt>
+			<dd><p>The <a href="../Classes/WWCommandLightMono.html"><code>WWCommandLightMono</code></a> object that specifies the tail light brightness.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Inserts a given <a href="../Classes/WWCommandLightMono.html"><code>WWCommandLightMono</code></a> object to the set, overwriting an existing mapping if it exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSet.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Wonder Workshop. All rights reserved. (Last updated: 2015-01-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

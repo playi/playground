@@ -1,0 +1,540 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>WWRobotDelegate Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">WWRobotAPI </a></h1>
+				<a id="developerHome" href="../index.html">Wonder Workshop</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">WWRobotDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/robot:didFinishCommandSequence:">&nbsp;&nbsp;&nbsp;&nbsp;- robot:didFinishCommandSequence:</option>
+	
+	<option value="//api/name/robot:didReceiveRobotState:">&nbsp;&nbsp;&nbsp;&nbsp;- robot:didReceiveRobotState:</option>
+	
+	<option value="//api/name/robot:didStopExecutingCommandSequence:withResults:">&nbsp;&nbsp;&nbsp;&nbsp;- robot:didStopExecutingCommandSequence:withResults:</option>
+	
+	<option value="//api/name/robot:eventsTriggered:">&nbsp;&nbsp;&nbsp;&nbsp;- robot:eventsTriggered:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/robot:didFinishCommandSequence:">robot:didFinishCommandSequence:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/robot:didReceiveRobotState:">robot:didReceiveRobotState:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/robot:didStopExecutingCommandSequence:withResults:">robot:didStopExecutingCommandSequence:withResults:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/robot:eventsTriggered:">robot:eventsTriggered:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="WWRobotDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">WWRobotDelegate Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">WWRobot.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>WWRobotDelegate</code> protocol defines the methods that a delegate of a <a href="../Classes/WWRobot.html"><code>WWRobot</code></a>
+object must adopt.  The optional methods of the protocol allows the delegate to respond
+to the current state of the physical robot.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/robot:eventsTriggered:">&ndash;&nbsp;robot:eventsTriggered:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/robot:didReceiveRobotState:">&ndash;&nbsp;robot:didReceiveRobotState:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/robot:didStopExecutingCommandSequence:withResults:">&ndash;&nbsp;robot:didStopExecutingCommandSequence:withResults:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/robot:didFinishCommandSequence:">&ndash;&nbsp;robot:didFinishCommandSequence:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/robot:didFinishCommandSequence:" title="robot:didFinishCommandSequence:"></a>
+	<h3 class="subsubtitle method-title">robot:didFinishCommandSequence:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked when a robot finished executing a <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object to the end.  This callback is not
+triggered if the caller stops the sequence execution prematurely.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)robot:(WWRobot *)<em>robot</em> didFinishCommandSequence:(WWCommandSetSequence *)<em>sequence</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>robot</em></dt>
+			<dd><p>The robot that was executing the <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sequence</em></dt>
+			<dd><p>The <code>WWCommmandSetSequence</code> object that was being executed on.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Invoked when a robot finished executing a <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object to the end.  This callback is not
+triggered if the caller stops the sequence execution prematurely.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/robot:didReceiveRobotState:" title="robot:didReceiveRobotState:"></a>
+	<h3 class="subsubtitle method-title">robot:didReceiveRobotState:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked when new <a href="../Classes/WWSensorSet.html"><code>WWSensorSet</code></a> data is received.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)robot:(WWRobot *)<em>robot</em> didReceiveRobotState:(WWSensorSet *)<em>state</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>robot</em></dt>
+			<dd><p>The robot from which the sensor data came.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>state</em></dt>
+			<dd><p>The set of sensor data that was received from the robot.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Invoked when new <a href="../Classes/WWSensorSet.html"><code>WWSensorSet</code></a> data is received.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/robot:didStopExecutingCommandSequence:withResults:" title="robot:didStopExecutingCommandSequence:withResults:"></a>
+	<h3 class="subsubtitle method-title">robot:didStopExecutingCommandSequence:withResults:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked when a robot stopped execution of a <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a>.  This callback is usually trigger when caller stops
+the execution with <code>stopCommandSequence:</code> method call.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)robot:(WWRobot *)<em>robot</em> didStopExecutingCommandSequence:(WWCommandSetSequence *)<em>sequence</em> withResults:(NSDictionary *)<em>results</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>robot</em></dt>
+			<dd><p>The robot that was executing the <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sequence</em></dt>
+			<dd><p>The <code>WWCommmandSetSequence</code> object that was being executed on.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>results</em></dt>
+			<dd><p>The execution result at the time that sequence stopped executing.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Invoked when a robot stopped execution of a <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a>.  This callback is usually trigger when caller stops
+the execution with <code>stopCommandSequence:</code> method call.</p>
+
+<p>The execution result will be returned, which can be passed in when invoking the <code>executeCommandSequence:withOptions:</code> method to
+resume execution (if needed).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/robot:eventsTriggered:" title="robot:eventsTriggered:"></a>
+	<h3 class="subsubtitle method-title">robot:eventsTriggered:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invoked when 1+ <a href="../Classes/WWEvent.html"><code>WWEvent</code></a> was triggered for the last <a href="../Classes/WWSensor.html"><code>WWSensor</code></a> received.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)robot:(WWRobot *)<em>robot</em> eventsTriggered:(NSArray *)<em>events</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>robot</em></dt>
+			<dd><p>The robot on which the event(s) triggered.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>events</em></dt>
+			<dd><p>The set of events that were triggered.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Invoked when 1+ <a href="../Classes/WWEvent.html"><code>WWEvent</code></a> was triggered for the last <a href="../Classes/WWSensor.html"><code>WWSensor</code></a> received.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Wonder Workshop. All rights reserved. (Last updated: 2015-01-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

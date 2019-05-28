@@ -1,0 +1,933 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>WWCommandSetSequence Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">WWRobotAPI </a></h1>
+				<a id="developerHome" href="../index.html">Wonder Workshop</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">WWCommandSetSequence Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sequenceFromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ sequenceFromData:</option>
+	
+	<option value="//api/name/sequenceFromFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ sequenceFromFile:</option>
+	
+	<option value="//api/name/sequenceFromFileInBundle:fileType:">&nbsp;&nbsp;&nbsp;&nbsp;+ sequenceFromFileInBundle:fileType:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addCommandSet:withDuration:">&nbsp;&nbsp;&nbsp;&nbsp;- addCommandSet:withDuration:</option>
+	
+	<option value="//api/name/addFrame:">&nbsp;&nbsp;&nbsp;&nbsp;- addFrame:</option>
+	
+	<option value="//api/name/count">&nbsp;&nbsp;&nbsp;&nbsp;- count</option>
+	
+	<option value="//api/name/duration">&nbsp;&nbsp;&nbsp;&nbsp;- duration</option>
+	
+	<option value="//api/name/frameAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- frameAtIndex:</option>
+	
+	<option value="//api/name/frames">&nbsp;&nbsp;&nbsp;&nbsp;- frames</option>
+	
+	<option value="//api/name/parseData:">&nbsp;&nbsp;&nbsp;&nbsp;- parseData:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Create and initialize Sequences">Create and initialize Sequences</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adding `WWCommandSet`">Adding `WWCommandSet`</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Get sequence information">Get sequence information</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sequenceFromData:">sequenceFromData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sequenceFromFile:">sequenceFromFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sequenceFromFileInBundle:fileType:">sequenceFromFileInBundle:fileType:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addCommandSet:withDuration:">addCommandSet:withDuration:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addFrame:">addFrame:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/count">count</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/duration">duration</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/frameAtIndex:">frameAtIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/frames">frames</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseData:">parseData:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="WWCommandSetSequence Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">WWCommandSetSequence Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/WWEventDataSource.html">WWEventDataSource</a> : <a href="../Classes/WWObject.html">WWObject</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">WWCommandSetSequence.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>WWCommandSetSequence</code> represents a sequence of commands that can be executed serially.  Each sequence has 1 or more <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a>
+objects, which describes a <a href="../Classes/WWCommandSet.html"><code>WWCommandSet</code></a> to execute for the <a href="#//api/name/duration">duration</a> of that frame.  This class is best for creating a robot animation
+sequence.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Create and initialize Sequences" name="task_Create and initialize Sequences"></a>
+						<h3 class="subsubtitle task-title">Create and initialize Sequences</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sequenceFromData:">+&nbsp;sequenceFromData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sequenceFromFile:">+&nbsp;sequenceFromFile:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sequenceFromFileInBundle:fileType:">+&nbsp;sequenceFromFileInBundle:fileType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseData:">&ndash;&nbsp;parseData:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Adding `WWCommandSet`" name="task_Adding `WWCommandSet`"></a>
+						<h3 class="subsubtitle task-title">Adding `WWCommandSet`</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addCommandSet:withDuration:">&ndash;&nbsp;addCommandSet:withDuration:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addFrame:">&ndash;&nbsp;addFrame:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Get sequence information" name="task_Get sequence information"></a>
+						<h3 class="subsubtitle task-title">Get sequence information</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/frameAtIndex:">&ndash;&nbsp;frameAtIndex:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/frames">&ndash;&nbsp;frames</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/count">&ndash;&nbsp;count</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/duration">&ndash;&nbsp;duration</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sequenceFromData:" title="sequenceFromData:"></a>
+	<h3 class="subsubtitle method-title">sequenceFromData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an initialized <code>WWCommandSetSequence</code> object from a JSON-formatted sequence, represented by <code>NSData</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (WWCommandSetSequence *)sequenceFromData:(NSData *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>An <code>NSData</code> object containing sequence described in JSON.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>WWCommandSetSequence</code> described by the data.  Returns nil if the data is malformatted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an initialized <code>WWCommandSetSequence</code> object from a JSON-formatted sequence, represented by <code>NSData</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sequenceFromFile:" title="sequenceFromFile:"></a>
+	<h3 class="subsubtitle method-title">sequenceFromFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an initialized <code>WWCommandSetSequence</code> object from a JSON-formatted sequence currently stored in a file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (WWCommandSetSequence *)sequenceFromFile:(NSString *)<em>fileName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fileName</em></dt>
+			<dd><p>Location of the file that contains the sequence in JSON.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>WWCommandSetSequence</code> that is described by the file content.  Returns nil if data is malformatted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an initialized <code>WWCommandSetSequence</code> object from a JSON-formatted sequence currently stored in a file.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sequenceFromFileInBundle:fileType:" title="sequenceFromFileInBundle:fileType:"></a>
+	<h3 class="subsubtitle method-title">sequenceFromFileInBundle:fileType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an initialized <code>WWCommandSetSequence</code> object from a JSON-formatted sequence currently stored in a file.  This is a helper function to
+locate files within the main bundle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (WWCommandSetSequence *)sequenceFromFileInBundle:(NSString *)<em>relativeName</em> fileType:(NSString *)<em>type</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relativeName</em></dt>
+			<dd><p>Name of the file that resides in the main bundle.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>type</em></dt>
+			<dd><p>The file extension format.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>WWCommandSetSequence</code> that is described by the file content.  Returns nil if data is malformatted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an initialized <code>WWCommandSetSequence</code> object from a JSON-formatted sequence currently stored in a file.  This is a helper function to
+locate files within the main bundle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addCommandSet:withDuration:" title="addCommandSet:withDuration:"></a>
+	<h3 class="subsubtitle method-title">addCommandSet:withDuration:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Insert a given <a href="../Classes/WWCommandSet.html"><code>WWCommandSet</code></a> object at the end of this sequence.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addCommandSet:(WWCommandSet *)<em>commandSet</em> withDuration:(double)<em>duration</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>commandSet</em></dt>
+			<dd><p>The object to add to the end of the sequence. No-op if the object is empty/nil.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>duration</em></dt>
+			<dd><p>Duration for how long to execute <a href="../Classes/WWCommandSet.html"><code>WWCommandSet</code></a>, in seconds.  The <a href="#//api/name/duration">duration</a> must be greater than 30ms.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Insert a given <a href="../Classes/WWCommandSet.html"><code>WWCommandSet</code></a> object at the end of this sequence.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addFrame:" title="addFrame:"></a>
+	<h3 class="subsubtitle method-title">addFrame:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Insert a given <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> at the end of this sequence.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addFrame:(WWCommandSetSequenceFrame *)<em>frame</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>The frame object to add to the end of the sequence. No-op if object is empty/nil.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Insert a given <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> at the end of this sequence.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="subsubtitle method-title">count</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the count of all the <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> objects in this sequence.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)count</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The count of <a href="#//api/name/frames">frames</a> in this sequence.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the count of all the <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> objects in this sequence.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/duration" title="duration"></a>
+	<h3 class="subsubtitle method-title">duration</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the total duration of this sequence when executed from start to finish, in seconds.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (double)duration</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The total duration of this sequence when executed from start to finish, in seconds.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the total duration of this sequence when executed from start to finish, in seconds.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/frameAtIndex:" title="frameAtIndex:"></a>
+	<h3 class="subsubtitle method-title">frameAtIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the associated <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> object at the given index.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (WWCommandSetSequenceFrame *)frameAtIndex:(NSUInteger)<em>index</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>The index from which to retrieve the frame in the sequence.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The corresponding <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> object or nil, if the index is erroneous (e.g., index >= size of sequence).</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieves the associated <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> object at the given index.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/frames" title="frames"></a>
+	<h3 class="subsubtitle method-title">frames</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array copy (shallow) of all the <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> objects associated with this sequence, in the correct order.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)frames</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The array of <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> objects or an empty array if no frames are associated.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an array copy (shallow) of all the <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> objects associated with this sequence, in the correct order.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseData:" title="parseData:"></a>
+	<h3 class="subsubtitle method-title">parseData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Parses through structured data that represents a <code>WWCommandSetSequence</code>.  The data format is proprietary and the index values are specified
+in WWConstant.h.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)parseData:(NSDictionary *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>Structured data that represents a sequence of <a href="../Classes/WWCommandSetSequenceFrame.html"><code>WWCommandSetSequenceFrame</code></a> objects, indexed appropriately.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Yes if data is loaded into this object successfully, false otherwise (e.g. malformed data).</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Parses through structured data that represents a <code>WWCommandSetSequence</code>.  The data format is proprietary and the index values are specified
+in WWConstant.h.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWCommandSetSequence.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Wonder Workshop. All rights reserved. (Last updated: 2015-01-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
