@@ -9,7 +9,7 @@ Welcome to the Wonder Workshop API documentation!  In this guide, you will learn
 
 ## Quickstart
 
-* For full API documentation, please check out [developer docs](./doc/index.html) section.
+* For full API documentation, please check out the [api reference](./doc/index.html). Note: these are HTML files and should be viewed in a browser once cloned locally.
 * For a quickstart guide, please refer to [getting started guide](./getting-started-ios.md) section.
 * Please check out our [sample application](https://github.com/playi/playground) for more examples (Note: you will need to provide your github screen name to developers@makewonder.com for approval before access as our developer program is currently in closed beta).
 
