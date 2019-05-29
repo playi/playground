@@ -1,0 +1,1515 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>WWRobot Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">WWRobotAPI </a></h1>
+				<a id="developerHome" href="../index.html">Wonder Workshop</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">WWRobot Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/connectionState">&nbsp;&nbsp;&nbsp;&nbsp;connectionState</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/firmwareVersion">&nbsp;&nbsp;&nbsp;&nbsp;firmwareVersion</option>
+	
+	<option value="//api/name/history">&nbsp;&nbsp;&nbsp;&nbsp;history</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/personalityColorIndex">&nbsp;&nbsp;&nbsp;&nbsp;personalityColorIndex</option>
+	
+	<option value="//api/name/robotType">&nbsp;&nbsp;&nbsp;&nbsp;robotType</option>
+	
+	<option value="//api/name/serialNumber">&nbsp;&nbsp;&nbsp;&nbsp;serialNumber</option>
+	
+	<option value="//api/name/signalStrength">&nbsp;&nbsp;&nbsp;&nbsp;signalStrength</option>
+	
+	<option value="//api/name/uuId">&nbsp;&nbsp;&nbsp;&nbsp;uuId</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/allExecutingCommandSequences">&nbsp;&nbsp;&nbsp;&nbsp;- allExecutingCommandSequences</option>
+	
+	<option value="//api/name/commandSequenceResults:">&nbsp;&nbsp;&nbsp;&nbsp;- commandSequenceResults:</option>
+	
+	<option value="//api/name/executeCommandSequence:withOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- executeCommandSequence:withOptions:</option>
+	
+	<option value="//api/name/isConnected">&nbsp;&nbsp;&nbsp;&nbsp;- isConnected</option>
+	
+	<option value="//api/name/isEqualToRobot:">&nbsp;&nbsp;&nbsp;&nbsp;- isEqualToRobot:</option>
+	
+	<option value="//api/name/isExecutingCommandSequence:">&nbsp;&nbsp;&nbsp;&nbsp;- isExecutingCommandSequence:</option>
+	
+	<option value="//api/name/isUnconfigured">&nbsp;&nbsp;&nbsp;&nbsp;- isUnconfigured</option>
+	
+	<option value="//api/name/reboot">&nbsp;&nbsp;&nbsp;&nbsp;- reboot</option>
+	
+	<option value="//api/name/resetState">&nbsp;&nbsp;&nbsp;&nbsp;- resetState</option>
+	
+	<option value="//api/name/sendRobotCommandSet:">&nbsp;&nbsp;&nbsp;&nbsp;- sendRobotCommandSet:</option>
+	
+	<option value="//api/name/stopCommandSequence:">&nbsp;&nbsp;&nbsp;&nbsp;- stopCommandSequence:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Querying robot">Querying robot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Sending commands">Sending commands</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Executing command sequences">Executing command sequences</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Modifying robot">Modifying robot</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionState">connectionState</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firmwareVersion">firmwareVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/history">history</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/personalityColorIndex">personalityColorIndex</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/robotType">robotType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serialNumber">serialNumber</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/signalStrength">signalStrength</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uuId">uuId</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allExecutingCommandSequences">allExecutingCommandSequences</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/commandSequenceResults:">commandSequenceResults:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/executeCommandSequence:withOptions:">executeCommandSequence:withOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isConnected">isConnected</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isEqualToRobot:">isEqualToRobot:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isExecutingCommandSequence:">isExecutingCommandSequence:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isUnconfigured">isUnconfigured</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reboot">reboot</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resetState">resetState</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendRobotCommandSet:">sendRobotCommandSet:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopCommandSequence:">stopCommandSequence:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="WWRobot Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">WWRobot Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/WWEventDataSource.html">WWEventDataSource</a> : <a href="../Classes/WWObject.html">WWObject</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">WWRobot.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>WWRobot</code> is a subclass of the <a href="../Classes/WWEventDataSource.html"><code>WWEventDataSource</code></a> object; it has a 1-to-1
+mapping to a physical Wonder Workshop robot.</p>
+
+<p>Caller can execute robot commands (via <a href="../Classes/WWCommandSet.html"><code>WWCommandSet</code></a>) and analyze robot state data
+(via <a href="../Classes/WWSensorSet.html"><code>WWSensorSet</code></a>) to control robots as desired.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/history">&nbsp;&nbsp;history</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/personalityColorIndex">&nbsp;&nbsp;personalityColorIndex</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/robotType">&nbsp;&nbsp;robotType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connectionState">&nbsp;&nbsp;connectionState</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/uuId">&nbsp;&nbsp;uuId</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serialNumber">&nbsp;&nbsp;serialNumber</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firmwareVersion">&nbsp;&nbsp;firmwareVersion</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/signalStrength">&nbsp;&nbsp;signalStrength</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Querying robot" name="task_Querying robot"></a>
+						<h3 class="subsubtitle task-title">Querying robot</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isUnconfigured">&ndash;&nbsp;isUnconfigured</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isConnected">&ndash;&nbsp;isConnected</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isEqualToRobot:">&ndash;&nbsp;isEqualToRobot:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Sending commands" name="task_Sending commands"></a>
+						<h3 class="subsubtitle task-title">Sending commands</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendRobotCommandSet:">&ndash;&nbsp;sendRobotCommandSet:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Executing command sequences" name="task_Executing command sequences"></a>
+						<h3 class="subsubtitle task-title">Executing command sequences</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/executeCommandSequence:withOptions:">&ndash;&nbsp;executeCommandSequence:withOptions:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopCommandSequence:">&ndash;&nbsp;stopCommandSequence:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/commandSequenceResults:">&ndash;&nbsp;commandSequenceResults:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allExecutingCommandSequences">&ndash;&nbsp;allExecutingCommandSequences</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isExecutingCommandSequence:">&ndash;&nbsp;isExecutingCommandSequence:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Modifying robot" name="task_Modifying robot"></a>
+						<h3 class="subsubtitle task-title">Modifying robot</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reboot">&ndash;&nbsp;reboot</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resetState">&ndash;&nbsp;resetState</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/connectionState" title="connectionState"></a>
+	<h3 class="subsubtitle method-title">connectionState</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the connection status of this robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WWRobotConnectionState connectionState</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the connection status of this robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The delegate object to interact with the robot.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;WWRobotDelegate&gt; delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The delegate object to interact with the robot.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firmwareVersion" title="firmwareVersion"></a>
+	<h3 class="subsubtitle method-title">firmwareVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the firmware version that is currently running on this robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *firmwareVersion</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the firmware version that is currently running on this robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/history" title="history"></a>
+	<h3 class="subsubtitle method-title">history</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the entire history of received <a href="../Classes/WWSensor.html"><code>WWSensor</code></a> objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WWSensorHistory *history</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the entire history of received <a href="../Classes/WWSensor.html"><code>WWSensor</code></a> objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the human-readable name of the robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the human-readable name of the robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/personalityColorIndex" title="personalityColorIndex"></a>
+	<h3 class="subsubtitle method-title">personalityColorIndex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the personality color of this robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WWPersonalityColorIndex personalityColorIndex</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the personality color of this robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/robotType" title="robotType"></a>
+	<h3 class="subsubtitle method-title">robotType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the type of this robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WWRobotType robotType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the type of this robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serialNumber" title="serialNumber"></a>
+	<h3 class="subsubtitle method-title">serialNumber</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the factory serial number of this robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *serialNumber</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the factory serial number of this robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/signalStrength" title="signalStrength"></a>
+	<h3 class="subsubtitle method-title">signalStrength</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the signal strength of this robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSNumber *signalStrength</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the signal strength of this robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/uuId" title="uuId"></a>
+	<h3 class="subsubtitle method-title">uuId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the unique identifier of this robot (read-only).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *uuId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the unique identifier of this robot (read-only).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allExecutingCommandSequences" title="allExecutingCommandSequences"></a>
+	<h3 class="subsubtitle method-title">allExecutingCommandSequences</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all the <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> objects that the robots are currently executing.  Returns nil
+if robot is not currently executing any sequence.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allExecutingCommandSequences</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of current sequences that are being executed.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns all the <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> objects that the robots are currently executing.  Returns nil
+if robot is not currently executing any sequence.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/commandSequenceResults:" title="commandSequenceResults:"></a>
+	<h3 class="subsubtitle method-title">commandSequenceResults:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current execution result for this given sequence.  If the sequence isn&rsquo;t being executed
+currently, nil will be returned instead.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)commandSequenceResults:(WWCommandSetSequence *)<em>sequence</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sequence</em></dt>
+			<dd><p><a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object that is currently being executed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Execution result of the <code>WWcommandSetSequence</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current execution result for this given sequence.  If the sequence isn&rsquo;t being executed
+currently, nil will be returned instead.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/executeCommandSequence:withOptions:" title="executeCommandSequence:withOptions:"></a>
+	<h3 class="subsubtitle method-title">executeCommandSequence:withOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts to execute the given <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> immediately, while respecting the options passed in.  Caller can specify the
+WWCommandSequenceStartFrameIndexKey and WWCommandSequenceStartFrameTimeOffsetKey values or nil to execute the sequence from
+the very beginning.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)executeCommandSequence:(WWCommandSetSequence *)<em>sequence</em> withOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sequence</em></dt>
+			<dd><p><a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object to execute on.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>A set of option to respect during execution.  If nil, execution will start at the beginning of the sequence.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Starts to execute the given <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> immediately, while respecting the options passed in.  Caller can specify the
+WWCommandSequenceStartFrameIndexKey and WWCommandSequenceStartFrameTimeOffsetKey values or nil to execute the sequence from
+the very beginning.</p>
+
+<p>Multiple sequences can be executed at once, although the results may be unpredictable as the robots will attempt to merge
+the execution commands together.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isConnected" title="isConnected"></a>
+	<h3 class="subsubtitle method-title">isConnected</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns true if robot is connected and ready to receive commands (and currently
+emitting sensor).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isConnected</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns true if connected, false otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns true if robot is connected and ready to receive commands (and currently
+emitting sensor).</p>
+
+<p>Robot is connected if <a href="#//api/name/connectionState">connectionState</a> == ROBOT_CONNECTION_CONNECTED, false otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isEqualToRobot:" title="isEqualToRobot:"></a>
+	<h3 class="subsubtitle method-title">isEqualToRobot:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns true if this robot is the same as the provided robot.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isEqualToRobot:(WWRobot *)<em>robot</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>robot</em></dt>
+			<dd><p>The robot with which to be compared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns true if this robot is the same as the specified robot.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns true if this robot is the same as the provided robot.</p>
+
+<p>Comparison is done using [uuId isEqualToString:].</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isExecutingCommandSequence:" title="isExecutingCommandSequence:"></a>
+	<h3 class="subsubtitle method-title">isExecutingCommandSequence:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the given <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object is being executed by this robot. Otherwise, returns NO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isExecutingCommandSequence:(WWCommandSetSequence *)<em>sequence</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sequence</em></dt>
+			<dd><p><a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object that is being tested for execution.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the given <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object is being executed by this robot. Otherwise, returns NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the given <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object is being executed by this robot. Otherwise, returns NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isUnconfigured" title="isUnconfigured"></a>
+	<h3 class="subsubtitle method-title">isUnconfigured</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns true if robot is not properly configured by the Wonder Workshop Go app.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isUnconfigured</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns true if unconfigured, false otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns true if robot is not properly configured by the Wonder Workshop Go app.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reboot" title="reboot"></a>
+	<h3 class="subsubtitle method-title">reboot</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Power cycles the physical robot and clears any queued commands.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)reboot</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Power cycles the physical robot and clears any queued commands.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resetState" title="resetState"></a>
+	<h3 class="subsubtitle method-title">resetState</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Resets the robot to its initial state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)resetState</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Resets the robot to its initial state.</p>
+
+<p>Initial state means:
+- Lights will reflect its personality color.
+- All movements are stopped.
+- The head faces center and is level.
+- The eye blinks.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendRobotCommandSet:" title="sendRobotCommandSet:"></a>
+	<h3 class="subsubtitle method-title">sendRobotCommandSet:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends the given <a href="../Classes/WWCommandSet.html"><code>WWCommandSet</code></a> to the physical robot to execute.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendRobotCommandSet:(WWCommandSet *)<em>command</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>command</em></dt>
+			<dd><p>The desired command set to send to the robot.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sends the given <a href="../Classes/WWCommandSet.html"><code>WWCommandSet</code></a> to the physical robot to execute.</p>
+
+<p>The given command might not be sent immediately, but will be sent within 50ms.  If sendRobotCommandSet: is called multiple times immediately, the
+<code>WWRobot</code> might aggregate and send them as a single command set. If
+there are collisions during command aggregation, the latest command might
+override earlier commands.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopCommandSequence:" title="stopCommandSequence:"></a>
+	<h3 class="subsubtitle method-title">stopCommandSequence:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops execution of the given <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object. If this robot is not currently executing
+this sequence, then this is a no-op.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopCommandSequence:(WWCommandSetSequence *)<em>sequence</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sequence</em></dt>
+			<dd><p><a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object to stop execution on.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Stops execution of the given <a href="../Classes/WWCommandSetSequence.html"><code>WWCommandSetSequence</code></a> object. If this robot is not currently executing
+this sequence, then this is a no-op.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobot.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Wonder Workshop. All rights reserved. (Last updated: 2015-01-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1233 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>WWRobotManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">WWRobotAPI </a></h1>
+				<a id="developerHome" href="../index.html">Wonder Workshop</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">WWRobotManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/allConnectedRobots">&nbsp;&nbsp;&nbsp;&nbsp;allConnectedRobots</option>
+	
+	<option value="//api/name/allConnectingRobots">&nbsp;&nbsp;&nbsp;&nbsp;allConnectingRobots</option>
+	
+	<option value="//api/name/allDisconnectingRobots">&nbsp;&nbsp;&nbsp;&nbsp;allDisconnectingRobots</option>
+	
+	<option value="//api/name/allDiscoveredRobots">&nbsp;&nbsp;&nbsp;&nbsp;allDiscoveredRobots</option>
+	
+	<option value="//api/name/allKnownRobots">&nbsp;&nbsp;&nbsp;&nbsp;allKnownRobots</option>
+	
+	<option value="//api/name/allLostRobots">&nbsp;&nbsp;&nbsp;&nbsp;allLostRobots</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/isScanning">&nbsp;&nbsp;&nbsp;&nbsp;isScanning</option>
+	
+	<option value="//api/name/scanPeriod">&nbsp;&nbsp;&nbsp;&nbsp;scanPeriod</option>
+	
+	<option value="//api/name/state">&nbsp;&nbsp;&nbsp;&nbsp;state</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/manager">&nbsp;&nbsp;&nbsp;&nbsp;+ manager</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/connectToRobot:">&nbsp;&nbsp;&nbsp;&nbsp;- connectToRobot:</option>
+	
+	<option value="//api/name/disconnectFromRobot:">&nbsp;&nbsp;&nbsp;&nbsp;- disconnectFromRobot:</option>
+	
+	<option value="//api/name/robotsWithConnectionState:">&nbsp;&nbsp;&nbsp;&nbsp;- robotsWithConnectionState:</option>
+	
+	<option value="//api/name/startScanningForRobots:">&nbsp;&nbsp;&nbsp;&nbsp;- startScanningForRobots:</option>
+	
+	<option value="//api/name/startScanningForRobotsImmediately">&nbsp;&nbsp;&nbsp;&nbsp;- startScanningForRobotsImmediately</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Monitoring properties">Monitoring properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving robots by connection state">Retrieving robots by connection state</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Scanning or stopping scan of robots">Scanning or stopping scan of robots</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Establishing or canceling connections with robots">Establishing or canceling connections with robots</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allConnectedRobots">allConnectedRobots</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allConnectingRobots">allConnectingRobots</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allDisconnectingRobots">allDisconnectingRobots</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allDiscoveredRobots">allDiscoveredRobots</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allKnownRobots">allKnownRobots</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allLostRobots">allLostRobots</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isScanning">isScanning</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scanPeriod">scanPeriod</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/state">state</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manager">manager</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectToRobot:">connectToRobot:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disconnectFromRobot:">disconnectFromRobot:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/robotsWithConnectionState:">robotsWithConnectionState:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startScanningForRobots:">startScanningForRobots:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startScanningForRobotsImmediately">startScanningForRobotsImmediately</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="WWRobotManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">WWRobotManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/WWObject.html">WWObject</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">WWRobotManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>WWRobotManager</code> objects are used to manage a discovered or connected Wonder Workshop <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> (represented by <a href="../Classes/WWRobot.html"><code>WWRobot</code></a>), including scanning for,
+discovering, connecting, and disconnecting operations.</p>
+
+<p>The <a href="#//api/name/delegate">delegate</a> pattern in order to report robot connection states to its caller.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Monitoring properties" name="task_Monitoring properties"></a>
+						<h3 class="subsubtitle task-title">Monitoring properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/state">&nbsp;&nbsp;state</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scanPeriod">&nbsp;&nbsp;scanPeriod</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isScanning">&nbsp;&nbsp;isScanning</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Retrieving robots by connection state" name="task_Retrieving robots by connection state"></a>
+						<h3 class="subsubtitle task-title">Retrieving robots by connection state</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allDiscoveredRobots">&nbsp;&nbsp;allDiscoveredRobots</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allConnectingRobots">&nbsp;&nbsp;allConnectingRobots</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allConnectedRobots">&nbsp;&nbsp;allConnectedRobots</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allLostRobots">&nbsp;&nbsp;allLostRobots</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allDisconnectingRobots">&nbsp;&nbsp;allDisconnectingRobots</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allKnownRobots">&nbsp;&nbsp;allKnownRobots</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/robotsWithConnectionState:">&ndash;&nbsp;robotsWithConnectionState:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Scanning or stopping scan of robots" name="task_Scanning or stopping scan of robots"></a>
+						<h3 class="subsubtitle task-title">Scanning or stopping scan of robots</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/manager">+&nbsp;manager</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startScanningForRobots:">&ndash;&nbsp;startScanningForRobots:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startScanningForRobotsImmediately">&ndash;&nbsp;startScanningForRobotsImmediately</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Establishing or canceling connections with robots" name="task_Establishing or canceling connections with robots"></a>
+						<h3 class="subsubtitle task-title">Establishing or canceling connections with robots</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connectToRobot:">&ndash;&nbsp;connectToRobot:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disconnectFromRobot:">&ndash;&nbsp;disconnectFromRobot:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/allConnectedRobots" title="allConnectedRobots"></a>
+	<h3 class="subsubtitle method-title">allConnectedRobots</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_CONNECTED</code> <a href="#//api/name/state">state</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *allConnectedRobots</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_CONNECTED</code> <a href="#//api/name/state">state</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allConnectingRobots" title="allConnectingRobots"></a>
+	<h3 class="subsubtitle method-title">allConnectingRobots</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_CONNECTING</code> <a href="#//api/name/state">state</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *allConnectingRobots</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_CONNECTING</code> <a href="#//api/name/state">state</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allDisconnectingRobots" title="allDisconnectingRobots"></a>
+	<h3 class="subsubtitle method-title">allDisconnectingRobots</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_DISCONNECTING</code> <a href="#//api/name/state">state</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *allDisconnectingRobots</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_DISCONNECTING</code> <a href="#//api/name/state">state</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allDiscoveredRobots" title="allDiscoveredRobots"></a>
+	<h3 class="subsubtitle method-title">allDiscoveredRobots</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_DISCOVERED</code> <a href="#//api/name/state">state</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *allDiscoveredRobots</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_DISCOVERED</code> <a href="#//api/name/state">state</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allKnownRobots" title="allKnownRobots"></a>
+	<h3 class="subsubtitle method-title">allKnownRobots</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that have been found, irrespective of robot <a href="#//api/name/state">state</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *allKnownRobots</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that have been found, irrespective of robot <a href="#//api/name/state">state</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allLostRobots" title="allLostRobots"></a>
+	<h3 class="subsubtitle method-title">allLostRobots</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_LOST</code> <a href="#//api/name/state">state</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *allLostRobots</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> that are in <code>ROBOT_CONNECTION_LOST</code> <a href="#//api/name/state">state</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The delegate object to receive connection events.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;WWRobotManagerDelegate&gt; delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The delegate object to receive connection events.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isScanning" title="isScanning"></a>
+	<h3 class="subsubtitle method-title">isScanning</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether <code>WWRobotManager</code> is currently scanning for <a href="../Classes/WWRobot.html"><code>WWRobot</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) bool isScanning</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Indicates whether <code>WWRobotManager</code> is currently scanning for <a href="../Classes/WWRobot.html"><code>WWRobot</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scanPeriod" title="scanPeriod"></a>
+	<h3 class="subsubtitle method-title">scanPeriod</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies the scan period (in seconds) during periodic scan.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float scanPeriod</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Specifies the scan period (in seconds) during periodic scan.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/startScanningForRobots:">- startScanningForRobots:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/state" title="state"></a>
+	<h3 class="subsubtitle method-title">state</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current state of the <a href="#//api/name/manager">manager</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) WWRobotManagerState state</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current state of the <a href="#//api/name/manager">manager</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/manager" title="manager"></a>
+	<h3 class="subsubtitle method-title">manager</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the robot manager.  This is a singleton class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (WWRobotManager *)manager</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a singleton <code>WWRobotManager</code> object (1 object per app).</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes the robot manager.  This is a singleton class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/connectToRobot:" title="connectToRobot:"></a>
+	<h3 class="subsubtitle method-title">connectToRobot:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Establishes connection to a robot.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)connectToRobot:(WWRobot *)<em>robot</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>robot</em></dt>
+			<dd><p>The robot to which the <a href="#//api/name/manager">manager</a> is attempting to connect.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Establishes connection to a robot.</p>
+
+<p>If a connection to robot is successfully established (or if the robot is already connected), the robot <a href="#//api/name/manager">manager</a> calls the
+<code>manager:didConnectRobot:</code> method of its <a href="#//api/name/delegate">delegate</a> object. If the connection attempt fails, the robot <a href="#//api/name/manager">manager</a> calls the
+<code>manager:didFailToConnectRobot:error:</code> method of its <a href="#//api/name/delegate">delegate</a> object instead.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disconnectFromRobot:" title="disconnectFromRobot:"></a>
+	<h3 class="subsubtitle method-title">disconnectFromRobot:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disconnects an active connection from a robot.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disconnectFromRobot:(WWRobot *)<em>robot</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>robot</em></dt>
+			<dd><p>The robot to which the maanger is attempting to disconnect.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Disconnects an active connection from a robot.</p>
+
+<p>This method is nonblocking and does not fail, so caller should consider the robot disconnected once this method finishes. Once
+the robot is successfully disconnected, the robot <a href="#//api/name/manager">manager</a> calls the <code>manager:didDisconnect:</code> <a href="#//api/name/delegate">delegate</a> method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/robotsWithConnectionState:" title="robotsWithConnectionState:"></a>
+	<h3 class="subsubtitle method-title">robotsWithConnectionState:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> based on the robot <a href="#//api/name/state">state</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)robotsWithConnectionState:(WWRobotConnectionState)<em>state</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>state</em></dt>
+			<dd><p>Robot connection <a href="#//api/name/state">state</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> with the specified <a href="#//api/name/state">state</a> or an empty array if none are found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current set of <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> <a href="#//api/name/robots">robots</a> based on the robot <a href="#//api/name/state">state</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startScanningForRobots:" title="startScanningForRobots:"></a>
+	<h3 class="subsubtitle method-title">startScanningForRobots:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Scans for <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> periodically based on the given scan period.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startScanningForRobots:(float)<em>scanPeriod</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scanPeriod</em></dt>
+			<dd><p>scan period (in seconds).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Scans for <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> periodically based on the given scan period.</p>
+
+<p>If <a href="#//api/name/scanPeriod">scanPeriod</a> is > 0, this method scans until a robot is found. Then, it will pause scanning until the specified
+<a href="#//api/name/scanPeriod">scanPeriod</a> elapses before scanning again.  This operation will continue until <a href="#//api/name/stopScanningForRobots"><code>stopScanningForRobots</code></a> is called.
+If <a href="#//api/name/scanPeriod">scanPeriod</a> &lt;= 0, then this method will perform the same action as <a href="#//api/name/startScanningForRobotsImmediately"><code>startScanningForRobotsImmediately</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/startScanningForRobotsImmediately">- startScanningForRobotsImmediately</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/stopScanningForRobots">- stopScanningForRobots</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startScanningForRobotsImmediately" title="startScanningForRobotsImmediately"></a>
+	<h3 class="subsubtitle method-title">startScanningForRobotsImmediately</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Scans for <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> immediately.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startScanningForRobotsImmediately</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Scans for <a href="../Classes/WWRobot.html"><code>WWRobot</code></a> immediately.</p>
+
+<p>Scan operation continues until <a href="#//api/name/stopScanningForRobots"><code>stopScanningForRobots</code></a> is called.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/startScanningForRobots:">- startScanningForRobots:</a></p></code></li>
+			
+			<li><code><p><a href="#//api/name/stopScanningForRobots">- stopScanningForRobots</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WWRobotManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+                    
+                    
+
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Wonder Workshop. All rights reserved. (Last updated: 2015-01-12)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

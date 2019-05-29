@@ -2,9 +2,10 @@
 Welcome to wonder workshop playground app!  This is a sample application that integrates with wonder workshop's developer API to provide granular access to all the dash/dot sensors and actuators.  Feel free to modify the code here as needed to create your very own app that interacts with dash and dot in creative ways!
 
 ### How to get started
-Please refer to our [developer portal](https://developer.makewonder.com/#/gettingstarted) for how to download our API framework binary and integrate it into your application.  [Documentation](https://developer.makewonder.com/#/docs) is also at the portal.
+To get github access to the file you're reading now, email us. See below for details.
+Documentation is included in this repository: [Android](Android/docs-android.md), [iOS](iOS/docs-ios.md).
 
-Alternatively, clone this github repo and try out the iOS or Android projects inside. The robot framework is included.  The projects demonstrate discovering & connecting to robots, sending commands, reading sensors, and registering for robot events.
+Try out the iOS or Android projects inside this repository. The robot framework is included.  The projects demonstrate discovering & connecting to robots, sending commands, reading sensors, and registering for robot events.
 
 ### Communication
 * If you **found a bug and can provide steps to reliably reproduce it**, please send an email to developers@makewonder.com with a description of the bug, repo steps, and any debugging output/stack trace that you have!
